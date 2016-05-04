@@ -30,9 +30,3 @@ At this time we are not accepting new samples from the public, but check back he
 •	[Bringing Desktop Apps to the UWP Using Desktop App Converter] (https://channel9.msdn.com/events/build/2016/p504)
 •	[Project Centennial: Bringing Existing Desktop Applications to the Universal Windows Platform] (https://channel9.msdn.com/events/build/2016/b829)
 •	[Preview the Desktop App Converter] (https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter)
-
-
-
-
-
-
