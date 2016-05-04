@@ -21,11 +21,17 @@ namespace HelloWorldWpfSample
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// Initialize the user interface objects
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Update the apps live tile
+        /// </summary>
         private void AddTileButton_Click(object sender, RoutedEventArgs e)
         {
             XmlDocument tileXml = TileUpdateManager.GetTemplateContent(TileTemplateType.TileSquare150x150Text01);
