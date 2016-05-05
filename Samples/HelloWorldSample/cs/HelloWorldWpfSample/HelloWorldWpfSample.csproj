@@ -67,10 +67,8 @@
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
     <Reference Include="Windows.Data">
-      <HintPath>..\..\..\..\..\..\..\Windows\System32\WinMetadata\Windows.Data.winmd</HintPath>
     </Reference>
     <Reference Include="Windows.UI">
-      <HintPath>..\..\..\..\..\..\..\Windows\System32\WinMetadata\Windows.UI.winmd</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
