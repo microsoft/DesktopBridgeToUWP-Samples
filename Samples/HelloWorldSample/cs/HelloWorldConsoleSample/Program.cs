@@ -33,7 +33,7 @@ namespace HelloWorldConsoleSample
             TileNotification tileNotification = new TileNotification(tileXml);
             TileUpdateManager.CreateTileUpdaterForApplication().Update(tileNotification);
 
-            Console.WriteLine("Go to your tile and see how it receive the update live!");
+            Console.WriteLine("See how it has received the live update");
             Console.ReadLine();
         }
     }
