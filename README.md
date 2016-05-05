@@ -1,8 +1,8 @@
 # Desktop app bridge to UWP Samples
 
-UWP using Desktop Conversion extensions is a bridge that enables you to convert your classic desktop application (like Win32, Windows Forms, and WPF) or game to a Universal Windows Platform (UWP) app or game. For more info, see Guide to UWP apps. After conversion, your classic desktop app is packaged, serviced, and deployed in the form of a UWP app package (an .appx or an .appxbundle) targeting Windows 10 Desktop.
-
-There are two parts to the technology that enables desktop apps to be converted to UWP packages. The first is the Desktop App Converter, which takes your existing binaries and repackages them as a UWP package. Your code is still the same, it's just packaged differently. The second piece comprises runtime technologies in the Windows Anniversary update that enable a UWP package to have executables that run as full trust instead of in an app container. This technology also gives a converted app a package identity, which is required to use some UWP APIs.
+Desktop Conversion Extensions is a bridge that enables you to convert your classic desktop application (like Win32, Windows Forms, and WPF) or game to a Universal Windows Platform (UWP) app or game. After conversion, your classic desktop app is packaged, serviced, and deployed in the form of a UWP app package (an .appx or an .appxbundle) targeting Windows 10.
+There are two parts to the technology that enables desktop apps to be converted to UWP packages. The first is the Desktop App Converter, which takes your existing binaries and repackages them as a UWP package, you can also create the package manually like we show in these samples. Your code is the same, it's just packaged differently. The second piece is comprised of runtime technologies in the Windows Anniversary update that enable a UWP package to have executables that run as full trust instead of in an app container. This technology also gives a converted app a package identity, which is required to use some UWP APIs.
+For more info on UWP apps, [see] (https://msdn.microsoft.com/en-us/windows/uwp/get-started/universal-application-platform-guide)
 
 ## Requirements
 
@@ -13,7 +13,7 @@ There are two parts to the technology that enables desktop apps to be converted 
 
 ## Contributions
 
-At this time we are not accepting new samples from the public, but check back here as we evolve our contribution model.
+We are not currently accepting new samples from the public, but check back here as we evolve our contribution model.
 
 ## Feedback
 

@@ -1,25 +1,25 @@
 ﻿# Hello World Sample
 
-This sample demonstrates how you can manually convert your existent win32 desktop app to UWP and add a live tile that was previously impossible to use.
+This sample demonstrates how to manually convert your existing Win32 desktop application to a Universal Windows Platform (UWP) app. It also shows you how to add a Live Tile, which were previously only available for native UWP apps. 
+The sample is a WPF “Hello world” app, but the steps are the same for any xcopy-deployable Win32 application (yes, even VB6 :-)).
 
 Build the sample
 ----------------
-
-- The sample is a Wpf hello world app but you can do the same with any xcopy deployable win32 application (yes even VB6:-))
-- Press Ctrl+Shift+B, or select **Build** \> **Build Solution**
-- Copy the HelloWorldWpfSample.exe to the CentennialPackage under the HelloWorldSample directory
-- Pay attention to the AppxManifest.xml in the CentennialPackage you can modify it to change the app display name, add extensions, update the app version, etc.
+- Press Ctrl+Shift+B, or select **Build** \> **Build Solution**.
+- Copy the HelloWorldWpfSample.exe to the CentennialPackage under the HelloWorldSample directory.
+- Pay attention to the AppxManifest.xml in the CentennialPackage. You can modify it to change the app display name, add extensions, update the app version, etc.
  
 Deploy and Run the sample
 -------------------------
 
- - To deploy run: add-appxpackage –register AppxManifest.xml from the PowerShell
- - To run go to the start menu and find the apps tile "HelloWorldWpfSample", right click and choose "Pin to taskbar"
- - When the app lunched press the Add Live Tile button in the app and see how your live tile is receiving the updates! 
+ - To deploy during development, run: "add-appxpackage –register AppxManifest.xml" from a PowerShell window.
+ - To deploy for production please follow the guidance [here] (https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-deploy-and-debug)
+ - To run the app, go to the start menu, find the app tile "HelloWorldWpfSample", right click, and choose "Pin to taskbar"
+ - When the app launches, press the “Add Live Tile” button in the app to see your live tile receive  updates! 
  
 Important Notes
 ---------------
 
-- Xcopy deployable app has no registry settings and no custom deployment logic. IOW, you can deploy it by just copying files around to the right locations. 
+- Xcopy deployable app has no registry settings and no custom deployment logic. In other words, you can deploy it by copying files around to the right locations. 
 - If your app is not xcopy deployable please use the [Desktop App Converter] (https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter)
 - You can learn more about Live Tiles [here] (https://msdn.microsoft.com/en-us/library/windows/apps/hh465403.aspx)
