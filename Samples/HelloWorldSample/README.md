@@ -6,7 +6,7 @@ The sample is a WPF “Hello world” app, but the steps are the same for any xc
 Build the sample
 ----------------
 - Press Ctrl+Shift+B, or select **Build** \> **Build Solution**.
-- Copy the HelloWorldWpfSample.exe to the CentennialPackage under the HelloWorldSample directory.
+- Copy the HelloWorldConsoleSample.exe from the x64 directory to the CentennialPackage under the HelloWorldSample directory.
 - Pay attention to the AppxManifest.xml in the CentennialPackage. You can modify it to change the app display name, add extensions, update the app version, etc.
  
 Deploy and Run the sample
@@ -14,7 +14,7 @@ Deploy and Run the sample
 
  - To deploy during development, run: "add-appxpackage –register AppxManifest.xml" from a PowerShell window.
  - To deploy for production please follow the guidance [here] (https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-deploy-and-debug)
- - To run the app, go to the start menu, find the app tile "HelloWorldWpfSample", right click, and choose "Pin to taskbar"
+ - To run the app, go to the start menu, find the app tile "HelloWorldConsoleSample", right click, and choose "Pin to taskbar"
  - When the app launches, press the “Add Live Tile” button in the app to see your live tile receive  updates! 
  
 Important Notes

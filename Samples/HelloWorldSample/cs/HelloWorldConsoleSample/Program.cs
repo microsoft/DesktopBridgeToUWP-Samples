@@ -10,38 +10,31 @@
 //*********************************************************
 
 using System;
-using System.Windows;
 using Windows.UI.Notifications;
 using Windows.Data.Xml.Dom;
 
-namespace HelloWorldWpfSample
+namespace HelloWorldConsoleSample
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+    class Program
     {
-        /// <summary>
-        /// Initialize the user interface objects
-        /// </summary>
-        public MainWindow()
+        static void Main(string[] args)
         {
-            InitializeComponent();
-        }
+            Console.WriteLine("Hello Centennial!");
+            Console.WriteLine("Enter the text for your Live Tile:");
+            string liveTileText = Console.ReadLine();
 
-        /// <summary>
-        /// Update the apps live tile
-        /// </summary>
-        private void AddTileButton_Click(object sender, RoutedEventArgs e)
-        {
+            // Update the apps live tile
             XmlDocument tileXml = TileUpdateManager.GetTemplateContent(TileTemplateType.TileSquare150x150Text01);
 
             XmlNodeList textNodes = tileXml.GetElementsByTagName("text");
-            textNodes[0].InnerText = LiveTile.Text;
+            textNodes[0].InnerText = liveTileText;
             textNodes[1].InnerText = DateTime.Now.ToString("HH:mm:ss");
 
             TileNotification tileNotification = new TileNotification(tileXml);
             TileUpdateManager.CreateTileUpdaterForApplication().Update(tileNotification);
+
+            Console.WriteLine("Go to your tile and see how it receive the update live!");
+            Console.ReadLine();
         }
     }
 }
