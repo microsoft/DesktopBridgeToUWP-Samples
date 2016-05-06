@@ -20,6 +20,7 @@ namespace HelloWorldConsoleSample
         static void Main(string[] args)
         {
             Console.WriteLine("Hello Centennial!");
+            Console.WriteLine("Pin this app to Start");
             Console.WriteLine("Enter the text for your Live Tile:");
             string liveTileText = Console.ReadLine();
 

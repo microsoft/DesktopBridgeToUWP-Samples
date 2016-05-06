@@ -2,11 +2,11 @@
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" 
 xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" 
 xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities">
-  <Identity Name="HelloWorldConsoleSample" ProcessorArchitecture="x64" Publisher="CN=Test" Version="0.0.0.3" />
+  <Identity Name="HelloWorldConsoleSample" ProcessorArchitecture="x64" Publisher="CN=Test" Version="0.0.0.1" />
   <Properties>
     <DisplayName>HelloWorldConsoleSample</DisplayName>
     <PublisherDisplayName>CN=Test</PublisherDisplayName>
-    <Logo>Assets\SampleAppx.50x50.png</Logo>
+    <Logo>Assets\SampleAppx.150x150.png</Logo>
   </Properties>
   <Resources>
     <Resource Language="en-us" />
@@ -20,7 +20,7 @@ xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/re
   <Applications>
     <Application Id="HelloWorldConsoleSample" Executable="HelloWorldConsoleSample.exe" EntryPoint="Windows.FullTrustApplication">
       <uap:VisualElements DisplayName="HelloWorldConsoleSample" Description="HelloWorldConsoleSample" BackgroundColor="#777777" 
-	  Square150x150Logo="Assets\SampleAppx.150x150.png" Square44x44Logo="Assets\SampleAppx.44x44.png" />
+	  Square150x150Logo="Assets\SampleAppx.150x150.png" Square44x44Logo="Assets\SampleAppx.44x44.png"/>
     </Application>
   </Applications>
 </Package>
