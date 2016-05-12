@@ -8,7 +8,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UWP", "UWP\UWP.csproj", "{3
 		{CC907CB5-2F85-4C6E-937F-64BA9E1B9202} = {CC907CB5-2F85-4C6E-937F-64BA9E1B9202}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullTrustProcess", "FullTrustProcess\FullTrustProcess.csproj", "{CC907CB5-2F85-4C6E-937F-64BA9E1B9202}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgroundProcess", "BackgroundProcess\BackgroundProcess.csproj", "{CC907CB5-2F85-4C6E-937F-64BA9E1B9202}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -54,13 +54,15 @@ namespace UWP
         /// <summary>
         /// Initializes the app service on the host process 
         /// </summary>
-        /// 
         protected override void OnBackgroundActivated(BackgroundActivatedEventArgs args)
         {
             base.OnBackgroundActivated(args);
             appServiceDeferral = args.TaskInstance.GetDeferral();
             AppServiceTriggerDetails details = args.TaskInstance.TriggerDetails as AppServiceTriggerDetails;
-            Connection = details.AppServiceConnection;
+            if (details != null)
+            {
+                Connection = details.AppServiceConnection;
+            }
         }
 
         /// <summary>
