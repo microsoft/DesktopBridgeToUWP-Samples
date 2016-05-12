@@ -48,8 +48,11 @@ namespace UWP
             ValueSet valueSet = new ValueSet();
             valueSet.Add("request", MessageToSend.Text);
 
-            AppServiceResponse response = await App.Connection.SendMessageAsync(valueSet);
-            MessageRecevied.Text = "Received response: " + response.Message["response"] as string;
+            if (App.Connection != null)
+            {
+                AppServiceResponse response = await App.Connection.SendMessageAsync(valueSet);
+                MessageRecevied.Text = "Received response: " + response.Message["response"] as string;
+            }
         }
     }
 }

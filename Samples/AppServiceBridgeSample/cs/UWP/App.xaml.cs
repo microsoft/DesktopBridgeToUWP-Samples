@@ -57,10 +57,10 @@ namespace UWP
         protected override void OnBackgroundActivated(BackgroundActivatedEventArgs args)
         {
             base.OnBackgroundActivated(args);
-            appServiceDeferral = args.TaskInstance.GetDeferral();
-            AppServiceTriggerDetails details = args.TaskInstance.TriggerDetails as AppServiceTriggerDetails;
-            if (details != null)
+            if (args.TaskInstance.TriggerDetails is AppServiceTriggerDetails)
             {
+                appServiceDeferral = args.TaskInstance.GetDeferral();
+                AppServiceTriggerDetails details = args.TaskInstance.TriggerDetails as AppServiceTriggerDetails;
                 Connection = details.AppServiceConnection;
             }
         }
