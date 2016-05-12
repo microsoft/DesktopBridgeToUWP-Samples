@@ -6,10 +6,10 @@ For more info on UWP apps, [see] (https://msdn.microsoft.com/en-us/windows/uwp/g
 
 ## Requirements
 
-•	Windows 10 Anniversary Update Enterprise edition preview (Build 10.0.14316.0 and later)
-•	64 bit (x64) processor
-•	Visual Studio 2015 
-•	[Windows Software Development Kit (SDK) for Windows 10] (https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk)
+- Windows 10 Anniversary Update Enterprise edition preview (Build 10.0.14316.0 and later)
+- 64 bit (x64) processor
+- Visual Studio 2015 
+- [Windows Software Development Kit (SDK) for Windows 10] (https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk)
 
 ## Contributions
 
@@ -17,8 +17,8 @@ We are not currently accepting new samples from the public, but check back here 
 
 ## Feedback
 
-•	Ask a question or request a feature on [User Voice] (https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial)
-•	File a bug in [GitHub Issues] (https://github.com/Microsoft/DesktopBridgeToUWP-Samples/issues)
+- Ask a question or request a feature on [User Voice] (https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial)
+- File a bug in [GitHub Issues] (https://github.com/Microsoft/DesktopBridgeToUWP-Samples/issues)
 	
 ## License
 
@@ -26,7 +26,7 @@ We are not currently accepting new samples from the public, but check back here 
 
 ## Additional resources
 
-•	[Bring your desktop app to the Universal Windows Platform] (https://developer.microsoft.com/en-us/windows/bridges/desktop)
-•	[Bringing Desktop Apps to the UWP Using Desktop App Converter] (https://channel9.msdn.com/events/build/2016/p504)
-•	[Project Centennial: Bringing Existing Desktop Applications to the Universal Windows Platform] (https://channel9.msdn.com/events/build/2016/b829)
-•	[Preview the Desktop App Converter] (https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter)
+- [Bring your desktop app to the Universal Windows Platform] (https://developer.microsoft.com/en-us/windows/bridges/desktop)
+- [Bringing Desktop Apps to the UWP Using Desktop App Converter] (https://channel9.msdn.com/events/build/2016/p504)
+- [Project Centennial: Bringing Existing Desktop Applications to the Universal Windows Platform] (https://channel9.msdn.com/events/build/2016/b829)
+- [Preview the Desktop App Converter] (https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter)
