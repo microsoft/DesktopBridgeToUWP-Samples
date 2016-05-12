@@ -33,9 +33,9 @@ namespace UWP
         }
 
         /// <summary>MessageToSend
-        /// Launches the full trust process via the new "fullTrustProcess" extenstion
+        /// Launches the Win32 background process via the new "fullTrustProcess" extenstion
         /// </summary>
-        private async void LaunchConsoleProcess_Click(object sender, RoutedEventArgs e)
+        private async void LaunchBackgroundProcess_Click(object sender, RoutedEventArgs e)
         {
             await Windows.ApplicationModel.FullTrustProcessLauncher.LaunchFullTrustProcessForCurrentAppAsync();
         }

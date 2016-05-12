@@ -1,15 +1,14 @@
 ﻿# AppService Bridge Sample
 
-This sample demonstrates how you can create a package that includes both: win32 and UWP app and communicate between the two via AppService.
-It also shows you how to launch a win32 full trust proccess from a UWP via the new "fullTrustProcess" extension.
-By adding a UWP to your package you can enhance your app with new UWP features that were previously not available to desktop apps such as: background tasks, app services and UWP XAML UI frontend.
-Over time, gradually migrating  existing Win32/.NET code to move functionality into the app container. 
-Running your code in the app container benefits the security of your user’s machine, and at the end of the migration results in a UWP app that can run on PCs, Phones, IoT devices, Xbox One and HoloLens.
+This sample demonstrates how to create a package that includes both a Win32 and Universal Windows Platform (UWP) processes, and communicate between them via an AppService APIs. It also shows how to launch a Win32 process from a UWP app using the new "fullTrustProcess" extension.
+
+Adding UWP app to your package allows you to integrate features previously unavailable to desktop apps, such as UWP XAML UI frontend. Additionally, by gradually migrating existing Win32/.NET code to move functionality to UWP over time, you can improve the security of your user’s machine and expand your app’s reach to include a wide range of devices such as PCs, Phones, IoT devices, Xbox One and HoloLens.
+
 
 Build/Deploy and Run the sample
 -------------------------------
 
- - Debloy the solution by selecting **Build** \> **Deploy solution**.
+ - Deploy the solution by selecting **Build** \> **Deploy solution**.
  - Make sure the FullTrustProcess.exe was copied to the Appx folder - UWP\bin\x64\Release\AppX if not rebuild the solution or copy it manually.
  - Press F5 to run!
  - Launch the Full trust process by pressing the "Launch FullTrust Process" button in the UWA.

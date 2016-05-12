@@ -107,7 +107,6 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="UWP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\Default.rd.xml" />
@@ -142,8 +141,8 @@
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy /y /s "$(SolutionDir)FullTrustProcess\bin\$(ConfigurationName)\FullTrustProcess.exe" "$(SolutionDir)\UWP\bin\x64\$(ConfigurationName)\AppX\"
-xcopy /y /s "$(SolutionDir)FullTrustProcess\bin\$(ConfigurationName)\FullTrustProcess.exe" "$(SolutionDir)\UWP\bin\x86\$(ConfigurationName)\AppX\"</PostBuildEvent>
+    <PostBuildEvent>xcopy /y /s "$(SolutionDir)BackgroundProcess\bin\$(ConfigurationName)\BackgroundProcess.exe" "$(SolutionDir)\UWP\bin\x64\$(ConfigurationName)\AppX\"
+xcopy /y /s "$(SolutionDir)BackgroundProcess\bin\$(ConfigurationName)\BackgroundProcess.exe" "$(SolutionDir)\UWP\bin\x86\$(ConfigurationName)\AppX\"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

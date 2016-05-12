@@ -9,10 +9,10 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel>
-            <Button Content="Launch FullTrust Process" Click="LaunchConsoleProcess_Click" Width="350" Height="36"/>
+            <Button Content="Launch Background Process" Click="LaunchBackgroundProcess_Click" Width="360" Height="36"/>
             <StackPanel Orientation="Horizontal" Margin="0,50,0,0">
                 <TextBox x:Name="MessageToSend" Height="24" Width="90" />
-                <Button Content="Send Request to FullTrust Process" Click="SendRequest_Click" Width="260"/>
+                <Button Content="Send Request to Background Process" Click="SendRequest_Click" Width="275"/>
             </StackPanel>
             <TextBlock x:Name="MessageRecevied" Text="Received response: "/>
         </StackPanel>
