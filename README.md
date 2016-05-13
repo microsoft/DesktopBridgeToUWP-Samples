@@ -6,7 +6,7 @@ For more info on UWP apps, [see] (https://msdn.microsoft.com/en-us/windows/uwp/g
 
 ## Requirements
 
-- Windows 10 Anniversary Update Enterprise edition preview (Build 10.0.14316.0 and later)
+- Windows 10 Anniversary Update Enterprise/Professional edition preview (Build 10.0.14342.0 and later)
 - 64 bit (x64) processor
 - Visual Studio 2015 
 - [Windows Software Development Kit (SDK) for Windows 10] (https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk)
