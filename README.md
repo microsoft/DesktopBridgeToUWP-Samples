@@ -11,10 +11,6 @@ For more info on UWP apps, [see] (https://msdn.microsoft.com/en-us/windows/uwp/g
 - Visual Studio 2015 
 - [Windows Software Development Kit (SDK) for Windows 10] (https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk)
 
-## Contributions
-
-We are not currently accepting new samples from the public, but check back here as we evolve our contribution model.
-
 ## Feedback
 
 - Ask a question or request a feature on [User Voice] (https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial)
