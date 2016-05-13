@@ -40,6 +40,7 @@ namespace SDKTemplate
         /// </summary>
         private async void LaunchBackgroundProcess_Click(object sender, RoutedEventArgs e)
         {
+            // Make sure the BackgroundProcess is in your AppX folder, if not rebuild the solution
             await Windows.ApplicationModel.FullTrustProcessLauncher.LaunchFullTrustProcessForCurrentAppAsync();
         }
 
