@@ -9,9 +9,9 @@ Build/Deploy and Run the sample
 -------------------------------
 
  - Deploy the solution by selecting **Build** \> **Deploy solution**.
- - Make sure the FullTrustProcess.exe was copied to the Appx folder - UWP\bin\x64\Release\AppX if not rebuild the solution or copy it manually.
+ - Make sure the BackgroundProcess.exe was copied to the Appx folder - UWP\bin\x64\Release\AppX if not rebuild the solution or copy it manually.
  - Press F5 to run!
- - Launch the Full trust process by pressing the "Launch FullTrust Process" button in the UWA.
+ - Launch the Full trust process by pressing the "Launch Background Process" button in the UWA.
  - Send requests from the UWA and see the responses.
 
 Notes
