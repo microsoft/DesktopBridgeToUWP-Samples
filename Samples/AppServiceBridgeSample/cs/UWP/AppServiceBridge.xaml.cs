@@ -13,6 +13,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using System;
+using Windows.UI.Popups;
 using Windows.Foundation.Collections;
 using Windows.ApplicationModel.AppService;
 
@@ -40,10 +41,17 @@ namespace SDKTemplate
         /// </summary>
         private async void LaunchBackgroundProcess_Click(object sender, RoutedEventArgs e)
         {
-            // Make sure the BackgroundProcess is in your AppX folder, if not rebuild the solution
-            await Windows.ApplicationModel.FullTrustProcessLauncher.LaunchFullTrustProcessForCurrentAppAsync();
+            try
+            {
+                // Make sure the BackgroundProcess is in your AppX folder, if not rebuild the solution
+                await Windows.ApplicationModel.FullTrustProcessLauncher.LaunchFullTrustProcessForCurrentAppAsync();
+            }
+            catch (Exception)
+            {
+                MessageDialog dialog = new MessageDialog("Rebuild the solution and make sure the BackgroundProcess is in your AppX folder");
+                await dialog.ShowAsync();
+            }
         }
-
         /// <summary>
         /// Sends message to the full trust process and receives a response back
         /// </summary>

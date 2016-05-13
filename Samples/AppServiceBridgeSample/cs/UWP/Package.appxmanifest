@@ -3,7 +3,7 @@
   <Identity Name="Microsoft.AppServiceBridge" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" Version="1.0.0.0" />
   <mp:PhoneIdentity PhoneProductId="1aa93327-07b6-485f-bc70-70cbd5a9ca0a" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>AppService Bridge Centennial Sample</DisplayName>
+    <DisplayName>Desktop Bridge AppService Sample</DisplayName>
     <PublisherDisplayName>Microsoft Corporation</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -15,7 +15,7 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="UWP.App">
-      <uap:VisualElements DisplayName="Desktop Bridge AppService Sample" Square150x150Logo="Assets\squareTile-sdk.png" Square44x44Logo="Assets\SmallTile-sdk.png" Description="AppService Bridge Centennial Sample" BackgroundColor="#00b2f0">
+      <uap:VisualElements DisplayName="Desktop Bridge AppService Sample" Square150x150Logo="Assets\squareTile-sdk.png" Square44x44Logo="Assets\SmallTile-sdk.png" Description="Desktop Bridge AppService Sample" BackgroundColor="#00b2f0">
         <uap:SplashScreen Image="Assets\Splash-sdk.png" />
         <uap:DefaultTile>
           <uap:ShowNameOnTiles>
