@@ -10,7 +10,6 @@
 //*********************************************************
 
 using System;
-using System.Threading.Tasks;
 using System.Threading;
 using Windows.ApplicationModel.Background;
 
@@ -18,10 +17,6 @@ namespace Win32App
 {
     class Program
     {
-        // Time zone and time trigger tasks
-        static BackgroundTaskRegistration timeZoneTrigger;
-        static BackgroundTaskRegistration timeTrigger;
-
         /// <summary>
         /// Creates thread to register for background tasks
         /// </summary>
@@ -29,15 +24,8 @@ namespace Win32App
         {
             Thread registerBackgroundThread = new Thread(new ThreadStart(ThreadProc));
             registerBackgroundThread.Start();
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("*****************************");
-            Console.WriteLine("**** Existing desktop app ****");
-            Console.WriteLine("*****************************");
 
             Console.ReadLine();
-
-            timeZoneTrigger.Unregister(true);
-            timeTrigger.Unregister(true);
         }
 
         /// <summary>
@@ -53,7 +41,7 @@ namespace Win32App
             await BackgroundExecutionManager.RequestAccessAsync();
 
             // Register a TimeZoneTrigger background task with name and trigger
-            timeZoneTrigger = RegisterBackgroundTask("TimeZoneTriggerTest", new SystemTrigger(SystemTriggerType.TimeZoneChange, false));
+            RegisterBackgroundTask("TimeZoneTriggerTest", new SystemTrigger(SystemTriggerType.TimeZoneChange, false));
 
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Registration completed for Time Zone change system event. Change the time zone to trigger the backgrond task");
@@ -63,7 +51,7 @@ namespace Win32App
             Console.WriteLine("**** Time trigger backgrond task ****");
             Console.WriteLine("*************************************");
             // Register a background TimeTrigger task with name and trigger
-            timeTrigger = RegisterBackgroundTask("TimerTriggerTest", new TimeTrigger(15, false));
+            RegisterBackgroundTask("TimerTriggerTest", new TimeTrigger(15, false));
 
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Registration completed for Time trigger event. The backgrond task runs every 15 mins");
@@ -73,15 +61,23 @@ namespace Win32App
         /// <summary>
         /// Register a background task with the taskEntryPoint, name and trigger
         /// </summary>
-        public static BackgroundTaskRegistration RegisterBackgroundTask(String triggerName, IBackgroundTrigger trigger)
+        public static void RegisterBackgroundTask(String triggerName, IBackgroundTrigger trigger)
         {
+            // Check if the task is already registered
+            foreach (var cur in BackgroundTaskRegistration.AllTasks)
+            {
+                if (cur.Value.Name == triggerName)
+                {
+                    // The task is already registered.
+                    return;
+                }
+            }
+
             BackgroundTaskBuilder builder = new BackgroundTaskBuilder();
             builder.Name = triggerName;
             builder.SetTrigger(trigger);
-            builder.TaskEntryPoint = "BackgroundTask.SampleBackgroundTask"; 
-            BackgroundTaskRegistration task = builder.Register();
-
-            return task;
+            builder.TaskEntryPoint = "BackgroundTask.SampleBackgroundTask";
+            builder.Register();
         }
     }
 }
