@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package IgnorableNamespaces="projc" xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:appx="http://schemas.microsoft.com/appx/2010/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities" xmlns:wincap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/windowscapabilities" xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10" xmlns:projc="http://schemas.microsoft.com/projc/2010/manifest">
+  <Identity Name="WpfUWP" Publisher="CN=Microsoft" Version="0.0.0.1" ProcessorArchitecture="x64"/>
+  <Properties>
+    <DisplayName>WpfUWP</DisplayName>
+    <PublisherDisplayName>Microsoft Corporation</PublisherDisplayName>
+    <Logo>Assets\SampleAppx.50x50.png</Logo>
+  </Properties>
+  <Resources>
+    <Resource Language="en-us" />
+  </Resources>
+  <Dependencies>
+    <!--Update this to the minimum version supporting Centennial.-->
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14257.0" MaxVersionTested="10.0.14257.0" />
+  </Dependencies>
+  <Capabilities>
+    <rescap:Capability Name="runFullTrust" />
+  </Capabilities>
+  <Applications>
+    <Application Id="MyApp" Executable="WpfUWP.exe" EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements DisplayName="WpfUWP" Description="MyApp" BackgroundColor="#777777" Square150x150Logo="Assets\SampleAppx.150x150.png" Square44x44Logo="Assets\SampleAppx.44x44.png" />
+    </Application>
+  </Applications>
+</Package>
