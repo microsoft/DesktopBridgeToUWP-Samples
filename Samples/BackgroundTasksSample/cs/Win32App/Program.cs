@@ -56,6 +56,10 @@ namespace Win32App
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Registration completed for Time trigger event. The backgrond task runs every 15 mins");
             Console.WriteLine("Pin the app to start and see how the tile is updated every time the task is triggered");
+            
+            // This will result in "value out of expected range" error.
+            // It is failing in `toastnotificationactiontrigger.cpp` at `ToastNotificationActionTriggerFactory::ActivateInstance
+            RegisterBackgroundTask("ToastNotificationTriggerTest", new ToastNotificationActionTrigger());
         }
 
         /// <summary>
