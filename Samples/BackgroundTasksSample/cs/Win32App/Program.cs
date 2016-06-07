@@ -56,6 +56,13 @@ namespace Win32App
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Registration completed for Time trigger event. The backgrond task runs every 15 mins");
             Console.WriteLine("Pin the app to start and see how the tile is updated every time the task is triggered");
+
+            // just a test
+            ApplicationTrigger trigger = new ApplicationTrigger();
+            if (trigger is ApplicationTrigger)
+            {
+                var result = await (trigger as ApplicationTrigger).RequestAsync(); // returns UnknownError
+            }
         }
 
         /// <summary>
