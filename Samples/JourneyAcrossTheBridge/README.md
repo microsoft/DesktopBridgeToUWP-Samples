@@ -41,10 +41,6 @@ In the final step, we will now expand the reach of our application to all Window
 Build/Deploy and Run the sample
 -------------------------------
 
+ - Select the UWPPackager project righ click --> Properties --> set the Package layout to the right location (DesktopBridgeDemo - Step1\UWPPackager\PackageLayout)
  - Press Ctrl+Shift+B, or select **Build** \> **Build Solution**. 
- - Under the BackgroundTasksSample\cs directory you will find the CentennialPackage to deploy during development, run: "add-appxpackage –register AppxManifest.xml" from a PowerShell window.
- - To deploy for production please follow the guidance [here] (https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-deploy-and-debug)
- - To run the app, go to the start menu, find the app tile "Win32App", right click, and choose "Pin to taskbar"
- - Go to settings and change your time zone, you will receive notifications from the background task! Your live tile will also receive updates. 
- - Look what happens after 15 min when the time trigger is fired.
  
