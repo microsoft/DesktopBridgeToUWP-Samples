@@ -1,16 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
+﻿//*********************************************************
+//
+// Copyright (c) Microsoft. All rights reserved.
+// This code is licensed under the MIT License (MIT).
+// THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF
+// ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY
+// IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR
+// PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
+//
+//*********************************************************
+
+using System;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Notifications;
 using Windows.Data.Xml.Dom;
@@ -26,12 +26,18 @@ namespace MyUWPApp
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        /// <summary>
+        /// Intialize the view
+        /// </summary>
         public MainPage()
         {
             InitializeComponent();
             (App.Current as App).StatusUpdated += MainPage_StatusUpdated;
         }
 
+        /// <summary>
+        /// Create animation and register for a time trigger
+        /// </summary>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
@@ -39,6 +45,9 @@ namespace MyUWPApp
             RegisterBackgroundTask("TimerTrigger", new TimeTrigger(15, false));
         }
 
+        /// <summary>
+        /// Registers the background task
+        /// </summary>
         private void RegisterBackgroundTask(String triggerName, IBackgroundTrigger trigger)
         {
             // Check if the task is already registered
@@ -58,6 +67,9 @@ namespace MyUWPApp
             builder.Register();
         }
 
+        /// <summary>
+        /// Updates the comboBox with the selected item
+        /// </summary>
         private async void MainPage_StatusUpdated(object sender, string e)
         {
             await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
@@ -73,6 +85,9 @@ namespace MyUWPApp
             });
         }
 
+        /// <summary>
+        /// Updates the tile when the state changed
+        /// </summary>
         private void comboBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string value = (comboBox1.SelectedItem as ComboBoxItem).Content.ToString();

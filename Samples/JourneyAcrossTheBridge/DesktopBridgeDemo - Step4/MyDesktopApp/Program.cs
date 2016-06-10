@@ -1,8 +1,18 @@
-﻿using System;
+﻿//*********************************************************
+//
+// Copyright (c) Microsoft. All rights reserved.
+// This code is licensed under the MIT License (MIT).
+// THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF
+// ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY
+// IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR
+// PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
+//
+//*********************************************************
+
+using System;
 using System.Linq;
 using System.Threading;
 using Microsoft.Win32;
-using Windows.Foundation;
 using Windows.Storage;
 using Windows.Foundation.Collections;
 using Windows.ApplicationModel.AppService;
@@ -16,6 +26,9 @@ namespace MyDesktopApp
         static RegistryKey RegKey = null;
         static string CurrentStatus = "";
 
+        /// <summary>
+        /// Creates an app service thread
+        /// </summary>
         static void Main(string[] args)
         {
             RegKey = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\UWPSamples\DesktopBridgeDemo", true);
@@ -37,6 +50,9 @@ namespace MyDesktopApp
             appServiceExit.WaitOne();
         }
 
+        /// <summary>
+        /// Creates the app service connection
+        /// </summary>
         static async void ThreadProc()
         {
             connection = new AppServiceConnection();
@@ -58,6 +74,9 @@ namespace MyDesktopApp
             }
         }
 
+        /// <summary>
+        /// Close the app service
+        /// </summary>
         private static void Connection_ServiceClosed(AppServiceConnection sender, AppServiceClosedEventArgs args)
         {
             appServiceExit.Set();

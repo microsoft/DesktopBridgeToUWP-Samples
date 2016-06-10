@@ -25,6 +25,7 @@ namespace MyDesktopApp
         [STAThread]
         static void Main()
         {
+            // Writes the user state to the registry and updates the UI
             RegKey = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\UWPSamples\DesktopBridgeDemo", true);
             if (RegKey == null)
             {
