@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities">
-  <Identity Name="Win32App" ProcessorArchitecture="x64" Publisher="CN=Test" Version="0.0.0.1" />
+  <Identity Name="Win32App" ProcessorArchitecture="x64" Publisher="CN=Test" Version="0.5.0.1" />
   <Properties>
     <DisplayName>Win32App</DisplayName>
     <PublisherDisplayName>CN=Test</PublisherDisplayName>
