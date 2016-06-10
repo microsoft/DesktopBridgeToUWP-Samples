@@ -26,6 +26,9 @@ namespace MyDesktopApp
             }
         }
 
+        /// <summary>
+        /// Updates the app live tile
+        /// </summary>
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!initialized) return;
