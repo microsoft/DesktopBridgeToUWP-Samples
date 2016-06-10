@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" 
+xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" 
+xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities">
+    <Identity Name="MyDesktopAppStep2" ProcessorArchitecture="x64" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" Version="1.0.0.6" />
+      <Properties>
+        <DisplayName>MyDesktopAppStep2</DisplayName>
+        <PublisherDisplayName>CN=Test</PublisherDisplayName>
+        <Logo>Assets\SampleAppx.150x150.png</Logo>
+      </Properties>
+      <Resources>
+        <Resource Language="en-us" />
+      </Resources>
+      <Dependencies>
+        <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14316.0" MaxVersionTested="10.0.14316.0" />
+      </Dependencies>
+      <Capabilities>
+         <rescap:Capability Name="runFullTrust" />
+      </Capabilities>
+      <Applications>
+        <Application Id="MyDesktopAppStep2" Executable="MyDesktopApp.exe" EntryPoint="Windows.FullTrustApplication">
+          <uap:VisualElements DisplayName="MyDesktopAppStep2" Description="MyDesktopAppStep2" BackgroundColor="#777777" Square150x150Logo="Assets\SampleAppx.150x150.png" Square44x44Logo="Assets\SampleAppx.44x44.png">
+        </uap:VisualElements>
+      </Application>
+    </Applications>
+</Package>
