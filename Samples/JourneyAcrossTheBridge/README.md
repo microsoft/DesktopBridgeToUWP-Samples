@@ -40,5 +40,6 @@ Build/Deploy and Run the sample
 -------------------------------
 
  - Select the UWPPackager project righ click --> Properties --> set the Package layout to the right location (DesktopBridgeDemo - Step1\UWPPackager\PackageLayout)
+ - If the sample includes UWPPackager project set it as a startUp project
  - Press Ctrl+Shift+B, or select **Build** \> **Build Solution**. 
- 
+ - Press F5 to run!
