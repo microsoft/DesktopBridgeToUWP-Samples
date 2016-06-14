@@ -3,7 +3,7 @@
          xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" 
          xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
          IgnorableNamespaces="uap rescap">
-    <Identity Name="MyDesktopAppStep3" ProcessorArchitecture="x64" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" Version="1.0.0.5" />
+    <Identity Name="MyDesktopAppStep3" ProcessorArchitecture="x64" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" Version="1.0.0.6" />
       <Properties>
         <DisplayName>MyDesktopAppStep3</DisplayName>
         <PublisherDisplayName>CN=Test</PublisherDisplayName>
