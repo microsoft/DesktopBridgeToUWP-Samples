@@ -14,7 +14,6 @@
         <CollectionViewSource  x:Name="itemsViewSource" Source="{Binding Items.Products}"/>
         <CollectionViewSource  x:Name="orderViewSource" Source="{Binding Items.Order}"/>
 
-        <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
         <x:String x:Key="AppName">Products</x:String>
     </Page.Resources>
 
