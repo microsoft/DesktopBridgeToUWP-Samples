@@ -29,6 +29,10 @@ namespace NorthwindCent.DesktopServer
         static AutoResetEvent appServiceExit;
         static string dbFileFolder;
 
+		/// <summary>
+        /// Copy database file from app package to App data folder, if it is not already there.
+        /// So that the app can open the database for query and modification.
+        /// </summary>
         static async void InitDatabaseFileAsync()
         {
             var appDataFolder = ApplicationData.Current.LocalFolder;
@@ -60,9 +64,13 @@ namespace NorthwindCent.DesktopServer
 
             InitializeAppServiceConnection();
 
+			// Wait for the signal that App service is disconnected
             appServiceExit.WaitOne();
         }
 
+		/// <summary>
+        /// Initialize connection with UWA component via AppService.
+        /// </summary>
         static async void InitializeAppServiceConnection()
         {
             connection = new AppServiceConnection();
@@ -98,11 +106,19 @@ namespace NorthwindCent.DesktopServer
             }
         }
 
+		/// <summary>
+        /// Event handler called when App Service is closed by the UWA
+        /// </summary>
         private static void Connection_ServiceClosed(AppServiceConnection sender, AppServiceClosedEventArgs args)
         {
+			// When App service is disconnected, send the signal for the desktop server to exit
             appServiceExit.Set();
         }
 
+		/// <summary>
+        /// Called when desktop server received a request from UWA
+		/// This method just distribute the request to methods that handle the respective request
+        /// </summary>
         private static async void Connection_RequestReceived(AppServiceConnection sender, AppServiceRequestReceivedEventArgs args)
         {
             string key = args.Request.Message.First().Key;
@@ -124,6 +140,9 @@ namespace NorthwindCent.DesktopServer
             }
         }
 
+		/// <summary>
+        /// Handles unknown request and return error message`
+        /// </summary>
         private static IAsyncOperation<AppServiceResponseStatus> SendUnknownRequestErrorAsync(AppServiceRequest request, string requestString)
         {
             ConsoleColor oldColor = Console.ForegroundColor;
@@ -140,7 +159,10 @@ namespace NorthwindCent.DesktopServer
 
             return request.SendResponseAsync(returnValues);
         }
-
+		
+		/// <summary>
+        /// Handles "GetCategories" request and returns data of product categories to UWA
+        /// </summary>
         private static IAsyncOperation<AppServiceResponseStatus> SendCategoriesAsync(AppServiceRequest request)
         {
             ConsoleColor oldColor = Console.ForegroundColor;
@@ -188,6 +210,9 @@ namespace NorthwindCent.DesktopServer
             return request.SendResponseAsync(returnValues);
         }
 
+		/// <summary>
+        /// Handles "GetProducts" request and returns data of products of give category to UWA
+        /// </summary>
         private static IAsyncOperation<AppServiceResponseStatus> SendProductsByCategoryAsync(AppServiceRequest request, int categoryId)
         {
             ConsoleColor oldColor = Console.ForegroundColor;

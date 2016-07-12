@@ -26,7 +26,9 @@ namespace NorthwindCent.DataModel
         {
             this.connectionString = "Data Source='" + dbFilePath + "'";
         }
-
+        /// <summary>
+        /// Get data of product categrories from database
+        /// </summary>
         public IEnumerable<Category> GetCategories()
         {
             Console.WriteLine("Loading database from {0}", connectionString);
@@ -51,7 +53,12 @@ namespace NorthwindCent.DataModel
                 return results;
             }
         }
-
+        /// <summary>
+        /// Get data of all products for the given product category
+        /// </summary>
+        /// <param name="categoryId">
+        /// Category Id for product category to query for.
+        /// </param>
         public IEnumerable<Product> GetProductsByCategory(int categoryId)
         {
             Console.WriteLine("Loading database from {0}", connectionString);
