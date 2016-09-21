@@ -56,6 +56,9 @@ namespace SDKTemplate
             }
         }
 
+        /// <summary>
+        /// Associate the cancellation handler with the background task 
+        /// </summary>
         private void OnTaskCanceled(IBackgroundTaskInstance sender, BackgroundTaskCancellationReason reason)
         {
             if (this.appServiceDeferral != null)
