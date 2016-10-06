@@ -12,9 +12,9 @@ Build/Deploy and Run the sample
 -------------------------------
 
  - Deploy the solution by selecting **Build** \> **Deploy solution**.
- - Make sure the Win32Process_CPP.exe was copied to the Appx folder - UWP\bin\x86\Release\AppX if not rebuild the solution or copy it manually.
- - Press F5 to run!
+ - Make sure the Win32Process_CPP.exe was copied to the Appx folder - ShareTarget\bin\x86\Debug\AppX if not rebuild the solution or copy it manually.
  - Run the [**Sharing content source app sample**](http://go.microsoft.com/fwlink/p/?linkid=231511) to share the content and select the share target app - "Share Target"
+ - You will see the Share target app receiving the content from the another app and lunching a win32 part of the package to process the data. 
  
 Notes
 ------

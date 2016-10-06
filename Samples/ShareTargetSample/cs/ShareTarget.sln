@@ -1,9 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.25618.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareTarget", "ShareTarget\ShareTarget.csproj", "{0CB72B9E-C5FA-40AE-873A-7A98F77ACF6A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{95886824-BFEC-4D23-9C0B-788980A79579} = {95886824-BFEC-4D23-9C0B-788980A79579}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Win32ConsoleApp", "Win32ConsoleApp\Win32ConsoleApp.csproj", "{95886824-BFEC-4D23-9C0B-788980A79579}"
 EndProject

@@ -37,7 +37,7 @@
         </uap:Extension>
         <desktop:Extension Category="windows.fullTrustProcess" Executable="Win32ConsoleApp.exe" />
       </Extensions>
-      <uap:VisualElements AppListEntry ="none" DisplayName="Share Target" Square150x150Logo="Assets\squareTile-sdk.png" Square44x44Logo="Assets\SmallTile-sdk.png" Description="Share Target C# sample" BackgroundColor="#00b2f0">
+      <uap:VisualElements DisplayName="Share Target" Square150x150Logo="Assets\squareTile-sdk.png" Square44x44Logo="Assets\SmallTile-sdk.png" Description="Share Target C# sample" BackgroundColor="#00b2f0">
         <uap:SplashScreen Image="Assets\Splash-sdk.png" />
         <uap:DefaultTile>
           <uap:ShowNameOnTiles>
