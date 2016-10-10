@@ -1,11 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.25302.0
+VisualStudioVersion = 15.0.25807.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDesktopApp", "MyDesktopApp\MyDesktopApp.csproj", "{2EBE1B26-0EF1-41CB-A2FB-6CAB7C08EA8F}"
 EndProject
-Project("{365BE41E-7993-430D-A5E6-1381A54BC077}") = "UWPPackager", "UWPPackager\UWPPackager.vsdproj", "{8332197A-9628-4EFB-9E66-767874A36920}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UWPPackager", "UWPPackager\UWPPackager.vsdproj", "{8332197A-9628-4EFB-9E66-767874A36920}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2EBE1B26-0EF1-41CB-A2FB-6CAB7C08EA8F} = {2EBE1B26-0EF1-41CB-A2FB-6CAB7C08EA8F}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
