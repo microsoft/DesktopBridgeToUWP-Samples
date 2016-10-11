@@ -5,6 +5,7 @@
     <Configuration Condition="'$(Configuration)' == ''">Debug</Configuration>
     <Platform Condition="'$(Platform)' == ''">x86</Platform>
     <ProjectGuid>{8332197A-9628-4EFB-9E66-767874A36920}</ProjectGuid>
+    <ProjectTypeGuids>{365BE41E-7993-430D-A5E6-1381A54BC077};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
