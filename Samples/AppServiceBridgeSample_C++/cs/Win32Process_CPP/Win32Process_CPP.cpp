@@ -28,38 +28,6 @@ void RequestReceived(AppServiceConnection^ connection, AppServiceRequestReceived
 void ServiceClosed(AppServiceConnection^ connection, AppServiceClosedEventArgs^ args);
 
 /// <summary>
-/// Gets the current package family name to intiate the connection
-/// </summary>
-int GetCurrentPackageFamilyName(PWSTR& familyName)
-{
-	UINT32 length = 0;
-	LONG rc = GetCurrentPackageFamilyName(&length, NULL);
-	if (rc != ERROR_INSUFFICIENT_BUFFER)
-	{
-		if (rc == APPMODEL_ERROR_NO_PACKAGE)
-			wprintf(L"Process has no package identity\n");
-		else
-			wprintf(L"Error %d in GetCurrentPackageFamilyName\n", rc);
-		return 1;
-	}
-	if (familyName == NULL)
-	{
-		wprintf(L"Error allocating memory\n");
-		return 2;
-	}
-
-	rc = GetCurrentPackageFamilyName(&length, familyName);
-	if (rc != ERROR_SUCCESS)
-	{
-		wprintf(L"Error %d retrieving PackageFamilyName\n", rc);
-		return 3;
-	}
-	wprintf(L"For package family name - %s\n", familyName);
-
-	return 0;
-}
-
-/// <summary>
 /// Creates the app service connection
 /// </summary>
 IAsyncAction^ ConnectToAppServiceAsync()
@@ -67,19 +35,15 @@ IAsyncAction^ ConnectToAppServiceAsync()
 	return create_async([]
 	{
 		// Get the package family name
-		UINT32 length = 0;
-		LONG rc = GetCurrentPackageFullName(&length, NULL);
-		PWSTR familyName = (PWSTR)malloc(length * sizeof(*familyName));
-		rc = GetCurrentPackageFamilyName(familyName);
-		assert(rc == 0);
+		Windows::ApplicationModel::Package^ package = Windows::ApplicationModel::Package::Current;
+		Platform::String^ packageFamilyName = package->Id->FamilyName;
 
 		// Create and set the connection
 		auto connection = ref new AppServiceConnection();
-		connection->PackageFamilyName = ref new String(familyName); ;
+		connection->PackageFamilyName = packageFamilyName;
 		connection->AppServiceName = "CommunicationService";
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), (FOREGROUND_GREEN));
 		cout << "Opening connection..." << endl;
-		free(familyName);
 
 		// Open the connection
 		create_task(connection->OpenAsync()).then([connection](AppServiceConnectionStatus status)
