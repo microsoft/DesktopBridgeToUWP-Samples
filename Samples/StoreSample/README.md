@@ -1,5 +1,5 @@
 # Store API Sample
-This sample demonstrates how to perform in-app purchases using the Windows.Services.Store API from a non-universal application (Centennial). This is done via a simple purchase workflow that uses store-managed consumables.
+This sample demonstrates how to perform in-app purchases using the Windows.Services.Store API from an application that uses the [Desktop Bridge](https://developer.microsoft.com/en-us/windows/bridges/desktop) (Centennial). This is done via a simple purchase workflow that uses store-managed consumables.
 
 **NOTE: If you are creating an application from scratch we recommend using the Windows Universal Platform.** A universal platform Store example can be found [here](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store).
 
@@ -7,7 +7,7 @@ The Store API supports several different operations which are documented at [htt
 
 This sample demonstrates the following subset of operations:
 
-  * [In-app purhcases](https://msdn.microsoft.com/en-us/windows/uwp/monetize/in-app-purchases-and-trials) using Store-managed consumables.
+  * [In-app purchases](https://msdn.microsoft.com/en-us/windows/uwp/monetize/in-app-purchases-and-trials) using Store-managed consumables.
   * Check the balance of a Store-managed consumable. 
   * Retrieve the list of configured consumable add-ons for a Store application
 
@@ -17,7 +17,7 @@ This sample demonstrates the following subset of operations:
   * [Visual Studio 15](https://www.visualstudio.com/visual-studio-pre-release-downloads/)
 
 ## Using the Code
-This sample is meant to illustrate how it is possible to make Windows 10 API calls such as those found in the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace from a non-universal application (Win32 Windows Forms or Classic Desktop WPF). While this sample application can be associated with a Store app and run as-is it is much more interesting to go through the steps of preparing your app to call UWP APIs by integrating the purchase dialog from this sample into your application. This is accomplished by completing the following tasks first:
+This sample is meant to illustrate how it is possible to make Windows 10 API calls such as those found in the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace from an application using the [Desktop Bridge](https://developer.microsoft.com/en-us/windows/bridges/desktop) (Win32 Windows Forms or Classic Desktop WPF). While this sample application can be associated with a Store app and run as-is it is much more interesting to go through the steps of preparing your app to call UWP APIs by integrating the purchase dialog from this sample into your application. The following preparatory tasks are needed whether you wish to integrate the sample code into your own application or use it as a standalone sample.
 
   * [Convert your existing app](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-root)
   * [Register as an app developer](https://developer.microsoft.com/store/register)
@@ -42,7 +42,7 @@ Once your app has been converted and approved in the store and the store-managed
   6. Click **OK** to close the Reference Manager dialog.
 
 ### Add System.Runtime.SystemRuntime Reference
-If your project already includes a reference to this assembly you can skip this step.
+If your project already includes a reference to this assembly, you can skip this step.
 
   1. Right-click on **References** in your project and select **Add Reference...***.
   2. Click on the **Browse** button at the bottom of the dialog.

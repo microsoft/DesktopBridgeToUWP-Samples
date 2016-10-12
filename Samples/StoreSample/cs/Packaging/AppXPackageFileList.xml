@@ -9,9 +9,6 @@
     <LayoutFile Include="$(MyProjectOutputPath)\bin\Debug\InAppPurchases.exe">
       <PackagePath>$(PackageLayout)\InAppPurchases.exe</PackagePath>
     </LayoutFile>
-    <LayoutFile Include="$(MyProjectOutputPath)\bin\Debug\Windows.winmd">
-      <PackagePath>$(PackageLayout)\Windows.winmd</PackagePath>
-    </LayoutFile>
     <LayoutFile Include="$(MyProjectOutputPath)\AppXManifest.xml">
       <PackagePath>$(PackageLayout)\AppXManifest.xml</PackagePath>
     </LayoutFile>

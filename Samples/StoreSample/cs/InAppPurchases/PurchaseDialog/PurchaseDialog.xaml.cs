@@ -35,6 +35,9 @@ namespace InAppPurchases
 
         public PurchaseDialog(DialogInputType type, ObservableCollection<StoreProduct> options)
         {
+            if (options == null || options.Count < 3)
+                throw new ArgumentNullException("options must contain at least 3 StoreProduct items.");
+
             InitializeComponent();
             DataContext = this;
             _type = type;
@@ -72,12 +75,7 @@ namespace InAppPurchases
                     break;
             }
 
-            if (SelectedConsumable != null)
-            {
-                this.DialogResult = true;
-            }
-            else
-                this.DialogResult = false;
+            this.DialogResult = (SelectedConsumable != null) ? true : false;
         }
     }
 }

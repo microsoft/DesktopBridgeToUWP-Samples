@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,9 +12,19 @@ namespace InAppPurchases
     {
         public static double AsDouble(this String price)
         {
-            // Remove the currency character and parse as a double
+            decimal priceAsDecimal;
+
+            // Remove the currency character
             price = price.Substring(1);
-            return Double.Parse(price);
+
+            if (Decimal.TryParse(price, NumberStyles.Currency, CultureInfo.InvariantCulture, out priceAsDecimal))
+            {
+                return (double)priceAsDecimal;
+            }
+            else
+            {
+                throw new FormatException($"Unable to parse value as currency: {price}");
+            }
         }
     }
 }

@@ -27,6 +27,8 @@ namespace InAppPurchases
         public PurchaseWindow()
         {
             InitializeComponent();
+            // Bind the StoreConsumable helper to the Window so we can 
+            // use the StoreProduct into for each consumable in the UI.
             MyPurchases = StoreConsumableHelper.Instance;
             this.DataContext = MyPurchases;
         }
@@ -46,13 +48,18 @@ namespace InAppPurchases
             LaunchDialogOfType(PurchaseDialog.DialogInputType.Slider);
         }
 
+        /// <summary>
+        /// Launch the PurchaseDialog displaying the consumable options. How the options
+        /// are displayed is determined by the DialogInputType passed in.
+        /// </summary>
+        /// <param name="type"></param>
         private async void LaunchDialogOfType(PurchaseDialog.DialogInputType type)
         {
             ErrorDialog errorDlg = null;
 
             PurchaseDialog dlg = new PurchaseDialog(type, MyPurchases.Consumables);
             dlg.Owner = this;
-            if (dlg.ShowDialog() == true)
+            if (dlg.ShowDialog().Value)
             {
                 var result = await MyPurchases.PurchaseConsumable(dlg.SelectedConsumable);
 

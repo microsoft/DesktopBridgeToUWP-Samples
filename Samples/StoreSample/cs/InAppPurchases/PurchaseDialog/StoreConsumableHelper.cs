@@ -79,6 +79,10 @@ namespace InAppPurchases
             Balance = await GetConsumableBalance();
         }
 
+        /// <summary>
+        /// Retrieve the base price value of unconsumed store-managed consumables.
+        /// </summary>
+        /// <returns>double</returns>
         public async Task<double> GetConsumableBalance()
         {
             double unconsumedBalance = 0.0;
@@ -104,6 +108,11 @@ namespace InAppPurchases
             return unconsumedBalance;
         }
 
+        /// <summary>
+        /// Launch the Store UI for purchasing the requested store-managed consumable 
+        /// </summary>
+        /// <param name="product">The StoreProduct to purchase.</param>
+        /// <returns></returns>
         public async Task<StorePurchaseResult> PurchaseConsumable(StoreProduct product)
         {
             // The next two lines are only required because this is a non-universal app
