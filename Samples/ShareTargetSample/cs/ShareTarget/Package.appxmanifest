@@ -15,7 +15,7 @@
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Dependencies>
-    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.0" MaxVersionTested="10.0.14393.0" />
   </Dependencies>
 
   <Resources>
@@ -35,7 +35,12 @@
             <uap:DataFormat>Text</uap:DataFormat>
           </uap:ShareTarget>
         </uap:Extension>
-        <desktop:Extension Category="windows.fullTrustProcess" Executable="Win32ConsoleApp.exe" />
+        <desktop:Extension Category="windows.fullTrustProcess" Executable="Win32ConsoleApp.exe" >
+          <desktop:FullTrustProcess>
+            <desktop:ParameterGroup GroupId="UWPGroup" Parameters="LaunchedFromShareTargetUWP"/>
+            <desktop:ParameterGroup GroupId="OtherGroup" Parameters="Other"/>
+          </desktop:FullTrustProcess>
+        </desktop:Extension>
       </Extensions>
       <uap:VisualElements DisplayName="Share Target" Square150x150Logo="Assets\squareTile-sdk.png" Square44x44Logo="Assets\SmallTile-sdk.png" Description="Share Target C# sample" BackgroundColor="#00b2f0">
         <uap:SplashScreen Image="Assets\Splash-sdk.png" />

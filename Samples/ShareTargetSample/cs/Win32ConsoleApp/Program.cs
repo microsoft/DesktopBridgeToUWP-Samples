@@ -20,13 +20,23 @@ namespace Win32ConsoleApp
         /// Creates a thread for the app
         /// </summary>
         static void Main(string[] args)
-        {
-            Thread appShareTargetHandlerThread = new Thread(new ThreadStart(ThreadProc));
-            appShareTargetHandlerThread.Start();
+        { 
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("*****************************");
             Console.WriteLine("**** Classic desktop app ****");
             Console.WriteLine("*****************************");
+
+            // The app launched from the share target UWP part
+            if (args.Length > 3 && args[2] == "LaunchedFromShareTargetUWP")
+            {
+                Thread appShareTargetHandlerThread = new Thread(new ThreadStart(ThreadProc));
+                appShareTargetHandlerThread.Start();
+            }
+            else
+            {
+                Console.WriteLine("Open the share source from the UWP samples repository and share text");
+            }
+
             Console.ReadLine();
         }
 

@@ -53,7 +53,7 @@ namespace ShareTarget
             {
                 // Launch the full trust process that will read the data from the file
                 // The data can be also transfered by the app service as shown in the other sample - AppServiceBridgeSample in this repository
-                await Windows.ApplicationModel.FullTrustProcessLauncher.LaunchFullTrustProcessForCurrentAppAsync();
+                await Windows.ApplicationModel.FullTrustProcessLauncher.LaunchFullTrustProcessForCurrentAppAsync("UWPGroup");
             }
             catch (Exception)
             {
