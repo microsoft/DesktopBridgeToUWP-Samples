@@ -18,7 +18,7 @@ For more info on UWP apps, [see] (https://msdn.microsoft.com/en-us/windows/uwp/g
 	
 ## License
 
-[MIT] (https://github.com/Microsoft/DesktopBridgeToUWP-Samples/blob/HelloWorldSample/LICENSE)
+[MIT] (https://github.com/Microsoft/DesktopBridgeToUWP-Samples/blob/master/LICENSE)
 
 ## Additional resources
 
