@@ -199,3 +199,4 @@ FakesAssemblies/
 # Custom ignores
 gallery.xml
 project.lock.json
+Samples/AppServiceBridgeSample_C++/cs/AppServiceBridgeSample.VC.db
