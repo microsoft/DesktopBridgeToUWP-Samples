@@ -29,6 +29,8 @@ namespace InAppPurchases
     {
         private static volatile StoreConsumableHelper instance = null;
 
+        static int IAP_E_UNEXPECTED = unchecked((int)0x803f6107);
+
         // All Store operations are performed on a StoreContext
         private StoreContext storeContext = StoreContext.GetDefault();
         private double purchaseBalance = 0.0;
@@ -62,12 +64,20 @@ namespace InAppPurchases
             }
         }
 
-        public async Task Initialize()
+        public async Task<bool> Initialize()
         {
             // Create a filtered list of the product add-ons that are consumable
             string[] filterList = new string[] { "Consumable" };
 
             var addOns = await storeContext.GetAssociatedStoreProductsAsync(filterList);
+
+            if(addOns.ExtendedError != null)
+            {
+                if(addOns.ExtendedError.HResult == IAP_E_UNEXPECTED)
+                {
+                    return false;
+                }
+            }
 
             // Sort the list by price, lowest to highest
             foreach (StoreProduct product in addOns.Products.Values.OrderBy(x=>x.Price.FormattedBasePrice.AsDouble()))
@@ -77,6 +87,7 @@ namespace InAppPurchases
 
             // Get the current purchased balance from the Store
             Balance = await GetConsumableBalance();
+            return true;
         }
 
         /// <summary>

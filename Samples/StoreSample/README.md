@@ -17,7 +17,7 @@ This sample demonstrates the following subset of operations:
   * [Visual Studio 15](https://www.visualstudio.com/visual-studio-pre-release-downloads/)
 
 ## Using the Code
-This sample is meant to illustrate how it is possible to make Windows 10 API calls such as those found in the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace from an application using the [Desktop Bridge](https://developer.microsoft.com/en-us/windows/bridges/desktop) (Win32 Windows Forms or Classic Desktop WPF). While this sample application can be associated with a Store app and run as-is it is much more interesting to go through the steps of preparing your app to call UWP APIs by integrating the purchase dialog from this sample into your application. The following preparatory tasks are needed whether you wish to integrate the sample code into your own application or use it as a standalone sample.
+This sample is meant to illustrate how it is possible to make Windows 10 API calls such as those found in the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace from an application using the [Desktop Bridge](https://developer.microsoft.com/en-us/windows/bridges/desktop) (Win32 Windows Forms or Classic Desktop WPF). While this sample application can be associated with a Store app and run as-is, it is much more interesting to go through the steps of preparing your app to call UWP APIs by integrating the purchase dialog from this sample into your application. The following preparatory tasks are needed whether you wish to integrate the sample code into your own application or use it as a standalone sample.
 
   * [Convert your existing app](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-root)
   * [Register as an app developer](https://developer.microsoft.com/store/register)
@@ -25,7 +25,9 @@ This sample is meant to illustrate how it is possible to make Windows 10 API cal
   * [Submit your converted app to the Store](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)
   * [Create your store-managed consumables](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)
 
-Once your app has been converted and approved in the store and the store-managed consumables are setup you need to make a few minor changes to your project in Visual Studio to enable UWP APIs and get the sample working. They are:
+To run the code as-is you need to modify the sample [AppXManifest.xml](cs/Packaging/PackageLayout/AppXManifest.xml) file to include your application identity information. Change placeholders that are formatted like ***THIS*** to actual values for your application.
+
+Once you've converted your app, gotten it approved in the Store, and the store-managed consumables are set up you need to make a few minor changes to your project in Visual Studio to enable UWP APIs and get the sample working. They are:
 
   * [Add Windows 10 WinMD reference to your project](#add-windows-10-reference)
   * [Add reference to System.Runtime.SystemRuntime](#add-system.runtime.systemruntime-reference)
@@ -79,12 +81,14 @@ purchaseWindow.ShowDialog();
 ```
 
 ### Debugging
-Once the dialog is added to your project starting a standard Debug session will allow the application to run but the Store API calls will NOT work. The reason is that your application is still not running in the context of a universal application. The Store API calls are meant to run in the context of a Windows Universal Platform Application but because your project is not universal it will run under the old app model. To have your application run in the correct context you need to add a new packaging project to your solution. Instructions for how to set this up can be found here:
+Once the dialog is added to your project, starting a standard Debug session will allow the application to run but the Store API calls will NOT work until you run your app in the context of an .appx package. The Store API calls are meant to run in the context of a Universal Windows Platform Application but because your project is not universal it will run under the old app model. To have your application run in the correct context you need to add a new packaging project to your solution. Instructions for how to set this up can be found here:
 
   * [Deploy and debug your converted UWP app](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-deploy-and-debug)
 
+For more information about testing apps that use the Windows.Services.Store namespace see the [official documentation](https://msdn.microsoft.com/en-us/windows/uwp/monetize/in-app-purchases-and-trials?f=255&MSPPError=-2147217396#testing-apps-that-use-the-windows-services-store-namespace).
+
 ### Make It Yours
-With the dialog added to your project and the Store APIs working you are now free to modify the UX so that it seemlessly integrates with the rest of your application.
+With the dialog added to your project and the Store APIs working you are now free to modify the UX so that it seemlessly integrates with the rest of your application. 
 
 ## What About Windows Forms Applications?
 This sample shows how to add a purchase dialog to an existing WPF application but what if your application is a Windows Forms application? No problem. You will have to create your own dialogs but the Store API calls are the same and are enabled by [adding the Windows 10 reference](#add-windows-10-reference) as well as the [System.Runtime.WindowsRuntime Reference](#add-system.runtime.systemruntime-reference).

@@ -3,33 +3,10 @@
   
   <PropertyGroup>
     <MyProjectOutputPath>..\InAppPurchases</MyProjectOutputPath>
-    <AssetPath>..\InAppPurchases\Assets</AssetPath>
   </PropertyGroup>
   <ItemGroup>
     <LayoutFile Include="$(MyProjectOutputPath)\bin\Debug\InAppPurchases.exe">
       <PackagePath>$(PackageLayout)\InAppPurchases.exe</PackagePath>
     </LayoutFile>
-    <LayoutFile Include="$(MyProjectOutputPath)\AppXManifest.xml">
-      <PackagePath>$(PackageLayout)\AppXManifest.xml</PackagePath>
-    </LayoutFile>
-    <LayoutFile Include="$(AssetPath)\LockScreenLogo.scale-200.png">
-      <PackagePath>$(PackageLayout)\Assets\LockScreenLogo.png</PackagePath>
-    </LayoutFile>
-    <LayoutFile Include="$(AssetPath)\SplashScreen.scale-200.png">
-      <PackagePath>$(PackageLayout)\Assets\SplashScreen.png</PackagePath>
-    </LayoutFile>
-    <LayoutFile Include="$(AssetPath)\Square44x44Logo.scale-200.png">
-      <PackagePath>$(PackageLayout)\Assets\Square44x44Logo.png</PackagePath>
-    </LayoutFile>
-    <LayoutFile Include="$(AssetPath)\Square150x150Logo.scale-200.png">
-      <PackagePath>$(PackageLayout)\Assets\Square150x150Logo.png</PackagePath>
-    </LayoutFile>
-    <LayoutFile Include="$(AssetPath)\StoreLogo.png">
-      <PackagePath>$(PackageLayout)\Assets\StoreLogo.png</PackagePath>
-    </LayoutFile>
-    <LayoutFile Include="$(AssetPath)\Wide310x150Logo.scale-200.png">
-      <PackagePath>$(PackageLayout)\Assets\Wide310x150Logo.png</PackagePath>
-    </LayoutFile>
   </ItemGroup>
-
 </Project>

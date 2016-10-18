@@ -107,7 +107,12 @@ namespace InAppPurchases
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            await MyPurchases.Initialize();
+            if(!await MyPurchases.Initialize())
+            {
+                ErrorDialog errorDlg = new ErrorDialog("This sample has not been properly configured. See the README for instructions.");
+                errorDlg.Owner = this;
+                errorDlg.ShowDialog();
+            }
         }
     }
 }
