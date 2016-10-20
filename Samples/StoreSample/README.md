@@ -34,7 +34,7 @@ To run the code as-is you need to modify the sample [AppXManifest.xml](cs/Packag
 Once you've converted your app, gotten it approved in the Store, and the store-managed consumables are set up you need to make a few minor changes to your project in Visual Studio to enable UWP APIs and get the sample working. They are:
 
   * [Add Windows 10 WinMD reference to your project](#add-windows-10-reference)
-  * [Add reference to System.Runtime.SystemRuntime](#add-system.runtime.systemruntime-reference)
+  * [Add reference to System.Runtime.SystemRuntime](#add-systemruntimesystemruntime-reference)
   * [Add theme reference](#add-theme-reference)
   * [Add the dialog](#add-the-dialog)
   * [Start debugging](#debugging)
