@@ -25,7 +25,11 @@ This sample is meant to illustrate how it is possible to make Windows 10 API cal
   * [Submit your converted app to the Store](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)
   * [Create your store-managed consumables](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)
 
-To run the code as-is you need to modify the sample [AppXManifest.xml](cs/Packaging/PackageLayout/AppXManifest.xml) file to include your application identity information. Change placeholders that are formatted like ***THIS*** to actual values for your application.
+To run the code as-is you need to modify the sample [AppXManifest.xml](cs/Packaging/PackageLayout/AppXManifest.xml) file to include your application identity information. Change placeholders that are formatted like ***THIS*** to actual values for your application. For more information about what values to use see the documentation for [viewing app identity details](https://msdn.microsoft.com/en-us/windows/uwp/publish/view-app-identity-details). You also need to manually set the Package Layout setting.
+
+  1. Right-click on the *Packaging* project and select **Properties**.
+  2. Under *Start Options* set the Package Layout to **PackageLayout**.
+  3. Set the *Start Up Tile* option to **InAppPurchases**.
 
 Once you've converted your app, gotten it approved in the Store, and the store-managed consumables are set up you need to make a few minor changes to your project in Visual Studio to enable UWP APIs and get the sample working. They are:
 
@@ -33,6 +37,7 @@ Once you've converted your app, gotten it approved in the Store, and the store-m
   * [Add reference to System.Runtime.SystemRuntime](#add-system.runtime.systemruntime-reference)
   * [Add theme reference](#add-theme-reference)
   * [Add the dialog](#add-the-dialog)
+  * [Start debugging](#debugging)
 
 ### Add Windows 10 Reference
  

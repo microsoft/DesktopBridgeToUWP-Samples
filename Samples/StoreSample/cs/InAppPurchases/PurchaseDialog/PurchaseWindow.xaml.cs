@@ -69,9 +69,11 @@ namespace InAppPurchases
                         errorDlg = null;
                         break;
 
-                    case StorePurchaseStatus.NotPurchased:
-                        errorDlg = new ErrorDialog("Purchase was not recorded, it may have been canceled.");
-                        break;
+                    // Uncomment this case to handle the scenario where a user cancels the
+                    // Store purchase process.
+                    //case StorePurchaseStatus.NotPurchased:
+                    //    [Code to handle a cancelled transaction]
+                    //    break;
 
                     case StorePurchaseStatus.NetworkError:
                         errorDlg = new ErrorDialog("Purchase was not recorded due to a network error.");
@@ -109,7 +111,7 @@ namespace InAppPurchases
         {
             if(!await MyPurchases.Initialize())
             {
-                ErrorDialog errorDlg = new ErrorDialog("This sample has not been properly configured. See the README for instructions.");
+                ErrorDialog errorDlg = new ErrorDialog("Please update the AppXManifest.xml file to include your application identity information. See the README for information on how to do this.");
                 errorDlg.Owner = this;
                 errorDlg.ShowDialog();
             }

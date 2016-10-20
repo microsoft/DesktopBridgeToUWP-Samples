@@ -5,8 +5,8 @@
    xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities">
   <Identity Name="***YOUR_PACKAGE_NAME_HERE***"
     ProcessorArchitecture="x64"
-    Publisher="CN=***COMPANY_NAME***, O=***ORGANIZATION_NAME***, L=***CITY***, S=***STATE***, C=***COUNTRY***"
-    Version="***YOUR_PACKAGE_VERSION_HERE***" />
+    Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" 
+    Version="1.0.0.0" />
   <Properties>
     <DisplayName>***YOUR_PACKAGE_DISPLAY_NAME_HERE***</DisplayName>
     <PublisherDisplayName>CN=Test</PublisherDisplayName>
@@ -16,7 +16,7 @@
     <Resource Language="en-us" />
   </Resources>
   <Dependencies>
-    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14316.0" MaxVersionTested="10.0.14316.0" />
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14316.0" MaxVersionTested="10.0.14393.0" />
   </Dependencies>
   <Capabilities>
     <rescap:Capability Name="runFullTrust"/>
