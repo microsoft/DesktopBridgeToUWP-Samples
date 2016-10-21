@@ -25,7 +25,18 @@ This sample is meant to illustrate how it is possible to make Windows 10 API cal
   * [Submit your converted app to the Store](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)
   * [Create your store-managed consumables](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)
 
-To run the code as-is you need to modify the sample [AppXManifest.xml](cs/Packaging/PackageLayout/AppXManifest.xml) file to include your application identity information. Change placeholders that are formatted like ***THIS*** to actual values for your application. For more information about what values to use see the documentation for [viewing app identity details](https://msdn.microsoft.com/en-us/windows/uwp/publish/view-app-identity-details). You also need to manually set the Package Layout setting.
+To run the code as-is you need to modify the sample [AppXManifest.xml](cs/Packaging/PackageLayout/AppXManifest.xml) file to include your application identity information. Currently there are dummy values in the manifest for the following items that you will need to change to match your application.
+
+  * Identity Name
+  * Identity Publisher
+  * Identity Version
+  * Properties Display Name
+  * Properties PublisherDisplayName
+  * Application Id
+  * Application DisplayName
+  * All of the image assets
+  
+For more information about what values to use see the documentation for [viewing app identity details](https://msdn.microsoft.com/en-us/windows/uwp/publish/view-app-identity-details). You also need to manually set the Package Layout setting.
 
   1. Right-click on the *Packaging* project and select **Properties**.
   2. Under *Start Options* set the Package Layout to **PackageLayout**.

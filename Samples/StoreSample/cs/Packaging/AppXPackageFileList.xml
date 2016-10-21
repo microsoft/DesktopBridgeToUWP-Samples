@@ -5,7 +5,7 @@
     <MyProjectOutputPath>..\InAppPurchases</MyProjectOutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <LayoutFile Include="$(MyProjectOutputPath)\bin\Debug\InAppPurchases.exe">
+    <LayoutFile Include="$(MyProjectOutputPath)\bin\$(Configuration)\InAppPurchases.exe">
       <PackagePath>$(PackageLayout)\InAppPurchases.exe</PackagePath>
     </LayoutFile>
   </ItemGroup>

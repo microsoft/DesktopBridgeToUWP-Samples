@@ -43,6 +43,23 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="PackageLayout\AppxManifest.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="PackageLayout\Assets\LockScreenLogo.png" />
+    <Content Include="PackageLayout\Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="PackageLayout\Assets\SplashScreen.png" />
+    <Content Include="PackageLayout\Assets\SplashScreen.scale-200.png" />
+    <Content Include="PackageLayout\Assets\Square150x150Logo.png" />
+    <Content Include="PackageLayout\Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="PackageLayout\Assets\Square44x44Logo.png" />
+    <Content Include="PackageLayout\Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="PackageLayout\Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="PackageLayout\Assets\StoreLogo.png" />
+    <Content Include="PackageLayout\Assets\Wide310x150Logo.png" />
+    <Content Include="PackageLayout\Assets\Wide310x150Logo.scale-200.png" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\InAppPurchases\InAppPurchases.csproj">
       <Project>{8882c718-0384-40de-a074-af2760914ad7}</Project>
       <Name>InAppPurchases</Name>
