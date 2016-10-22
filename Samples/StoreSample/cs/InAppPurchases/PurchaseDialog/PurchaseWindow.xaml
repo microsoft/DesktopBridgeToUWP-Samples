@@ -1,0 +1,36 @@
+﻿<Window x:Class="InAppPurchases.PurchaseWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InAppPurchases"
+        mc:Ignorable="d"
+        Title="App Name" 
+        Background="White"
+        Loaded="Window_Loaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32"/>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBlock Background="Green" Text="{Binding Path=Balance, StringFormat='You have spent ${0}'}" Style="{StaticResource CaptionTextBlockStyle}" TextAlignment="Center" Padding="0 8 0 0"/>
+        <Grid Background="Gray" Opacity="0.2" Grid.RowSpan="2"></Grid>
+        <UniformGrid Grid.Row="1" Rows="3">
+            <UniformGrid.Resources>
+                <ResourceDictionary>
+                    <Style x:Key="BaseTextBlockStyle" TargetType="Button">
+                        <Setter Property="FontFamily" Value="Segoe UI"/>
+                        <Setter Property="FontWeight" Value="SemiBold"/>
+                        <Setter Property="FontSize" Value="15"/>
+                        <Setter Property="Margin" Value="10"/>
+                    </Style>
+                </ResourceDictionary>
+            </UniformGrid.Resources>
+            <Button Name="btnButtonOption" Click="btnButtonOption_Click" Style="{StaticResource BaseTextBlockStyle}">Button Dialog</Button>
+            <Button Name="btnRadioButtonOption" Click="btnRadioButtonOption_Click" Style="{StaticResource BaseTextBlockStyle}">RadioButton Dialog</Button>
+            <Button Name="btnSliderOption" Click="btnSliderOption_Click" Style="{StaticResource BaseTextBlockStyle}">Slider Dialog</Button>
+        </UniformGrid>
+        
+    </Grid>
+</Window>

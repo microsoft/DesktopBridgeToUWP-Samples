@@ -1,0 +1,49 @@
+﻿<Window x:Class="InAppPurchases.PurchaseDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InAppPurchases"
+        mc:Ignorable="d"
+        Height="328" Width="504" WindowStartupLocation="CenterOwner" WindowStyle="None" ShowInTaskbar="False" ResizeMode="NoResize">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Button Height="48" Width="48" HorizontalAlignment="Right" VerticalAlignment="Top" BorderThickness="0" IsCancel="True" Background="Transparent">X</Button>
+        <TextBlock Grid.Row="1" Style="{StaticResource SubheaderTextBlockStyle}" Padding="48 0">Title Text</TextBlock>
+        <TextBlock Grid.Row="2" Style="{StaticResource BodyTextBlockStyle}" Padding="48 16 48 0">Lorem ipsum dolor sit amet, mea quot utroque omnesque et. Tale zril aeterno nec id, cum habeo ipsum hendrerit ne, ut sint malorum ius.</TextBlock>
+        
+        <!--Radio Button Interface-->
+        <StackPanel Name="radioButtonGroup" Grid.Row="3" Orientation="Horizontal" Margin="48 24 48 0" Visibility="{Binding RadioButtonInterfaceVisibility}">
+            <RadioButton Name="radioSmallPurchase" Tag="{Binding Options[0]}" FontSize="15" Content="{Binding Options[0].Price.FormattedBasePrice}"></RadioButton>
+            <RadioButton Name="radioMediumPurchase" Tag="{Binding Options[1]}" FontSize="15" Margin="48 0 0 0" IsChecked="True" Content="{Binding Options[1].Price.FormattedBasePrice}"></RadioButton>
+            <RadioButton Name="radioLargePurchase" Tag="{Binding Options[2]}" FontSize="15" Margin="48 0 0 0" Content="{Binding Options[2].Price.FormattedBasePrice}"></RadioButton>
+        </StackPanel>
+        
+        <!--Slider Interface-->
+        <StackPanel Grid.Row="3" Margin="48 10" Visibility="{Binding SliderInterfaceVisibility}">
+            <Slider Name="sliderCtrl" LargeChange="1" Maximum="2" SmallChange="1" TickFrequency="1" IsSnapToTickEnabled="True" Value="1"></Slider>
+            <Grid Width="408">
+                <TextBlock Text="{Binding Options[0].Price.FormattedBasePrice}"/>
+                <TextBlock Text="{Binding Options[1].Price.FormattedBasePrice}" HorizontalAlignment="Center"/>
+                <TextBlock Text="{Binding Options[2].Price.FormattedBasePrice}" HorizontalAlignment="Right"/>
+            </Grid>
+        </StackPanel>
+        
+        <!--Button Interface-->
+        <UniformGrid Name="buttonGroup" Grid.Row="3" Margin="48 24" Rows="1" Visibility="{Binding ButtonInterfaceVisibility}">
+            <RadioButton Name="btnSmallPurchase" Tag="{Binding Options[0]}" Style="{StaticResource {x:Type ToggleButton}}" Margin="0 0 12 0" Content="{Binding Options[0].Price.FormattedBasePrice}"></RadioButton>
+            <RadioButton Name="btnMediumPurchase" Tag="{Binding Options[1]}" Style="{StaticResource {x:Type ToggleButton}}" Margin="12 0 12 0" IsChecked="True" Content="{Binding Options[1].Price.FormattedBasePrice}"></RadioButton>
+            <RadioButton Name="btnLargePurchase" Tag="{Binding Options[2]}" Style="{StaticResource {x:Type ToggleButton}}" Margin="12 0 0 0" Content="{Binding Options[2].Price.FormattedBasePrice}"></RadioButton>
+        </UniformGrid>
+
+        <Button Grid.Row="4" FontSize="15" Padding="24 5" HorizontalAlignment="Right" Margin="0 24 48 48" BorderThickness="0" Click="btnPurchase_Click">Buy Now</Button>
+    </Grid>
+</Window>
