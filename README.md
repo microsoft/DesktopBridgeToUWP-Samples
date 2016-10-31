@@ -6,9 +6,9 @@ For more info on UWP apps, [see] (https://msdn.microsoft.com/en-us/windows/uwp/g
 
 ## Requirements
 
-- Windows 10 Anniversary Update Enterprise/Professional edition preview (Build 10.0.14342.0 and later)
-- 64 bit (x64) processor
-- Visual Studio 2015 
+- Windows 10, version 1607 (Anniversary Edition) or later.
+- [Visual Studio 15](https://www.visualstudio.com/visual-studio-pre-release-downloads/)
+- [Desktop to UWP packaging project] (https://visualstudiogallery.msdn.microsoft.com/c71521f1-3c73-49e8-b1a4-70e958f179ba)
 - [Windows Software Development Kit (SDK) for Windows 10] (https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk)
 
 ## Feedback
