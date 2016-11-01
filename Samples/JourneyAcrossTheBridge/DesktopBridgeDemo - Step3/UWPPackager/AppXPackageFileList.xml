@@ -5,13 +5,13 @@
     <MyBgTaskOutputPath>$(PackageLayout)\..\..\BackgroundTasks\bin</MyBgTaskOutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <LayoutFile Include="$(MyProjectOutputPath)\Debug\MyDesktopApp.exe">
+    <LayoutFile Include="$(MyProjectOutputPath)\$(Configuration)\MyDesktopApp.exe">
       <PackagePath>$(PackageLayout)\MyDesktopApp.exe</PackagePath>
     </LayoutFile>
-    <LayoutFile Include="$(MyBgTaskOutputPath)\x64\Debug\BackgroundTasks.winmd">
+    <LayoutFile Include="$(MyBgTaskOutputPath)\$(Configuration)\BackgroundTasks.winmd">
       <PackagePath>$(PackageLayout)\BackgroundTasks.winmd</PackagePath>
     </LayoutFile>
-    <LayoutFile Include="$(MyBgTaskOutputPath)\x64\Debug\BackgroundTasks.pri">
+    <LayoutFile Include="$(MyBgTaskOutputPath)\$(Configuration)\BackgroundTasks.pri">
       <PackagePath>$(PackageLayout)\BackgroundTasks.pri</PackagePath>
     </LayoutFile>
   </ItemGroup>
