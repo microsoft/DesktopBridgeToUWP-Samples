@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MyUWPAppOutputPath>$(PackageLayout)\..\..\MyUWPApp\bin</MyUWPAppOutputPath>
+    <MyDesktopOutputPath>$(PackageLayout)\..\..\MyDesktopApp\bin</MyDesktopOutputPath>
+    <BackgroundTaskOutputPath>$(PackageLayout)\..\..\BackgroundTasks\bin</BackgroundTaskOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <LayoutFile Include="$(MyUWPAppOutputPath)\x86\$(Configuration)\MyUWPApp.exe">
+      <PackagePath>$(PackageLayout)\MyUWPApp.exe</PackagePath>
+    </LayoutFile>
+    <LayoutFile Include="$(MyDesktopOutputPath)\$(Configuration)\MyDesktopApp.exe">
+      <PackagePath>$(PackageLayout)\DesktopApp.exe</PackagePath>
+    </LayoutFile>
+    <LayoutFile Include="$(BackgroundTaskOutputPath)\$(Configuration)\BackgroundTasks.winmd">
+      <PackagePath>$(PackageLayout)\BackgroundTasks.winmd</PackagePath>
+    </LayoutFile>
+  </ItemGroup>
+</Project>
