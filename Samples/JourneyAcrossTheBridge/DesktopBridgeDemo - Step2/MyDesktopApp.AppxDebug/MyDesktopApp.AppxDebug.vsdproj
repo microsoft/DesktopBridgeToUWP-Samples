@@ -1,16 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTarget="CopyFilesToLayout" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition="'$(Configuration)' == ''">Debug</Configuration>
     <Platform Condition="'$(Platform)' == ''">x86</Platform>
-    <ProjectGuid>{8332197A-9628-4EFB-9E66-767874A36920}</ProjectGuid>
     <ProjectTypeGuids>{365BE41E-7993-430D-A5E6-1381A54BC077};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <ProjectGuid>{8B192FE7-1E7C-4C4F-9E07-DDA8375B0F7B}</ProjectGuid>
+    <MinimumVisualStudioVersion>15</MinimumVisualStudioVersion>
+    <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DefineConstants>DEBUG</DefineConstants>
     <OutputPath>bin\x86\Debug\</OutputPath>
+    <PackageLayout>..\MyDesktopApp.AppxPackage\bin\x86\Debug</PackageLayout>
+    <StartupTile>MyDesktopApp</StartupTile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <OutputPath>bin\x86\Release\</OutputPath>
@@ -25,6 +28,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <DefineConstants>DEBUG</DefineConstants>
     <OutputPath>bin\AnyCPU\Debug\</OutputPath>
+    <PackageLayout>..\MyDesktopApp.AppxPackage\bin\x86\Debug</PackageLayout>
+    <StartupTile>MyDesktopApp</StartupTile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <OutputPath>bin\AnyCPU\Release\</OutputPath>
@@ -41,16 +46,11 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="PackageLayout\AppxManifest.xml" />
-    <Content Include="PackageLayout\Assets\SampleAppx.150x150.png" />
-    <Content Include="PackageLayout\Assets\SampleAppx.44x44.png" />
-  </ItemGroup>
   <PropertyGroup>
-    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">15.0</VisualStudioVersion>
   </PropertyGroup>
   <PropertyGroup>
-    <RootNamespace>UWPPackager</RootNamespace>
+    <RootNamespace>MyDesktopApp.AppxDebug</RootNamespace>
   </PropertyGroup>
   <Import Project="$(MSBuildProjectFullPath).user" Condition="Exists('$(MSBuildProjectFullPath).user')" />
   <Import Project="$(MSBuildProjectDirectory)\AppXPackageFileList.xml" />
@@ -60,6 +60,7 @@
     </BuildDependsOn>
   </PropertyGroup>
   <Target Name="_CopyAppXFilesToPackageLayout">
+    <Error Condition="!Exists(%(LayoutFile.FullPath))" Text="LayoutFile does not exist [%(LayoutFile.FullPath)]" />
     <Copy Condition="Exists(%(LayoutFile.Identity))" SourceFiles="@(LayoutFile)" DestinationFiles="@(LayoutFile->'%(PackagePath)')" SkipUnchangedFiles="true" />
     <ItemGroup>
       <PdbToCopy Condition="Exists(%(LayoutFile.Identity))" Include="$([System.String]::Copy('%(LayoutFile.FullPath)').Replace('%(LayoutFile.Extension)','.pdb'))">
@@ -69,6 +70,6 @@
     <Copy Condition="Exists(%(PdbToCopy.Identity))" SourceFiles="@(PdbToCopy)" DestinationFiles="@(PdbToCopy->'%(PackagePath)')" SkipUnchangedFiles="true" />
   </Target>
   <Target Name="Build" DependsOnTargets="$(BuildDependsOn)" />
-  <Target Name="Rebuild" DependsOnTargets="$(Build)" />
+  <Target Name="Rebuild" DependsOnTargets="Build" />
   <Target Name="Clean" />
 </Project>
