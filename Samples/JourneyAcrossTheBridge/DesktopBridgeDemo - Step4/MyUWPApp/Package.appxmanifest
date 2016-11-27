@@ -29,7 +29,7 @@
         <uap:Extension Category="windows.appService">
           <uap:AppService Name="CommunicationService" />
         </uap:Extension>
-        <desktop:Extension Category="windows.fullTrustProcess" Executable="MyDesktopApp.exe" />
+        <desktop:Extension Category="windows.fullTrustProcess" Executable="win32\MyDesktopApp.exe" />
       </Extensions>
     </Application>
   </Applications>

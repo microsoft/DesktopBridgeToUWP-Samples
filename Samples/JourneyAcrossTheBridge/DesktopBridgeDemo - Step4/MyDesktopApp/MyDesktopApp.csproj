@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="Windows">
       <HintPath>$(SystemDrive)\Program Files (x86)\Windows Kits\10\UnionMetadata\Windows.winmd</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -67,4 +68,10 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <Target Name="AfterBuild">
+    <ItemGroup>
+      <Win32Files Include="$(TargetDir)\*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(win32Files)" DestinationFolder="..\MyUWPApp\win32" />
+  </Target>
 </Project>
