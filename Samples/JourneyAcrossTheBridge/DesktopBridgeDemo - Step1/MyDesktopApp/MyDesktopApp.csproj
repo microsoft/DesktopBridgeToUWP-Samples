@@ -83,7 +83,7 @@
   
   <Target Name="AfterBuild">
     <PropertyGroup>
-      <TargetUWP>..\MyDesktopApp.AppxPackage\win32\</TargetUWP>
+      <TargetUWP>..\MyDesktopApp.Package\win32\</TargetUWP>
     </PropertyGroup>
      <ItemGroup>
        <Win32Binaries Include="$(TargetDir)\*" />
