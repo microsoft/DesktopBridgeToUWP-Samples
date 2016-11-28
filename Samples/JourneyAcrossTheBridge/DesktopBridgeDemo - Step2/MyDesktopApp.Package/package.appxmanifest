@@ -33,8 +33,8 @@
                  EntryPoint="Windows.FullTrustApplication">
 
       <uap:VisualElements
-        DisplayName="MyDesktopApp.Package"
-        Description="MyDesktopApp.Package"
+        DisplayName="MyDesktopApp Step2"
+        Description="MyDesktopApp Step2"
         BackgroundColor="transparent"
         Square150x150Logo="images\Square150x150Logo.png"
         Square44x44Logo="images\Square44x44Logo.png">
