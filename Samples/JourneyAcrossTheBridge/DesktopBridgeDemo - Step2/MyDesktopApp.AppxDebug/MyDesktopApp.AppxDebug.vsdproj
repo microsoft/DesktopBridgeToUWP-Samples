@@ -12,7 +12,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DefineConstants>DEBUG</DefineConstants>
     <OutputPath>bin\x86\Debug\</OutputPath>
-    <PackageLayout>..\MyDesktopApp.AppxPackage\bin\x86\Debug</PackageLayout>
+    <PackageLayout>..\MyDesktopApp.Package\bin\x86\Debug</PackageLayout>
     <StartupTile>MyDesktopApp</StartupTile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
@@ -28,7 +28,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <DefineConstants>DEBUG</DefineConstants>
     <OutputPath>bin\AnyCPU\Debug\</OutputPath>
-    <PackageLayout>..\MyDesktopApp.AppxPackage\bin\x86\Debug</PackageLayout>
+    <PackageLayout>..\MyDesktopApp.Package\bin\x86\Debug</PackageLayout>
     <StartupTile>MyDesktopApp</StartupTile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
