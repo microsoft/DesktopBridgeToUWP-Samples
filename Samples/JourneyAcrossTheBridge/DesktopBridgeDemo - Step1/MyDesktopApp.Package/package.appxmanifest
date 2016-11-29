@@ -9,13 +9,13 @@
   <Identity
     Name="MyDesktopApp-Step1"
     Version="1.0.0.0"
-    Publisher="CN=rmpablos" />
+    Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
 
   <mp:PhoneIdentity PhoneProductId="6f6600a4-6da1-4d91-b493-35808d01f8de" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
 
   <Properties>
-    <DisplayName>MyDesktopApp - Step1</DisplayName>
-    <PublisherDisplayName>rmpablos</PublisherDisplayName>
+    <DisplayName>MyDesktopApp-Step1</DisplayName>
+    <PublisherDisplayName>Microsoft Corporation</PublisherDisplayName>
     <Logo>images\storelogo.png</Logo>
   </Properties>
 

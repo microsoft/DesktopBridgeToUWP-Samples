@@ -1,2 +1,0 @@
-MainPackage=C:\code\DesktopBridgeToUWP-Samples\Samples\JourneyAcrossTheBridge\DesktopBridgeDemo - Step3\MyDesktopApp.Package\bin\x64\Release\MyDesktopApp.Package_1.0.4.0_x64.appx
-SymbolPackage=C:\code\DesktopBridgeToUWP-Samples\Samples\JourneyAcrossTheBridge\DesktopBridgeDemo - Step3\MyDesktopApp.Package\AppPackages\MyDesktopApp.Package_1.0.4.0_Test\MyDesktopApp.Package_1.0.4.0_x64.appxsym
