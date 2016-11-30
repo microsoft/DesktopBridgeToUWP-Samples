@@ -3,7 +3,7 @@
   <Identity Name="MyDesktopAppStep4" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" Version="1.0.0.0" />
   <mp:PhoneIdentity PhoneProductId="4b81a0a2-04e6-4a15-a3f5-dd68c0c78114" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>MyDesktopAppStep4</DisplayName>
+    <DisplayName>MyDesktopApp-Step4</DisplayName>
     <PublisherDisplayName>Microsoft Corporation</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -29,7 +29,7 @@
         <uap:Extension Category="windows.appService">
           <uap:AppService Name="CommunicationService" />
         </uap:Extension>
-        <desktop:Extension Category="windows.fullTrustProcess" Executable="MyDesktopApp.exe" />
+        <desktop:Extension Category="windows.fullTrustProcess" Executable="win32\MyDesktopApp.exe" />
       </Extensions>
     </Application>
   </Applications>
