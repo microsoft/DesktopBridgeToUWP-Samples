@@ -36,10 +36,18 @@ Step5 - Expand
 In the final step, we will now expand the reach of our application to all Windows 10 devices that run UWP apps, by moving the last remaining pieces of code into the UWP app container process. To do so, we will replace the registry-based state with the UWP-compliant ApplicationData API. Thus, we can now deploy our app to phones, Xbox One, HoloLens and other Windows devices that can run UWP apps.
 
 
-Build/Deploy and Run the sample
+Build/Debug and Run the sample
 -------------------------------
 
- - Select the UWPPackager project righ click --> Properties --> set the Package layout to the right location (DesktopBridgeDemo - Step1\UWPPackager\PackageLayout)
- - If the sample includes UWPPackager project set it as a startUp project
- - Press Ctrl+Shift+B, or select **Build** \> **Build Solution**. 
- - Press F5 to run!
+ - Select the MyDesktopApp.AppxDebug as the startup project, right click --> Properties --> set the Package layout to the right location (..\MyDesktopApp.Package\bin\x86\Debug)
+ - Set the active configuration to Debug, X86 (if building x64 don't forget to update the package layout)
+ - Set your break points and hit F5 to run!
+
+ 
+ Package the sample
+-------------------------------
+
+ - Right click on the MyDesktopApp.Package project --> Store --> Create app package, the JS project is currently the best workaround we have to enable a smooth packaging experience.
+ - For step 1 and 2 you can select any CPU for step 3 and 4 please choose x86 and x64 only as it includes CoreCLR binaries
+
+
