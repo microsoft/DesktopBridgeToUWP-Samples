@@ -1,14 +1,16 @@
 ﻿# JourneyAcrossTheBridge sample
 
-This sample takes an existing desktop app and, using the Desktop Bridge, gradually migrates and enhances it into a full Universal Windows Platform (UWP) app. This allows it to run on all Windows 10 devices, including such Xbox One, HoloLens, phones, and IoT devices, and take full advantage of the Universal Windows Platform.
+This sample takes an existing desktop app and, using the Desktop Bridge, gradually migrates and enhances it into a full Universal Windows Platform (UWP) app. This allows it to run on all Windows 10 devices, including Desktop, Xbox One, HoloLens, phones, and IoT devices.
 As we migrate our app, it remains fully functional every step of the way and picks up additional features that will help keep users engaged.
 
+>Note: For this example we will use a JavaScript UWP project template. We will not be writing any JavaScript code; rather, this template provides us with the default UWP tools to help us prepare our app for the store. We are using JavaScript instead of C# because there are some known issues using the default C# UWP project template.
 
 Step1 - Convert
 ----------------
 
-Conversion is the first step on the bridge. If your app uses a .MSI (or similar) installer, the [Desktop App Converter](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter) can help with the conversion process.  Otherwise, you’ll need to manually convert your app. See the instructions in the MSDN article [Manually convert your Windows desktop application to a Universal Windows Platform (UWP) app]( https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-manual-conversion) and the [DesktopBridgeToUWP sample on GitHub](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/HelloWorldSample). 
-Our starting point is a simple Windows Forms app that keeps track of the user’s status by storing it in the registry. This app demonstrates how to sue the UWP packaging project, that was recently introduced by the Visual Studio team for Visual Studio 15 Preview 2 – see [this post](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-deploy-and-debug) for details and instructions.
+Conversion is the first step on the bridge. If your app uses a .MSI (or similar) installer, the [Desktop App Converter](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter) can help with the conversion process.  Otherwise, you’ll need to manually convert your app. See the instructions in the MSDN article [Manually convert your Windows desktop application to a Universal Windows Platform (UWP) app]( https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-manual-conversion) and the [DesktopBridgeToUWP sample on GitHub](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/HelloWorldSample).
+
+Our starting point is a simple Windows Forms app that keeps track of the user’s status by storing it in the registry. This app demonstrates how to use a Visual Studio UWP project to package your app. Additionally it shows how to use the [Desktop to UWP extension](https://marketplace.visualstudio.com/items?itemName=VisualStudioProductTeam.DesktoptoUWPPackagingProject) to allow a seamless F5 debugging experience. 
 
 
 Step2 – Enhance
