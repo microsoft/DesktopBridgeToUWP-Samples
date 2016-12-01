@@ -7,7 +7,7 @@ For more info on UWP apps, [see] (https://msdn.microsoft.com/en-us/windows/uwp/g
 ## Requirements
 
 - Windows 10, version 1607 (Anniversary Edition) or later.
-- [Visual Studio 15](https://www.visualstudio.com/visual-studio-pre-release-downloads/)
+- [Visual Studio 2017 RC](https://www.visualstudio.com/downloads/#visual-studio-community-2017-rc)
 - [Desktop to UWP packaging project] (https://visualstudiogallery.msdn.microsoft.com/c71521f1-3c73-49e8-b1a4-70e958f179ba)
 - [Windows Software Development Kit (SDK) for Windows 10] (https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk)
 
