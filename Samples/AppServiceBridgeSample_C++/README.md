@@ -20,4 +20,12 @@ Build/Deploy and Run the sample
 Notes
 ------
 
+In case you are using a slightly different version of VS than 2015 preview and getting the following error:
+"The build tools for v140 (Platform Toolset = 'v140') cannot be found"
+or "could not find assembly 'platform.winmd'"
+
+1. Upgrade the project VC++ compiler and libraries.
+2. Add the following path to the LIBPATH 
+$Your_Path\Microsoft Visual Studio\$YOUR_VER\Enterprise\Common7\IDE\VC\vcpackages
+
 - You can learn more about App Services [here] (https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.appservice.aspx)
