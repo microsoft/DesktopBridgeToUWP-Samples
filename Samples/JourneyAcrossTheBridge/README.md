@@ -10,7 +10,7 @@ Step1 - Convert
 
 Conversion is the first step on the bridge. If your app uses a .MSI (or similar) installer, the [Desktop App Converter](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter) can help with the conversion process.  Otherwise, you’ll need to manually convert your app. See the instructions in the MSDN article [Manually convert your Windows desktop application to a Universal Windows Platform (UWP) app]( https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-manual-conversion) and the [DesktopBridgeToUWP sample on GitHub](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/HelloWorldSample).
 
-Our starting point is a simple Windows Forms app that keeps track of the user’s status by storing it in the registry. This app demonstrates how to use a Visual Studio UWP project to package your app. Additionally it shows how to use the [Desktop to UWP extension](https://marketplace.visualstudio.com/items?itemName=VisualStudioProductTeam.DesktoptoUWPPackagingProject) to allow a seamless F5 debugging experience. 
+Our starting point is a simple Windows Forms app that keeps track of the user’s status by storing it in the registry. This app demonstrates how to use a Visual Studio UWP project to package your app. Additionally it shows how to use the [Desktop to UWP extension](http://go.microsoft.com/fwlink/?LinkID=797871&clcid=0x409) to allow a seamless F5 debugging experience. 
 
 
 Step2 – Enhance
