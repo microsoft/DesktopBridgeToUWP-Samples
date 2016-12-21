@@ -79,7 +79,7 @@ int main(Platform::Array<Platform::String^>^ args)
 
 	string result;
 	cin >> result;
-    return 0;
+	return 0;
 }
 
 /// <summary>
@@ -108,7 +108,7 @@ void ShowToast(PCWSTR data)
                                 <text> %s</text>
                             </binding>
                         </visual>
-						<audio src="ms-winsoundevent:Notification.IM"/>
+                        <audio src="ms-winsoundevent:Notification.IM"/>
                      </toast>)";
 
 	wsprintf(buffer, toast, data);
