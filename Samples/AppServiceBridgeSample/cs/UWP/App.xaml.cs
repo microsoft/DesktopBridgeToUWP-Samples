@@ -49,8 +49,22 @@ namespace SDKTemplate
             if (args.TaskInstance.TriggerDetails is AppServiceTriggerDetails)
             {
                 appServiceDeferral = args.TaskInstance.GetDeferral();
+                args.TaskInstance.Canceled += OnTaskCanceled; // Associate a cancellation handler with the background task.
+
                 AppServiceTriggerDetails details = args.TaskInstance.TriggerDetails as AppServiceTriggerDetails;
                 Connection = details.AppServiceConnection;
+            }
+        }
+
+        /// <summary>
+        /// Associate the cancellation handler with the background task 
+        /// </summary>
+        private void OnTaskCanceled(IBackgroundTaskInstance sender, BackgroundTaskCancellationReason reason)
+        {
+            if (this.appServiceDeferral != null)
+            {
+                // Complete the service deferral.
+                this.appServiceDeferral.Complete(); 
             }
         }
 

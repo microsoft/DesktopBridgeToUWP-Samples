@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package
+   xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+   xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+   xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities">
+  <Identity Name="InAppPurchases"
+    ProcessorArchitecture="x64"
+    Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" 
+    Version="1.0.0.0" />
+  <Properties>
+    <DisplayName>InAppPurchases</DisplayName>
+    <PublisherDisplayName>CN=Test</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Resources>
+    <Resource Language="en-us" />
+  </Resources>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14316.0" MaxVersionTested="10.0.14393.0" />
+  </Dependencies>
+  <Capabilities>
+    <rescap:Capability Name="runFullTrust"/>
+  </Capabilities>
+  <Applications>
+    <Application Id="InAppPurchases" Executable="InAppPurchases.exe" EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements
+       BackgroundColor="#777777"
+       DisplayName="InAppPurchases"
+       Square150x150Logo="Assets\Square150x150Logo.png"
+       Square44x44Logo="Assets\Square44x44Logo.png"
+       Description="A demo application for processing in-app purchases." />
+    </Application>
+  </Applications>
+</Package>

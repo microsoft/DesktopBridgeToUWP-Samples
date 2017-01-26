@@ -6,9 +6,9 @@ For more info on UWP apps, [see] (https://msdn.microsoft.com/en-us/windows/uwp/g
 
 ## Requirements
 
-- Windows 10 Anniversary Update Enterprise/Professional edition preview (Build 10.0.14342.0 and later)
-- 64 bit (x64) processor
-- Visual Studio 2015 
+- Windows 10, version 1607 (Anniversary Edition) or later.
+- [Visual Studio 2017 RC](https://www.visualstudio.com/downloads/#visual-studio-community-2017-rc)
+- [Desktop Bridge Debugging project] (http://go.microsoft.com/fwlink/?LinkID=797871)
 - [Windows Software Development Kit (SDK) for Windows 10] (https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk)
 
 ## Feedback
@@ -18,7 +18,7 @@ For more info on UWP apps, [see] (https://msdn.microsoft.com/en-us/windows/uwp/g
 	
 ## License
 
-[MIT] (https://github.com/Microsoft/DesktopBridgeToUWP-Samples/blob/HelloWorldSample/LICENSE)
+[MIT] (https://github.com/Microsoft/DesktopBridgeToUWP-Samples/blob/master/LICENSE)
 
 ## Additional resources
 
