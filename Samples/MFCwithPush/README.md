@@ -4,7 +4,7 @@ This sample demonstrates how to extend an MFC application to receive raw push no
 
 AppxManifest
 ------------
-In addition to the main MFC application in our [AppxManifest.xml] (), we are declaring a background task type “pushNotification”. One thing to note here is that we also need to declare the activatable class that implements the background task in the manifest (as a package-level extension), because we will need the system to activate the component for us when a push notification comes in even when the application is not running.
+In addition to the main MFC application in our [AppxManifest.xml] (https://github.com/Microsoft/DesktopBridgeToUWP-Samples/blob/master/Samples/MFCwithPush/StorePackaging/Package.appxmanifest), we are declaring a background task type “pushNotification”. One thing to note here is that we also need to declare the activatable class that implements the background task in the manifest (as a package-level extension), because we will need the system to activate the component for us when a push notification comes in even when the application is not running.
 
 Build/Deploy and Run the sample
 -------------------------------
