@@ -1,4 +1,4 @@
-# MFC application receives push notifications 
+# MFC application receives push notifications!
 
 This sample demonstrates how to extend an MFC application to receive raw push notifications from a server application regardless whether the client software is running or not. If the application is running it will receive the notification event and process the payload within the application process. If the application is not running, a background task will be triggered to handle the payload, for example to save to disk, notify the user with a toast notification, update the Live Tile, etc.
 
@@ -10,13 +10,20 @@ Build/Deploy and Run the sample
 -------------------------------
 
  - Set the "StorePackaging" as startup project
+ - Change the build configuration to x86
  - Build and deploy the project
  - Press Ctrl + F5 to run
+ - Launch the Push Test Server from your start menu and send notifications to your app!
  - To debug use attach to the proccess or follow the guidance [here - Debugging your Desktop Bridge app section] (https://msdn.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-packaging-dot-net)
  
 Windows Store App
 -----------------
  You can also check out the app in the [Window Store] (https://www.microsoft.com/store/apps/9nrhrdq505qv)
+ 
+Notes
+-----
 
+Pay attention when building your own app you will have to replace the secret/sid values to much your App's identity.
+For more details about push notification please follow the documention [here] (https://msdn.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-raw-notification-overview)
   
 
