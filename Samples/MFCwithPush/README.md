@@ -13,7 +13,7 @@ Build/Deploy and Run the sample
  - Change the build configuration to x86
  - Build and deploy the project
  - Press Ctrl + F5 to run
- - Launch the Push Test Server from your start menu and send notifications to your app!
+ - Launch the Push Test Server from the start menu and send notifications to your app!
  - To debug use attach to the proccess or follow the guidance [here - Debugging your Desktop Bridge app section] (https://msdn.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-packaging-dot-net)
  
 Windows Store App
