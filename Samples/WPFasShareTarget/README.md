@@ -5,7 +5,7 @@ This sample demonstrates how to extend a WPF picture viewer to become a share ta
 AppxManifest
 ------------
 
-The structure of our manifest looks very similar to the [VB6withXaml sample] (https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/VB6withXaml). In fact, our sharing UI is also XAML. The only difference here is that we are declaring the ‘windows.shareTarget’ extension instead of protocol activation, to let the system know we want to activate if the user is sharing the specified data type and selects our app as the sharing target.
+The structure of our [AppxManifest.xml] () looks very similar to the [VB6withXaml sample] (https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/VB6withXaml). In fact, our sharing UI is also XAML. The only difference here is that we are declaring the ‘windows.shareTarget’ extension instead of protocol activation, to let the system know we want to activate if the user is sharing the specified data type and selects our app as the sharing target.
 
 Build/Deploy and Run the sample
 -------------------------------
@@ -15,6 +15,8 @@ Build/Deploy and Run the sample
  - Press Ctrl + F5 to run
  - To debug use attach to the proccess or follow the guidance [here - Debugging your Desktop Bridge app section] (https://msdn.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-packaging-dot-net)
  
+ Windows Store App
+------------------
  You can also check out the app in the [Window Store] (https://www.microsoft.com/en-us/store/p/wpf-app-as-sharetarget/9pjcjljlck37)
 
   
