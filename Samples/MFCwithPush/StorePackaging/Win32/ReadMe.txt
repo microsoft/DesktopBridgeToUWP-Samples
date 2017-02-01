@@ -1,0 +1,1 @@
+The files in this direcotry would be copied to the Packageing project once its layout is ready
