@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities" IgnorableNamespaces="uap rescap mp">
-  <Identity Name="17855StefanWick.WinformsAppService" Publisher="CN=1913355A-B6E7-49A5-822D-9E131A0518BE" Version="1.1.2.0" />
+  <Identity Name="WinformsAppService" Publisher="CN=1913355A-B6E7-49A5-822D-9E131A0518BE" Version="1.0.0.0" />
   <mp:PhoneIdentity PhoneProductId="4d0554d5-cacb-4d6e-90ee-61b40f60a08f" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>Winforms AppService</DisplayName>
-    <PublisherDisplayName>Stefan Wick</PublisherDisplayName>
+    <PublisherDisplayName>Microsoft Corporation</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Dependencies>
