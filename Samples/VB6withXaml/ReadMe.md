@@ -20,7 +20,7 @@ To modify and rebuild the VB6 application, you will need to install the legacy V
  - Press Ctrl + F5 to run
  - To debug use attach to the proccess or follow the guidance [here - Debugging your Desktop Bridge app section] (https://msdn.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-packaging-dot-net)
  
-Windows Store app
+Windows Store App
 ------------------
 https://www.microsoft.com/store/apps/9n191ncxf2f6  
 
