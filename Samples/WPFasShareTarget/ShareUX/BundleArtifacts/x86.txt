@@ -1,0 +1,2 @@
+MainPackage=c:\users\swick\documents\visual studio 2017\Projects\WPFasShareTarget\Release\ShareUX\ShareUX_1.1.1.0_Win32.appx
+SymbolPackage=c:\users\swick\documents\visual studio 2017\Projects\WPFasShareTarget\AppPackages\ShareUX\ShareUX_1.1.1.0_Test\ShareUX_1.1.1.0_Win32.appxsym

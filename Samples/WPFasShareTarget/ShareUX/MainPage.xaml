@@ -1,0 +1,31 @@
+﻿<Page
+    x:Class="ShareUX.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ShareUX"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="768" d:DesignWidth="645"
+    mc:Ignorable="d">
+
+    <Grid Margin="12">
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0.3" EndPoint="1,0">
+                <LinearGradientBrush.GradientStops>
+                    <GradientStop Color="#B2B6CAFF" Offset="0" />
+                    <GradientStop Color="#BFC3D5FF" Offset="0.1" />
+                    <GradientStop Color="#E0E4F0FF" Offset="0.3" />
+                    <GradientStop Color="#E6EAF5FF" Offset="0.5" />
+                    <GradientStop Color="#CFD7E2FF" Offset="0.6" />
+                    <GradientStop Color="#BFC5D3FF" Offset="0.8" />
+                    <GradientStop Color="#C4CBD8FF" Offset="1" />
+                </LinearGradientBrush.GradientStops>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <StackPanel>
+            <Button Content="Share to WPF app" Click="ShareBtn_Click"/>
+            <TextBlock x:Name="tbFileName" />
+            <Image x:Name="img"/>
+        </StackPanel>
+    </Grid>
+</Page>
