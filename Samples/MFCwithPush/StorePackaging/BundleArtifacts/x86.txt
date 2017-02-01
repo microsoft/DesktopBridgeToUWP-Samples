@@ -1,0 +1,2 @@
+MainPackage=C:\Users\swick\Documents\Visual Studio 2015\Projects\MFCwithPush\Release\StorePackaging\StorePackaging_1.1.5.0_Win32.appx
+SymbolPackage=C:\Users\swick\Documents\Visual Studio 2015\Projects\MFCwithPush\AppPackages\StorePackaging\StorePackaging_1.1.5.0_Test\StorePackaging_1.1.5.0_Win32.appxsym

@@ -1,0 +1,3 @@
+MainPackage=C:\Users\swick\Documents\Visual Studio 2015\Projects\MFCwithPush\x64\Release\StorePackaging\Upload\StorePackaging_1.1.5.0_x64.appx
+SymbolPackage=C:\Users\swick\Documents\Visual Studio 2015\Projects\MFCwithPush\AppPackages\StorePackaging\StorePackaging_1.1.5.0\StorePackaging_1.1.5.0_x64.appxsym
+ResourcePack=C:\Users\swick\Documents\Visual Studio 2015\Projects\MFCwithPush\StorePackaging\_scale-100.appx
