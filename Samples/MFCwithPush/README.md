@@ -20,10 +20,11 @@ Windows Store App
 -----------------
  You can also check out the app in the [Window Store] (https://www.microsoft.com/store/apps/9nrhrdq505qv)
  
-Notes
------
+Important Notes
+---------------
 
 Pay attention when building your own app you will have to replace the secret/sid values to much your App's identity.
+-------------
 For more details about push notification please follow the documention [here] (https://msdn.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-raw-notification-overview)
   
 
