@@ -1,0 +1,35 @@
+﻿<Page
+    x:Class="TestClient.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TestClient"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="MintCream">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Margin="12" Text="AppService Connection "/>
+        <TextBlock x:Name="tbStatus" Grid.Row="0" Grid.Column="1" Margin="12" Text="Status: Closed" Foreground="Red"/>
+        <Button x:Name="connectBtn" Grid.Row="0" Grid.Column="2" Margin="12" Content="Connect" Click="connectBtn_Click"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Margin="12" Text="Request:  "/>
+        <TextBox x:Name="tbId" Grid.Row="1" Grid.Column="1" Margin="12" Width="200" Text="133-23-7893"/>
+        <Button x:Name="queryBtn" Grid.Row="1" Grid.Column="2" Margin="12" IsEnabled="False" Content="Submit" Click="queryBtn_Click"/>
+        <TextBlock Grid.Row="2" Grid.Column="0" Margin="12" Text="Response:  "/>
+        <StackPanel Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Margin="12">
+            <TextBlock x:Name="tbName" Foreground="DarkGreen"/>
+            <TextBlock x:Name="tbPhone" Foreground="DarkGreen"/>
+            <TextBlock x:Name="tbCity" Foreground="DarkGreen"/>
+            <TextBlock x:Name="tbState" Foreground="DarkGreen"/>
+        </StackPanel>
+    </Grid>
+</Page>
