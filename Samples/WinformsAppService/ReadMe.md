@@ -4,7 +4,7 @@ This sample demonstrates how to extend a WinForms data application with an App S
 
 AppxManifest
 ------------
-The entry point in the [AppxManifest.xml] (https://github.com/Microsoft/DesktopBridgeToUWP-Samples/blob/master/Samples/VB6withXaml/Xaml.MapUI/Package.appxmanifest) is the Windows Forms application, that we have packaged using the Desktop Bridge. Now we can add a UWP component (implemented in a Windows Runtime component called ‘MyAppService.dll’) to the package, which provides the App Service implementation. This component gets activated out-of-proc to the main application process, so we also need to declare a package-level extension to explain to the system how the class will get activated.
+The entry point in the [AppxManifest.xml] (https://github.com/Microsoft/DesktopBridgeToUWP-Samples/blob/master/Samples/WinformsAppService/TestClient/Package.appxmanifest) is the Windows Forms application, that we have packaged using the Desktop Bridge. Now we can add a UWP component (implemented in a Windows Runtime component called ‘MyAppService.dll’) to the package, which provides the App Service implementation. This component gets activated out-of-proc to the main application process, so we also need to declare a package-level extension to explain to the system how the class will get activated.
 
 Build/Deploy and Run the sample
 -------------------------------
