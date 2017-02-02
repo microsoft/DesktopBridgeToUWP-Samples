@@ -4,7 +4,7 @@
   <mp:PhoneIdentity PhoneProductId="67dd91c5-2a83-4782-9c36-5fd193dbc419" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>MFC App with Push Notification</DisplayName>
-    <PublisherDisplayName>Stefan Wick</PublisherDisplayName>
+    <PublisherDisplayName>Microsoft Corporation</PublisherDisplayName>
     <Logo>Assets\mfc_StoreLogo.png</Logo>
   </Properties>
   <Dependencies>
