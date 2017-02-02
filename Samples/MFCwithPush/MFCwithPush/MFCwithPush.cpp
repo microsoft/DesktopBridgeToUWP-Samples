@@ -22,6 +22,9 @@
 #include "MFCwithPushDoc.h"
 #include "MFCwithPushView.h"
 
+typedef void(__cdecl *SUBSCRIBEPUSHNOTIFICATIONEVENT)(void* pfnPushReceived);
+typedef void(__cdecl *REGISTERBACKGROUNDTASK)(PCWSTR pszString);
+
 using namespace std;
 using namespace concurrency;
 using namespace Platform;
@@ -158,23 +161,7 @@ BOOL CMFCwithPushApp::InitInstance()
 	CCommandLineInfo cmdInfo;
 	ParseCommandLine(cmdInfo);
 
-
-	// Hook up push notification event
-	task<PushNotificationChannel^>(PushNotificationChannelManager::CreatePushNotificationChannelForApplicationAsync()).then([this](PushNotificationChannel ^channel)
-	{
-		channel->PushNotificationReceived += ref new TypedEventHandler<PushNotificationChannel ^, PushNotificationReceivedEventArgs ^>(&OnPushNotificationReceived);
-		this->pushNotificationChannelUri = channel->Uri;
-		ApplicationData::Current->LocalSettings->Values->Insert("PushNotificationChannelUri", this->pushNotificationChannelUri);
-	});
-
-	// Register up notification background trigger
-	BackgroundTaskBuilder ^builder = ref new BackgroundTaskBuilder();
-	builder->Name = "pushTask";
-	builder->TaskEntryPoint = "PushNotificationBackgroundTask.MyTask";
-	builder->SetTrigger(ref new PushNotificationTrigger());
-	UnregisterBackgroundTasks(builder->Name);
-	builder->Register();
-
+	InitWin10Features();
 
 	// Dispatch commands specified on the command line.  Will return FALSE if
 	// app was launched with /RegServer, /Register, /Unregserver or /Unregister.
@@ -187,24 +174,32 @@ BOOL CMFCwithPushApp::InitInstance()
 	return TRUE;
 }
 
-void CMFCwithPushApp::UnregisterBackgroundTasks(String^ name)
+void CMFCwithPushApp::InitWin10Features()
 {
+	HINSTANCE hinstLib;
+	SUBSCRIBEPUSHNOTIFICATIONEVENT SubscribePushNotificationEventProc;
+	REGISTERBACKGROUNDTASK RegisterBackgroundTaskProc;
+	
 	//
-	// Loop through all background tasks and unregister any that have a name that matches
-	// the name passed into this function.
+	// our Win10 package contains UWPFeatures.dll
+	// if it's there, use it - otherwise no-op
 	//
-	auto iter = BackgroundTaskRegistration::AllTasks->First();
-	auto hascur = iter->HasCurrent;
-	while (hascur)
+	hinstLib = LoadLibrary(TEXT("UWPFeatures.dll"));
+	if (NULL != hinstLib)
 	{
-		auto cur = iter->Current->Value;
-
-		if (cur->Name == name)
+		// subscribe to the push notification event
+		SubscribePushNotificationEventProc = (SUBSCRIBEPUSHNOTIFICATIONEVENT)GetProcAddress(hinstLib, "SubscribePushNotificationEvent");
+		if (NULL != SubscribePushNotificationEventProc)
 		{
-			cur->Unregister(true);
+			(SubscribePushNotificationEventProc)((void*)&OnPushReceived);
 		}
 
-		hascur = iter->MoveNext();
+		// register the push notification background task
+		RegisterBackgroundTaskProc = (REGISTERBACKGROUNDTASK)GetProcAddress(hinstLib, "RegisterBackgroundTask");
+		if (NULL != RegisterBackgroundTaskProc)
+		{
+			(RegisterBackgroundTaskProc)(L"pushTask");
+		}
 	}
 }
 
@@ -280,10 +275,8 @@ void CMFCwithPushApp::SaveCustomState()
 {
 }
 
-// CMFCwithPushApp message handlers
-
-void CMFCwithPushApp::OnPushNotificationReceived(Windows::Networking::PushNotifications::PushNotificationChannel ^sender, Windows::Networking::PushNotifications::PushNotificationReceivedEventArgs ^args)
+void CMFCwithPushApp::OnPushReceived(PCWSTR pszString)
 {
-	String ^xml = args->RawNotification->Content;
-	COutputWnd::Notify(xml);
+	// we have received a push notification, so display it
+	COutputWnd::Notify(pszString);
 }

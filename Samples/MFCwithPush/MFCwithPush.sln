@@ -7,6 +7,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MFCwithPush", "MFCwithPush\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StorePackaging", "StorePackaging\StorePackaging.vcxproj", "{54CA624B-FB56-4628-B93A-1A27B0B46692}"
 	ProjectSection(ProjectDependencies) = postProject
+		{ED107265-3DE8-4686-BEE4-83DBF878D550} = {ED107265-3DE8-4686-BEE4-83DBF878D550}
 		{15EF60C9-1250-4011-83BC-9C24F8714544} = {15EF60C9-1250-4011-83BC-9C24F8714544}
 		{46FEDCF1-6DDF-41A7-BFB0-A924B2C2C148} = {46FEDCF1-6DDF-41A7-BFB0-A924B2C2C148}
 	EndProjectSection
@@ -14,6 +15,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PushNotificationBackgroundTask", "PushNotificationBackgroundTask\PushNotificationBackgroundTask.vcxproj", "{279C2BB4-547E-441A-85AB-90A50AD26D97}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PushTestserver", "PushTestserver\PushTestserver.csproj", "{46FEDCF1-6DDF-41A7-BFB0-A924B2C2C148}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UWPFeatures", "UWPFeatures\UWPFeatures.vcxproj", "{ED107265-3DE8-4686-BEE4-83DBF878D550}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -89,6 +92,18 @@ Global
 		{46FEDCF1-6DDF-41A7-BFB0-A924B2C2C148}.Release|x64.Build.0 = Release|Any CPU
 		{46FEDCF1-6DDF-41A7-BFB0-A924B2C2C148}.Release|x86.ActiveCfg = Release|Any CPU
 		{46FEDCF1-6DDF-41A7-BFB0-A924B2C2C148}.Release|x86.Build.0 = Release|Any CPU
+		{ED107265-3DE8-4686-BEE4-83DBF878D550}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{ED107265-3DE8-4686-BEE4-83DBF878D550}.Debug|ARM.ActiveCfg = Debug|Win32
+		{ED107265-3DE8-4686-BEE4-83DBF878D550}.Debug|x64.ActiveCfg = Debug|x64
+		{ED107265-3DE8-4686-BEE4-83DBF878D550}.Debug|x64.Build.0 = Debug|x64
+		{ED107265-3DE8-4686-BEE4-83DBF878D550}.Debug|x86.ActiveCfg = Debug|Win32
+		{ED107265-3DE8-4686-BEE4-83DBF878D550}.Debug|x86.Build.0 = Debug|Win32
+		{ED107265-3DE8-4686-BEE4-83DBF878D550}.Release|Any CPU.ActiveCfg = Release|Win32
+		{ED107265-3DE8-4686-BEE4-83DBF878D550}.Release|ARM.ActiveCfg = Release|Win32
+		{ED107265-3DE8-4686-BEE4-83DBF878D550}.Release|x64.ActiveCfg = Release|x64
+		{ED107265-3DE8-4686-BEE4-83DBF878D550}.Release|x64.Build.0 = Release|x64
+		{ED107265-3DE8-4686-BEE4-83DBF878D550}.Release|x86.ActiveCfg = Release|Win32
+		{ED107265-3DE8-4686-BEE4-83DBF878D550}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

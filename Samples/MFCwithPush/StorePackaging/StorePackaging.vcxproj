@@ -168,6 +168,9 @@
     <None Include="Win32\PushTestserver.exe">
       <DeploymentContent>true</DeploymentContent>
     </None>
+    <None Include="Win32\UWPFeatures.dll">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="App.xaml.cpp">
