@@ -51,7 +51,7 @@ void TestClient::MainPage::connectBtn_Click(Platform::Object^ sender, Windows::U
 		this->connectBtn->IsEnabled = false;
 		connection = ref new AppServiceConnection();
 		connection->AppServiceName = "DataAppService";
-		connection->PackageFamilyName = "17855StefanWick.WinformsAppService_bvbr2n7re90hg";
+		connection->PackageFamilyName = "WinformsAppService_bvbr2n7re90hg";
 		create_task(connection->OpenAsync()).then([this](AppServiceConnectionStatus status)
 		{
 			this->connectBtn->IsEnabled = true;
