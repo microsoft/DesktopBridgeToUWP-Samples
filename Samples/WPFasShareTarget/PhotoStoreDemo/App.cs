@@ -12,6 +12,8 @@
 // // Copyright (c) Microsoft. All rights reserved.
 // // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
+using System.IO;
+using System.Reflection;
 using System.Windows;
 
 namespace PhotoStoreDemo
@@ -21,5 +23,14 @@ namespace PhotoStoreDemo
     /// </summary>
     public partial class App : Application
     {
+
+        internal static string CurrentPath
+        {
+            get
+            {
+                FileInfo fi = new FileInfo(Assembly.GetExecutingAssembly().Location);
+                return fi.DirectoryName;
+            }
+        }
     }
 }

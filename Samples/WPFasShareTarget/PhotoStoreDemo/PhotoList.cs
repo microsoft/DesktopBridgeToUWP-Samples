@@ -57,7 +57,7 @@ namespace PhotoStoreDemo
 
         private void Update()
         {
-            DirectoryInfo local = new DirectoryInfo(Windows.Storage.ApplicationData.Current.LocalFolder.Path);
+            DirectoryInfo local = new DirectoryInfo(System.IO.Path.Combine(App.CurrentPath, "Photos"));
             foreach (var f in local.GetFiles("*"))
             {
                 Add(new ImageFile(f.FullName));

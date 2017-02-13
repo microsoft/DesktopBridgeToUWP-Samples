@@ -24,6 +24,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
+using System.Reflection;
 
 namespace PhotoStoreDemo
 {
@@ -43,10 +44,12 @@ namespace PhotoStoreDemo
             InitializeComponent();
         }
 
+       
+
         private void WindowLoaded(object sender, EventArgs e)
         {
             // listen for files being created via Share UX
-            FileSystemWatcher watcher = new FileSystemWatcher(Windows.Storage.ApplicationData.Current.LocalFolder.Path);
+            FileSystemWatcher watcher = new FileSystemWatcher(App.CurrentPath);
             watcher.EnableRaisingEvents = true;
             watcher.Created += Watcher_Created;
 
