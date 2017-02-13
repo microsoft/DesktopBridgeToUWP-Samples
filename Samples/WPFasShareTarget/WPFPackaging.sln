@@ -7,7 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoStoreDemo", "PhotoStor
 EndProject
 Project("{262852C6-CD72-467D-83FE-5EEB1973A190}") = "PhotoStoreDemo.Package", "PhotoStoreDemo.Package\PhotoStoreDemo.Package.jsproj", "{C312DA62-4EA1-4862-9728-60F4480C4E51}"
 EndProject
-Project("{365BE41E-7993-430D-A5E6-1381A54BC077}") = "PhotoStoreDemo.PackageDebug", "PhotoStoreDemo.PackageDebug\PhotoStoreDemo.PackageDebug.vsdproj", "{63448EC7-3380-486B-9538-4562D54497E8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoStoreDemo.PackageDebug", "PhotoStoreDemo.PackageDebug\PhotoStoreDemo.PackageDebug.vsdproj", "{63448EC7-3380-486B-9538-4562D54497E8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C312DA62-4EA1-4862-9728-60F4480C4E51} = {C312DA62-4EA1-4862-9728-60F4480C4E51}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

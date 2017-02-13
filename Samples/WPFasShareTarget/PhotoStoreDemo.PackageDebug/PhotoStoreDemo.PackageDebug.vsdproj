@@ -26,7 +26,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <DefineConstants>DEBUG</DefineConstants>
     <OutputPath>bin\AnyCPU\Debug\</OutputPath>
-    <PackageLayout>..\PhotoStoreDemo.Package\bin\debug\</PackageLayout>
+    <PackageLayout>..\PhotoStoreDemo.Package\bin\debug\appx</PackageLayout>
     <StartupTile>PhotoStoreDemo</StartupTile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
