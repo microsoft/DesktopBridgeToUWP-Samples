@@ -21,48 +21,14 @@ namespace PhotoStoreDemo
     {
         private DirectoryInfo _directory;
 
-        public PhotoList()
+        public void Init(string path)
         {
-        }
-
-        public PhotoList(string path) : this(new DirectoryInfo(path))
-        {
-        }
-
-        public PhotoList(DirectoryInfo directory)
-        {
-            _directory = directory;
+            _directory = new DirectoryInfo(path);
             Update();
         }
-
-        public string Path
-        {
-            set
-            {
-                _directory = new DirectoryInfo(value);
-                Update();
-            }
-            get { return _directory.FullName; }
-        }
-
-        public DirectoryInfo Directory
-        {
-            set
-            {
-                _directory = value;
-                Update();
-            }
-            get { return _directory; }
-        }
-
+       
         private void Update()
         {
-            DirectoryInfo local = new DirectoryInfo(System.IO.Path.Combine(App.CurrentPath, "Photos"));
-            foreach (var f in local.GetFiles("*"))
-            {
-                Add(new ImageFile(f.FullName));
-            }
-
             foreach (var f in _directory.GetFiles("*"))
             {
                 Add(new ImageFile(f.FullName));

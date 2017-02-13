@@ -49,7 +49,7 @@ namespace PhotoStoreDemo
         private void WindowLoaded(object sender, EventArgs e)
         {
             // listen for files being created via Share UX
-            FileSystemWatcher watcher = new FileSystemWatcher(App.CurrentPath);
+            FileSystemWatcher watcher = new FileSystemWatcher(App.CurrentPhotosPath);
             watcher.EnableRaisingEvents = true;
             watcher.Created += Watcher_Created;
 
@@ -64,8 +64,7 @@ namespace PhotoStoreDemo
 #endif
 
             Photos = (PhotoList) (Application.Current.Resources["Photos"] as ObjectDataProvider)?.Data;
-            DirectoryInfo directory = new DirectoryInfo(System.Reflection.Assembly.GetEntryAssembly().Location).Parent;
-            Photos.Path = directory.FullName + @"\Photos";
+            Photos.Init(App.CurrentPhotosPath); 
             ShoppingCart = (PrintList) (Application.Current.Resources["ShoppingCart"] as ObjectDataProvider)?.Data;            
         }
 

@@ -24,12 +24,18 @@ namespace PhotoStoreDemo
     public partial class App : Application
     {
 
-        internal static string CurrentPath
+        internal static string CurrentPhotosPath
         {
             get
             {
                 FileInfo fi = new FileInfo(Assembly.GetExecutingAssembly().Location);
-                return fi.DirectoryName;
+                DirectoryInfo di = new DirectoryInfo(Path.Combine(fi.DirectoryName, "Photos"));
+                if (!di.Exists)
+                {
+                    MessageBox.Show($"Folder '{di.FullName}' not found.");
+                    Application.Current.Shutdown(1);
+                }
+                return di.FullName;
             }
         }
     }
