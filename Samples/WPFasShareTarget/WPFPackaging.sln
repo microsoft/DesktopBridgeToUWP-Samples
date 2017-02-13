@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoStoreDemo", "PhotoStor
 EndProject
 Project("{262852C6-CD72-467D-83FE-5EEB1973A190}") = "PhotoStoreDemo.Package", "PhotoStoreDemo.Package\PhotoStoreDemo.Package.jsproj", "{C312DA62-4EA1-4862-9728-60F4480C4E51}"
 EndProject
+Project("{365BE41E-7993-430D-A5E6-1381A54BC077}") = "PhotoStoreDemo.PackageDebug", "PhotoStoreDemo.PackageDebug\PhotoStoreDemo.PackageDebug.vsdproj", "{63448EC7-3380-486B-9538-4562D54497E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,30 @@ Global
 		{C312DA62-4EA1-4862-9728-60F4480C4E51}.Release|x86.ActiveCfg = Release|x86
 		{C312DA62-4EA1-4862-9728-60F4480C4E51}.Release|x86.Build.0 = Release|x86
 		{C312DA62-4EA1-4862-9728-60F4480C4E51}.Release|x86.Deploy.0 = Release|x86
+		{63448EC7-3380-486B-9538-4562D54497E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63448EC7-3380-486B-9538-4562D54497E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63448EC7-3380-486B-9538-4562D54497E8}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{63448EC7-3380-486B-9538-4562D54497E8}.Debug|ARM.ActiveCfg = Debug|ARM
+		{63448EC7-3380-486B-9538-4562D54497E8}.Debug|ARM.Build.0 = Debug|ARM
+		{63448EC7-3380-486B-9538-4562D54497E8}.Debug|ARM.Deploy.0 = Debug|ARM
+		{63448EC7-3380-486B-9538-4562D54497E8}.Debug|x64.ActiveCfg = Debug|x64
+		{63448EC7-3380-486B-9538-4562D54497E8}.Debug|x64.Build.0 = Debug|x64
+		{63448EC7-3380-486B-9538-4562D54497E8}.Debug|x64.Deploy.0 = Debug|x64
+		{63448EC7-3380-486B-9538-4562D54497E8}.Debug|x86.ActiveCfg = Debug|x86
+		{63448EC7-3380-486B-9538-4562D54497E8}.Debug|x86.Build.0 = Debug|x86
+		{63448EC7-3380-486B-9538-4562D54497E8}.Debug|x86.Deploy.0 = Debug|x86
+		{63448EC7-3380-486B-9538-4562D54497E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63448EC7-3380-486B-9538-4562D54497E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63448EC7-3380-486B-9538-4562D54497E8}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{63448EC7-3380-486B-9538-4562D54497E8}.Release|ARM.ActiveCfg = Release|ARM
+		{63448EC7-3380-486B-9538-4562D54497E8}.Release|ARM.Build.0 = Release|ARM
+		{63448EC7-3380-486B-9538-4562D54497E8}.Release|ARM.Deploy.0 = Release|ARM
+		{63448EC7-3380-486B-9538-4562D54497E8}.Release|x64.ActiveCfg = Release|x64
+		{63448EC7-3380-486B-9538-4562D54497E8}.Release|x64.Build.0 = Release|x64
+		{63448EC7-3380-486B-9538-4562D54497E8}.Release|x64.Deploy.0 = Release|x64
+		{63448EC7-3380-486B-9538-4562D54497E8}.Release|x86.ActiveCfg = Release|x86
+		{63448EC7-3380-486B-9538-4562D54497E8}.Release|x86.Build.0 = Release|x86
+		{63448EC7-3380-486B-9538-4562D54497E8}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
