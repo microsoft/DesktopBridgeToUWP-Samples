@@ -3,10 +3,11 @@
   xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
   xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
   xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
-  IgnorableNamespaces="uap mp">
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+  IgnorableNamespaces="uap mp rescap">
 
   <Identity
-    Name="c312da62-4ea1-4862-9728-60f4480c4e51"
+    Name="PhotoStoreDemo"
     Version="1.0.0.0"
     Publisher="CN=rmpablos" />
 
@@ -19,27 +20,29 @@
   </Properties>
 
   <Dependencies>
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.0" MaxVersionTested="10.0.14393.0" />
     <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
   </Dependencies>
 
   <Resources>
-    <Resource Language="x-generate" />
+    <Resource Language="en-us" />
   </Resources>
 
   <Applications>
     <Application 
-      Id="App"
-      StartPage="index.html">
+      Id="PhotoStoreDemo"
+       Executable="PhotoStoreDemo.exe" 
+       EntryPoint="Windows.FullTrustApplication">
 
       <uap:VisualElements
-        DisplayName="PhotoStoreDemo.Package"
-        Description="PhotoStoreDemo.Package"
+        DisplayName="PhotoStoreDemo"
+        Description="PhotoStoreDemo"
         BackgroundColor="transparent"
         Square150x150Logo="images\Square150x150Logo.png"
         Square44x44Logo="images\Square44x44Logo.png">
 
         <uap:DefaultTile Wide310x150Logo="images\Wide310x150Logo.png" />
-        <uap:SplashScreen Image="images\splashscreen.png" />
+       
 
       </uap:VisualElements>
     </Application>
@@ -47,6 +50,7 @@
 
   <Capabilities>
     <Capability Name="internetClient" />
+    <rescap:Capability Name="runFullTrust" />
   </Capabilities>
 
 </Package>
