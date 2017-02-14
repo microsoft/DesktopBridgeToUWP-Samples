@@ -24,6 +24,28 @@ namespace PhotoStoreDemo
     /// </summary>
     public partial class App : System.Windows.Application
     {
-        
+        public static string CommandLineArgOne = string.Empty;
+        public App()
+        {
+            ProcessCommandLine(Environment.GetCommandLineArgs());
+        }
+
+        private static void ProcessCommandLine(string[] args)
+        {
+            if (args.Length > 1)
+            {
+                var path = args[1];
+                var sourcePath = new FileInfo(path);
+                if (sourcePath.Exists)
+                {
+                    CommandLineArgOne = sourcePath.FullName;
+                    var destPath = new FileInfo(Path.Combine(PhotosFolder.Current, sourcePath.Name));
+                    if (!destPath.Exists)
+                    {
+                        File.Copy(sourcePath.FullName, destPath.FullName);
+                    }
+                }
+            }
+        }
     }
 }

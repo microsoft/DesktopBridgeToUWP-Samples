@@ -13,6 +13,7 @@
 // // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 using System;
+using System.Linq;
 using System.IO;
 using System.Collections;
 using System.Windows;
@@ -48,11 +49,7 @@ namespace PhotoStoreDemo
 
         private void WindowLoaded(object sender, EventArgs e)
         {
-            // listen for files being created via Share UX
-            FileSystemWatcher watcher = new FileSystemWatcher(PhotosFolder.Current);
-            watcher.EnableRaisingEvents = true;
-            watcher.Created += Watcher_Created;
-
+           
             var layer = AdornerLayer.GetAdornerLayer(CurrentPhoto);
             _cropSelector = new RubberbandAdorner(CurrentPhoto) {Window = this};
             layer.Add(_cropSelector);
@@ -65,7 +62,20 @@ namespace PhotoStoreDemo
 
             Photos = (PhotoList) (Application.Current.Resources["Photos"] as ObjectDataProvider)?.Data;
             Photos.Init(PhotosFolder.Current); 
-            ShoppingCart = (PrintList) (Application.Current.Resources["ShoppingCart"] as ObjectDataProvider)?.Data;            
+            ShoppingCart = (PrintList) (Application.Current.Resources["ShoppingCart"] as ObjectDataProvider)?.Data;
+
+            var current = Photos.FirstOrDefault(p => p.Path == App.CommandLineArgOne);
+            if (current!=null)
+            {
+                PhotoListBox.SelectedItem = current;
+                PhotoListBox.ScrollIntoView(current);
+            }
+
+            // listen for files being created via Share UX
+            FileSystemWatcher watcher = new FileSystemWatcher(PhotosFolder.Current);
+            //watcher.EnableRaisingEvents = true;
+            watcher.Created += Watcher_Created;
+
         }
 
         private void Watcher_Created(object sender, FileSystemEventArgs e)
@@ -74,7 +84,10 @@ namespace PhotoStoreDemo
             Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Normal, new Action(() =>
             {
                 ImageFile item = new ImageFile(e.FullPath);
-                Photos.Insert(0, item);
+                Photos.Add(item);
+
+                PhotoListBox.SelectedItem = item;
+                PhotoListBox.ScrollIntoView(item);
             }));
         }
 
@@ -270,6 +283,9 @@ namespace PhotoStoreDemo
             if (result == false) return;
             ImageFile item = new ImageFile(ofd.FileName);
             item.AddToCache();
+            Photos.Add(item);
+            PhotoListBox.SelectedItem = item;
+            PhotoListBox.ScrollIntoView(item);
         }
     }
 }
