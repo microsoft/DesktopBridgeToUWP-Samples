@@ -14,7 +14,11 @@ namespace PhotoStoreDemo
         {
             get
             {
-                var path = GetSafeAppxLocalFolder();
+                string path = null;
+                if (ExecutionMode.IsRunningAsUwp())
+                {
+                    path = ExecutionMode.GetSafeAppxLocalFolder();
+                }
                 if (path==null)
                 {
                     path = new FileInfo(Assembly.GetExecutingAssembly().Location).DirectoryName;
@@ -27,21 +31,6 @@ namespace PhotoStoreDemo
                 }
                 return path;
             }
-        }
-
-        private static string GetSafeAppxLocalFolder()
-        {
-            try
-            {
-                return Windows.Storage.ApplicationData.Current.LocalFolder.Path;
-            }
-            catch (InvalidOperationException ioe)
-            {
-
-                System.Diagnostics.Debug.WriteLine(ioe.Message);
-            }
-            return null;
-        }
-        
+        }   
     }
 }
