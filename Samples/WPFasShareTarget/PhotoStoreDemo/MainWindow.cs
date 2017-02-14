@@ -49,7 +49,9 @@ namespace PhotoStoreDemo
 
         private void WindowLoaded(object sender, EventArgs e)
         {
-           
+
+            
+
             var layer = AdornerLayer.GetAdornerLayer(CurrentPhoto);
             _cropSelector = new RubberbandAdorner(CurrentPhoto) {Window = this};
             layer.Add(_cropSelector);
@@ -64,18 +66,10 @@ namespace PhotoStoreDemo
             Photos.Init(PhotosFolder.Current); 
             ShoppingCart = (PrintList) (Application.Current.Resources["ShoppingCart"] as ObjectDataProvider)?.Data;
 
-            var current = Photos.FirstOrDefault(p => p.Path == App.CommandLineArgOne);
-            if (current!=null)
-            {
-                PhotoListBox.SelectedItem = current;
-                PhotoListBox.ScrollIntoView(current);
-            }
-
             // listen for files being created via Share UX
             FileSystemWatcher watcher = new FileSystemWatcher(PhotosFolder.Current);
-            //watcher.EnableRaisingEvents = true;
+            watcher.EnableRaisingEvents = true;
             watcher.Created += Watcher_Created;
-
         }
 
         private void Watcher_Created(object sender, FileSystemEventArgs e)
@@ -83,11 +77,13 @@ namespace PhotoStoreDemo
             // new file got created, adding it to the list
             Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Normal, new Action(() =>
             {
-                ImageFile item = new ImageFile(e.FullPath);
-                Photos.Add(item);
-
-                PhotoListBox.SelectedItem = item;
-                PhotoListBox.ScrollIntoView(item);
+                if (File.Exists(e.FullPath))
+                {
+                    ImageFile item = new ImageFile(e.FullPath);
+                    Photos.Insert(0, item);
+                    PhotoListBox.SelectedIndex = 0;
+                    CurrentPhoto.Source = (BitmapSource)item.Image;
+                }
             }));
         }
 
@@ -282,10 +278,7 @@ namespace PhotoStoreDemo
             var result = ofd.ShowDialog();
             if (result == false) return;
             ImageFile item = new ImageFile(ofd.FileName);
-            item.AddToCache();
-            Photos.Add(item);
-            PhotoListBox.SelectedItem = item;
-            PhotoListBox.ScrollIntoView(item);
+            item.AddToCache();           
         }
     }
 }
