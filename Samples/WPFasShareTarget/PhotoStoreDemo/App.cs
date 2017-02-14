@@ -15,7 +15,7 @@
 using System;
 using System.IO;
 using System.Reflection;
-
+using System.Windows;
 
 namespace PhotoStoreDemo
 {
@@ -24,21 +24,37 @@ namespace PhotoStoreDemo
     /// </summary>
     public partial class App : System.Windows.Application
     {
-        public static string CommandLineArgOne = string.Empty;
         public App()
         {
-            ProcessCommandLine(Environment.GetCommandLineArgs());
+            
         }
 
-        private static void ProcessCommandLine(string[] args)
+        protected override void OnStartup(StartupEventArgs e)
         {
-            if (args.Length > 1)
+            if (e.Args.Length > 0)
             {
-                var path = args[1];
+                ProcessCommandLine(e.Args);
+            }
+
+            base.OnStartup(e);
+            MainWindow window = new MainWindow();
+            window.Show();
+
+        }
+        
+        public void Activate()
+        {
+            this.MainWindow.Activate();
+        }
+
+        internal void ProcessCommandLine(string[] args)
+        {             
+            if (args.Length > 0)
+            {
+                var path = args[0];
                 var sourcePath = new FileInfo(path);
                 if (sourcePath.Exists)
                 {
-                    CommandLineArgOne = sourcePath.FullName;
                     var destPath = new FileInfo(Path.Combine(PhotosFolder.Current, sourcePath.Name));
                     if (!destPath.Exists)
                     {

@@ -8,6 +8,11 @@
         Title="MainWindow" Height="350" Width="525" WindowState="Maximized" Loaded="WindowLoaded">
 
     <Window.Resources>
+        
+        <ObjectDataProvider x:Name="PhotosODP" x:Key="Photos" ObjectType="{x:Type local:PhotoList}" />
+        <ObjectDataProvider x:Name="ShoppingCartODP" x:Key="ShoppingCart" ObjectType="{x:Type local:PrintList}" />
+        <ObjectDataProvider x:Name="PrintTypesODP" x:Key="PrintTypes" ObjectType="{x:Type local:PrintTypeList}" />
+        
         <LinearGradientBrush x:Key="WindowGradient" StartPoint="0,0.3" EndPoint="1,0">
             <LinearGradientBrush.GradientStops>
                 <GradientStop Color="#B2B6CAFF" Offset="0" />

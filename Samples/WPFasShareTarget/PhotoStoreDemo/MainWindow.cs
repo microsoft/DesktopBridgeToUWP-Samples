@@ -62,9 +62,9 @@ namespace PhotoStoreDemo
             CropSelector.ShowRect = false;
 #endif
 
-            Photos = (PhotoList) (Application.Current.Resources["Photos"] as ObjectDataProvider)?.Data;
+            Photos = (PhotoList) (this.Resources["Photos"] as ObjectDataProvider)?.Data;
             Photos.Init(PhotosFolder.Current); 
-            ShoppingCart = (PrintList) (Application.Current.Resources["ShoppingCart"] as ObjectDataProvider)?.Data;
+            ShoppingCart = (PrintList) (this.Resources["ShoppingCart"] as ObjectDataProvider)?.Data;
 
             // listen for files being created via Share UX
             FileSystemWatcher watcher = new FileSystemWatcher(PhotosFolder.Current);

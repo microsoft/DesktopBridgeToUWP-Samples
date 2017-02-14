@@ -81,6 +81,7 @@
     <ApplicationIcon>LogoWPGPhoto.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -101,22 +102,20 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </ApplicationDefinition>
+    <Compile Include="App.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="PhotosFolder.cs" />
     <Compile Include="PrintList.cs" />
     <Compile Include="Shirt.cs" />
+    <Compile Include="SingleInstanceManager.cs" />
+    <Compile Include="StartUp.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Compile Include="RubberbandAdorner.cs" />
-    <Compile Include="App.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="ImageFile.cs" />
     <Compile Include="GreetingCard.cs" />
     <Compile Include="MainWindow.cs">
@@ -158,6 +157,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="LogoWPGPhoto.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
