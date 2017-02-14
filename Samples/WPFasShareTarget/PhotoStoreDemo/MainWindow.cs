@@ -43,6 +43,7 @@ namespace PhotoStoreDemo
         {
             _undoStack = new Stack();
             InitializeComponent();
+            buttonAddPhoto.ToolTip = PhotosFolder.Current;
         }
 
        
