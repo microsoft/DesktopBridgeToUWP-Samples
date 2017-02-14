@@ -49,7 +49,7 @@ namespace PhotoStoreDemo
         private void WindowLoaded(object sender, EventArgs e)
         {
             // listen for files being created via Share UX
-            FileSystemWatcher watcher = new FileSystemWatcher(App.CurrentPhotosPath);
+            FileSystemWatcher watcher = new FileSystemWatcher(PhotosFolder.Current);
             watcher.EnableRaisingEvents = true;
             watcher.Created += Watcher_Created;
 
@@ -64,7 +64,7 @@ namespace PhotoStoreDemo
 #endif
 
             Photos = (PhotoList) (Application.Current.Resources["Photos"] as ObjectDataProvider)?.Data;
-            Photos.Init(App.CurrentPhotosPath); 
+            Photos.Init(PhotosFolder.Current); 
             ShoppingCart = (PrintList) (Application.Current.Resources["ShoppingCart"] as ObjectDataProvider)?.Data;            
         }
 
@@ -261,6 +261,15 @@ namespace PhotoStoreDemo
         {
             _undoStack.Clear();
             UndoButton.IsEnabled = false;
+        }
+
+        private void AddPhoto(object sender, RoutedEventArgs e)
+        {
+            var ofd = new Microsoft.Win32.OpenFileDialog() { Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|GIF Files (*.gif)|*.gif" };
+            var result = ofd.ShowDialog();
+            if (result == false) return;
+            ImageFile item = new ImageFile(ofd.FileName);
+            item.AddToCache();
         }
     }
 }

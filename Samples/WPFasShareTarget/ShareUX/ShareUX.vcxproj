@@ -120,6 +120,9 @@
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
     </ClCompile>
+    <PreBuildEvent>
+      <Command>copy /y "$(SolutionDir)PhotoStoreDemo\bin\x86\$(Configuration)\*" "$(ProjectDir)Win32\" </Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -165,6 +168,9 @@
     <None Include="Win32\PhotoStoreDemo.exe">
       <DeploymentContent>true</DeploymentContent>
     </None>
+    <None Include="Win32\PhotoStoreDemo.exe.config">
+      <FileType>Text</FileType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\LargeTile.scale-100.png" />
@@ -183,14 +189,6 @@
     <Image Include="Assets\StoreLogo.scale-200.png" />
     <Image Include="Assets\Wide310x150Logo.scale-100.png" />
     <Image Include="Assets\Wide310x150Logo.scale-200.png" />
-    <Image Include="Win32\Photos\flower1.jpg" />
-    <Image Include="Win32\Photos\flower2.jpg" />
-    <Image Include="Win32\Photos\leaf1.jpg" />
-    <Image Include="Win32\Photos\leaf2.jpg" />
-    <Image Include="Win32\Photos\skyline.jpg" />
-    <Image Include="Win32\Photos\sunlight through sequoias.jpg" />
-    <Image Include="Win32\Photos\sunset.jpg" />
-    <Image Include="Win32\Photos\winter1.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="App.xaml.cpp">

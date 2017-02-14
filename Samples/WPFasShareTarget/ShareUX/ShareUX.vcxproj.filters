@@ -8,6 +8,9 @@
       <UniqueIdentifier>ae31fea3-4f24-4abd-9dfc-a6b56d5e161b</UniqueIdentifier>
       <Extensions>bmp;fbx;gif;jpg;jpeg;tga;tiff;tif;png</Extensions>
     </Filter>
+    <Filter Include="Win32">
+      <UniqueIdentifier>{b7ee0e3e-96b4-4a33-8801-457ddc624182}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml" />
@@ -71,30 +74,6 @@
     <Image Include="Assets\StoreLogo.scale-200.png">
       <Filter>Assets</Filter>
     </Image>
-    <Image Include="Win32\Photos\flower1.jpg">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Win32\Photos\flower2.jpg">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Win32\Photos\leaf1.jpg">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Win32\Photos\leaf2.jpg">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Win32\Photos\skyline.jpg">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Win32\Photos\sunlight through sequoias.jpg">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Win32\Photos\sunset.jpg">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Win32\Photos\winter1.jpg">
-      <Filter>Assets</Filter>
-    </Image>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest" />
@@ -103,7 +82,12 @@
     <None Include="ShareUX_TemporaryKey.pfx" />
     <None Include="Package.StoreAssociation.xml" />
     <None Include="ShareUX_StoreKey.pfx" />
-    <None Include="Win32\PhotoStoreDemo.exe" />
+    <None Include="Win32\PhotoStoreDemo.exe">
+      <Filter>Win32</Filter>
+    </None>
+    <None Include="Win32\PhotoStoreDemo.exe.config">
+      <Filter>Win32</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Page Include="MainPage.xaml" />

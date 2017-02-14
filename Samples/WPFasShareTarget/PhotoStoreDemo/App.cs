@@ -12,31 +12,18 @@
 // // Copyright (c) Microsoft. All rights reserved.
 // // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
+using System;
 using System.IO;
 using System.Reflection;
-using System.Windows;
+
 
 namespace PhotoStoreDemo
 {
     /// <summary>
     ///     Interaction logic for App.xaml
     /// </summary>
-    public partial class App : Application
+    public partial class App : System.Windows.Application
     {
-
-        internal static string CurrentPhotosPath
-        {
-            get
-            {
-                FileInfo fi = new FileInfo(Assembly.GetExecutingAssembly().Location);
-                DirectoryInfo di = new DirectoryInfo(Path.Combine(fi.DirectoryName, "Photos"));
-                if (!di.Exists)
-                {
-                    MessageBox.Show($"Folder '{di.FullName}' not found.");
-                    Application.Current.Shutdown(1);
-                }
-                return di.FullName;
-            }
-        }
+        
     }
 }

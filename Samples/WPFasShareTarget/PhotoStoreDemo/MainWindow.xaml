@@ -518,10 +518,10 @@
                 <ColumnDefinition Width="160" />
             </Grid.ColumnDefinitions>
 
-            <TextBlock Grid.Row="0" Grid.ColumnSpan="3" Style="{DynamicResource TitleText}">
+            <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Style="{DynamicResource TitleText}">
                 <Span>Order Prints and Gifts</Span>
             </TextBlock>
-
+            <Button Grid.Row="0" Grid.Column="2" Content="Add Photo" Click="AddPhoto"/>
             <ListBox Style="{DynamicResource PhotoListStyle}"
                      Grid.Row="1"
                      Grid.ColumnSpan="3"

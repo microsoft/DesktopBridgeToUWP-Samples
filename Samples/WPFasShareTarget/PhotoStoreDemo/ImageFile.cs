@@ -13,6 +13,7 @@
 // // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 using System;
+using System.IO;
 using System.Windows.Media.Imaging;
 
 namespace PhotoStoreDemo
@@ -31,5 +32,18 @@ namespace PhotoStoreDemo
         public BitmapFrame Image { get; }
 
         public override string ToString() => Path;
+
+        public void AddToCache()
+        { 
+            var fi = new FileInfo(Path);
+            var cachedFile = new FileInfo(System.IO.Path.Combine(PhotosFolder.Current, fi.Name));
+            if (!cachedFile.Exists)
+            {
+                File.Copy(fi.FullName, cachedFile.FullName);
+            }
+            
+            
+
+        }
     }
 }
