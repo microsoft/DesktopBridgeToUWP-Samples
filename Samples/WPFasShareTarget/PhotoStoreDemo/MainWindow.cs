@@ -13,6 +13,7 @@
 // // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 using System;
+using System.Linq;
 using System.IO;
 using System.Collections;
 using System.Windows;
@@ -24,6 +25,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
+using System.Reflection;
 
 namespace PhotoStoreDemo
 {
@@ -41,15 +43,25 @@ namespace PhotoStoreDemo
         {
             _undoStack = new Stack();
             InitializeComponent();
+            buttonAddPhoto.ToolTip = PhotosFolder.Current;
         }
+
+       
 
         private void WindowLoaded(object sender, EventArgs e)
         {
-            // listen for files being created via Share UX
-            FileSystemWatcher watcher = new FileSystemWatcher(Windows.Storage.ApplicationData.Current.LocalFolder.Path);
-            watcher.EnableRaisingEvents = true;
-            watcher.Created += Watcher_Created;
 
+            if (ExecutionMode.IsRunningAsUwp())
+            {
+                this.Title = "Desktop Bridge App: PhotoStore --- (Windows App Package)";
+                this.TitleSpan.Foreground = Brushes.Blue;
+            }
+            else
+            {
+                this.Title = "Desktop App";
+                this.TitleSpan.Foreground = Brushes.Navy;
+            }
+            
             var layer = AdornerLayer.GetAdornerLayer(CurrentPhoto);
             _cropSelector = new RubberbandAdorner(CurrentPhoto) {Window = this};
             layer.Add(_cropSelector);
@@ -60,10 +72,14 @@ namespace PhotoStoreDemo
             CropSelector.ShowRect = false;
 #endif
 
-            Photos = (PhotoList) (Application.Current.Resources["Photos"] as ObjectDataProvider)?.Data;
-            DirectoryInfo directory = new DirectoryInfo(System.Reflection.Assembly.GetEntryAssembly().Location).Parent;
-            Photos.Path = directory.FullName + @"\Photos";
-            ShoppingCart = (PrintList) (Application.Current.Resources["ShoppingCart"] as ObjectDataProvider)?.Data;            
+            Photos = (PhotoList) (this.Resources["Photos"] as ObjectDataProvider)?.Data;
+            Photos.Init(PhotosFolder.Current); 
+            ShoppingCart = (PrintList) (this.Resources["ShoppingCart"] as ObjectDataProvider)?.Data;
+
+            // listen for files being created via Share UX
+            FileSystemWatcher watcher = new FileSystemWatcher(PhotosFolder.Current);
+            watcher.EnableRaisingEvents = true;
+            watcher.Created += Watcher_Created;
         }
 
         private void Watcher_Created(object sender, FileSystemEventArgs e)
@@ -71,8 +87,13 @@ namespace PhotoStoreDemo
             // new file got created, adding it to the list
             Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Normal, new Action(() =>
             {
-                ImageFile item = new ImageFile(e.FullPath);
-                Photos.Insert(0, item);
+                if (File.Exists(e.FullPath))
+                {
+                    ImageFile item = new ImageFile(e.FullPath);
+                    Photos.Insert(0, item);
+                    PhotoListBox.SelectedIndex = 0;
+                    CurrentPhoto.Source = (BitmapSource)item.Image;
+                }
             }));
         }
 
@@ -259,6 +280,15 @@ namespace PhotoStoreDemo
         {
             _undoStack.Clear();
             UndoButton.IsEnabled = false;
+        }
+
+        private void AddPhoto(object sender, RoutedEventArgs e)
+        {
+            var ofd = new Microsoft.Win32.OpenFileDialog() { Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|GIF Files (*.gif)|*.gif" };
+            var result = ofd.ShowDialog();
+            if (result == false) return;
+            ImageFile item = new ImageFile(ofd.FileName);
+            item.AddToCache();           
         }
     }
 }

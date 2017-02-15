@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition="'$(Configuration)' == ''">Debug</Configuration>
+    <Platform Condition="'$(Platform)' == ''">x86</Platform>
+    <ProjectTypeGuids>{365BE41E-7993-430D-A5E6-1381A54BC077};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{63448EC7-3380-486B-9538-4562D54497E8}</ProjectGuid>
+    <MinimumVisualStudioVersion>15</MinimumVisualStudioVersion>
+    <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DefineConstants>DEBUG</DefineConstants>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DefineConstants>DEBUG</DefineConstants>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DefineConstants>DEBUG</DefineConstants>
+    <OutputPath>bin\AnyCPU\Debug\</OutputPath>
+    <PackageLayout>..\PhotoStoreDemo.Package\bin\debug\appx</PackageLayout>
+    <StartupTile>PhotoStoreDemo</StartupTile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\AnyCPU\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DefineConstants>DEBUG</DefineConstants>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="AppXPackageFileList.xml">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">15.0</VisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>PhotoStoreDemo.PackageDebug</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(MSBuildProjectFullPath).user" Condition="Exists('$(MSBuildProjectFullPath).user')" />
+  <Import Project="$(MSBuildProjectDirectory)\AppXPackageFileList.xml" />
+  <PropertyGroup>
+    <BuildDependsOn>
+      _CopyAppXFilesToPackageLayout;
+    </BuildDependsOn>
+  </PropertyGroup>
+  <Target Name="_CopyAppXFilesToPackageLayout">
+    <Error Condition="!Exists(%(LayoutFile.FullPath))" Text="LayoutFile does not exist [%(LayoutFile.FullPath)]" />
+    <Copy Condition="Exists(%(LayoutFile.Identity))" SourceFiles="@(LayoutFile)" DestinationFiles="@(LayoutFile->'%(PackagePath)')" SkipUnchangedFiles="true" />
+    <ItemGroup>
+      <PdbToCopy Condition="Exists(%(LayoutFile.Identity))" Include="$([System.String]::Copy('%(LayoutFile.FullPath)').Replace('%(LayoutFile.Extension)','.pdb'))">
+        <PackagePath>$([System.String]::Copy('%(LayoutFile.PackagePath)').Replace('%(LayoutFile.Extension)','.pdb'))</PackagePath>
+      </PdbToCopy>
+    </ItemGroup>
+    <Copy Condition="Exists(%(PdbToCopy.Identity))" SourceFiles="@(PdbToCopy)" DestinationFiles="@(PdbToCopy->'%(PackagePath)')" SkipUnchangedFiles="true" />
+  </Target>
+  <Target Name="Build" DependsOnTargets="$(BuildDependsOn)" />
+  <Target Name="Rebuild" DependsOnTargets="Build" />
+  <Target Name="Clean" />
+</Project>

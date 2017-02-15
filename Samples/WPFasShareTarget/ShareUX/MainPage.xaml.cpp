@@ -71,6 +71,7 @@ void MainPage::OnNavigatedTo(NavigationEventArgs^ e)
 
 void ShareUX::MainPage::ShareBtn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {	
+
 	file->CopyAsync(Windows::Storage::ApplicationData::Current->LocalFolder);
 	operation->ReportCompleted();
 }
