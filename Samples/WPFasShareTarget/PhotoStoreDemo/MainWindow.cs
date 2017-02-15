@@ -51,8 +51,17 @@ namespace PhotoStoreDemo
         private void WindowLoaded(object sender, EventArgs e)
         {
 
+            if (ExecutionMode.IsRunningAsUwp())
+            {
+                this.Title = "Desktop Bridge App: PhotoStore --- (Windows App Package)";
+                this.TitleSpan.Foreground = Brushes.Blue;
+            }
+            else
+            {
+                this.Title = "Desktop App";
+                this.TitleSpan.Foreground = Brushes.Navy;
+            }
             
-
             var layer = AdornerLayer.GetAdornerLayer(CurrentPhoto);
             _cropSelector = new RubberbandAdorner(CurrentPhoto) {Window = this};
             layer.Add(_cropSelector);
