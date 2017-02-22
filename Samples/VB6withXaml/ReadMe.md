@@ -12,7 +12,7 @@ Build/Deploy and Run the sample
 
 This folder contains the source code and project file for the VB6 application in this sample.
 This project produces the 'Landmarks.exe' binary that is included in the Store Package for this sample.
-To modify and rebuild the VB6 application, you will need to install the legacy Visual Basic 6.0 IDE.
+To modify and rebuild the VB6 application, you will need to install the legacy Visual Basic 6.0 IDE. For more information on how to do it follow the [microsoft support statement for VB 6.0] (https://msdn.microsoft.com/en-us/vstudio/ms788708.aspx) and the [lifecycle support policy FAQ] (https://support.microsoft.com/en-us/help/17959/lifecycle-support-policy-faq-microsoft-developer-tools)
 
  - If you don't want to rebuild the VB6 code, go to your repo at YOUR_PATH\Samples\VB6withXaml\Xaml.MapUI\Win32 and rename the file extenstion from txt to exe
  - Set the Xaml.MapUI as startup project
