@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="ApplicationDescription" xml:space="preserve">
+    <value>Contoso Demo app with localized resources (English)</value>
+  </data>
+  <data name="ApplicationDisplayName" xml:space="preserve">
+    <value>Contoso Demo Sample (English)</value>
+  </data>
+  <data name="PackageDisplayName" xml:space="preserve">
+    <value>Contoso Demo Package (English)</value>
+  </data>
+  <data name="PublisherDisplayName" xml:space="preserve">
+    <value>Contoso Samples, USA</value>
+  </data>
+  <data name="TileShortName" xml:space="preserve">
+    <value>Contoso (EN)</value>
+  </data>
+</root>
