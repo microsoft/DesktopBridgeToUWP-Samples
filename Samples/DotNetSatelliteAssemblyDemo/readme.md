@@ -59,8 +59,13 @@ A typical program only needs to make two calls to `PriResourceResolver` to enabl
       PriResourceResolver.Enable();
     }
     
-The rest of the `Program.cs` file is basically just test code.
-
+The rest of the `Program.cs` file is basically just test code that explicitly changes the
+thread's locale in order to force different localized resources to load. A normal app would 
+not do this; they would simply rely on the user's language preferences to set the default UI
+Culture. The purpose of the application is to illustrate usage of the PriResourceResolver helper 
+class, which bridges the gap between the .NET Satellite Assembly model and the MRT Resource 
+Package model.
+        
 The `PriResourceResolver.cs` file has the logic to actually support resolution of .NET satellite
 assemblies by UWP apps. For more information about what this file is doing, please see [the **Using 
 MRT for Converted Desktop apps and games** whitepaper](http://aka.ms/MrtForCentennial).
@@ -138,3 +143,6 @@ The batch file simply copies the build output from `%BINARY_SOURCE%` and then us
 SDK utilities `makepri`, `makeappx`, and `signtool` to make and sign the AppX package.
 For more information about what the batch file does, see [the **Using MRT for Converted 
 Desktop apps and games** whitepaper](http://aka.ms/MrtForCentennial).
+
+If you need to create a signing certificate for your AppX, you can use the batch file in
+the `SigningCerts` directory that is a peer of this sample.
