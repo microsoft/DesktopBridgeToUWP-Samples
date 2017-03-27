@@ -14,7 +14,7 @@ This folder contains the source code and project file for the ACDual application
 The ACDual project produces the 'ACDual.exe' binary and ACDual.tlb typelib that is included in the Store Package for this sample.  To modify and rebuild the application, you need to ensure MFC is installed with Visual Studio.  To build the project:
  - Load ACDual.sln in Visual Studio and Build
  - Copy ACDual.exe and ACDual.tlb from the build output into the \PackageFiles folder
- - Rebuild the app package with makeappx from a Developer Command Prompt for VS, ie:
+ - Using makeappx.exe from your Windows 10 SDK folder, rebuild the app package from the command line, ie:
  `makeappx pack /l /p acdual.appx /d packagefiles`
 
 - To sideload the application, you will need to sign it using signtool.  Refer to the MSDN topic on signing (https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-signing).
@@ -24,3 +24,8 @@ The ACDual project produces the 'ACDual.exe' binary and ACDual.tlb typelib that 
 Windows Store App
 -----------------
  You can also check out the app in the [Window Store] (https://www.microsoft.com/store/apps/9nm1gvnkhjnf)
+
+Requirements
+-----------------
+- Packaged Com in UWP apps requires the Windows 10 Creators Update or higher
+- Packaged Com requires Windows 10 SDK version 10.0.15063 or higher
