@@ -13,7 +13,7 @@ This folder contains source code for the MFC Scribble sample and a PackageFiles 
  - Load Scribble.sln
  - Change the build configuration to Retail|x86, then Build and Deploy the project
  - Copy the output, Scribble.exe into the PackageFiles folder
- - To rebuild the package, use makeappx from the Developer Tools for Visual Studio command prompt:
+  - Use makeappx.exe from the Windows 10 SDK to rebuild the package, ie:
  `makeappx pack /l /p Scribble.appx /d packagefiles`
 - To sideload the application, you will need to sign it using signtool.  Refer to the MSDN topic on [signing] (https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-signing).
 
@@ -23,4 +23,7 @@ Windows Store App
 -----------------
  You can also check out the app in the [Window Store] (https://www.microsoft.com/store/apps/9n4xcm905zkj)
  
-  
+ Requirements
+----------------
+- Packaged Com support in UWP requires Windows 10 Creators Update or higher
+- Packaged Com requries the Windows 10 SDK version 10.0.15063 or higher.
