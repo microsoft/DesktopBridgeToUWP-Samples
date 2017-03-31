@@ -13,7 +13,7 @@ For more info on UWP apps, [see](https://msdn.microsoft.com/en-us/windows/uwp/ge
 
 ## Feedback
 
-- Ask a question or request a feature on [User Voice] (https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial)
+- Ask a question or request a feature on [User Voice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial)
 - File a bug in [GitHub Issues](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/issues)
 	
 ## License
