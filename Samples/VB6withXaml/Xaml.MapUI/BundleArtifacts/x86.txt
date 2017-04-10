@@ -1,0 +1,3 @@
+MainPackage=C:\Blogs\VB6withXaml - Store3\Release\Xaml.MapUI\Xaml.MapUI_1.1.17.0_Win32.appx
+SymbolPackage=C:\Blogs\VB6withXaml - Store3\AppPackages\Xaml.MapUI\Xaml.MapUI_1.1.17.0_Test\Xaml.MapUI_1.1.17.0_Win32.appxsym
+ResourcePack=C:\Blogs\VB6withXaml - Store3\Release\Xaml.MapUI\Xaml.MapUI_1.1.17.0_scale-100.appx

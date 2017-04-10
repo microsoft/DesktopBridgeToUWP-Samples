@@ -1,5 +1,9 @@
 @ECHO OFF
 
+REM
+REM See readme.md for information on this batch file
+REM
+
 SET CERTIFICATE_PATH=.
 SET CERTIFICATE_NAME=contoso_demo
 

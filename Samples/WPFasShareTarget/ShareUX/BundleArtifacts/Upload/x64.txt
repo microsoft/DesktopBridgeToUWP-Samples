@@ -1,0 +1,3 @@
+MainPackage=c:\users\swick\documents\visual studio 2017\Projects\WPFasShareTarget\x64\Release\ShareUX\Upload\ShareUX_1.1.1.0_x64.appx
+SymbolPackage=c:\users\swick\documents\visual studio 2017\Projects\WPFasShareTarget\AppPackages\ShareUX\ShareUX_1.1.1.0\ShareUX_1.1.1.0_x64.appxsym
+ResourcePack=c:\Users\swick\documents\visual studio 2017\Projects\WPFasShareTarget\ShareUX\_scale-100.appx

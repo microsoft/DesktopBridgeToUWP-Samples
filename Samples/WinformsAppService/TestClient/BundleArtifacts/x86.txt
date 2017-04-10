@@ -1,0 +1,2 @@
+MainPackage=c:\users\swick\documents\visual studio 2017\Projects\Winforms AppService\Release\TestClient\TestClient_1.1.2.0_Win32.appx
+SymbolPackage=c:\users\swick\documents\visual studio 2017\Projects\Winforms AppService\AppPackages\TestClient\TestClient_1.1.2.0_Test\TestClient_1.1.2.0_Win32.appxsym

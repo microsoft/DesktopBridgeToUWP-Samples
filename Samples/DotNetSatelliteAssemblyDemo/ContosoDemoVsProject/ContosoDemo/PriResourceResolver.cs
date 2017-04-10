@@ -1,4 +1,13 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved
+﻿//*
+//
+// Copyright (c) Microsoft. All rights reserved.
+// This code is licensed under the MIT License (MIT).
+// THIS CODE IS PROVIDED AS IS WITHOUT WARRANTY OF
+// ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY
+// IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR
+// PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
+//
+//*
 
 using System;
 using System.Diagnostics;
@@ -204,11 +213,17 @@ namespace ContosoDemo
         private static Assembly LoadAssemblyFromPackageGraph(string absoluteAssemblyName, Package package)
         {
             if (IsFileNameInsideDirectoryName(absoluteAssemblyName, package.InstalledLocation.Path))
+            {
                 return Assembly.UnsafeLoadFrom(absoluteAssemblyName);
+            }
 
             foreach (var dependency in package.Dependencies)
+            {
                 if (IsFileNameInsideDirectoryName(absoluteAssemblyName, dependency.InstalledLocation.Path))
+                {
                     return Assembly.UnsafeLoadFrom(absoluteAssemblyName);
+                }
+            }
 
             throw new InvalidOperationException("Tried to load an assembly from outside the package graph");
         }

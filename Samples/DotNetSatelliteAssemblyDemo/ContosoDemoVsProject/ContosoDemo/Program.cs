@@ -1,4 +1,13 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved
+﻿//*
+//
+// Copyright (c) Microsoft. All rights reserved.
+// This code is licensed under the MIT License (MIT).
+// THIS CODE IS PROVIDED AS IS WITHOUT WARRANTY OF
+// ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY
+// IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR
+// PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
+//
+//*
 
 using System;
 using System.Diagnostics;
@@ -14,18 +23,7 @@ namespace ContosoDemo
         /// <summary>
         /// This is a trivial test program that simply tries to resolve various resource
         /// strings using different languages, including one for which we have not localized.
-        /// 
-        /// Most normal apps would not do this; they would simply rely on the user's language
-        /// preferences to set the default UI Culture. The purpose of the application is 
-        /// to illustrate usage of the PriResourceResolver helper class, which bridges the 
-        /// gap between the .NET Satellite Assembly model and the MRT Resource Package model.
-        /// 
-        /// This program is specifically designed as an example of how a .NET applications
-        /// could migrate to the Desktop App Bridge to be packaged as an AppX and shipped in
-        /// the Windows Store.
-        /// 
-        /// A whitepaper that more fully discusses MRT localization for converted Desktop Apps
-        /// can be found at <TODO: Need final published URI>
+        /// See 'readme.md' for more information.
         /// </summary>
         /// <param name="commandLine">Unused; command-line arguments</param>
         static void Main(string[] commandLine)
