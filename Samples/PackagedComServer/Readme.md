@@ -11,16 +11,21 @@ Build/Deploy and Run the sample
 -------------------------------
 
 This folder contains the source code and project file for the ACDual application in this sample, a folder for packaging server into a UWP that includes the manifest and assets created using the Desktop App Converter, and a folder with a C# Winforms app that drives uses the com server.
-The ACDual project produces the 'ACDual.exe' binary and ACDual.tlb typelib that is included in the Store Package for this sample.  To modify and rebuild the application, you need to ensure MFC is installed with Visual Studio.  To build the project:
+The ACDual project produces the 'ACDual.exe' binary and 'AutoClik.tlb' typelib that is included in the Store Package for this sample.  To modify and rebuild the application, you need to ensure MFC is installed with Visual Studio.  To build the project:
  - Load ACDual.sln in Visual Studio and Build
- - Copy ACDual.exe and ACDual.tlb from the build output into the \PackageFiles folder
- - Rebuild the app package with makeappx from a Developer Command Prompt for VS, ie:
+ - Copy ACDual.exe and AutoClik.tlb from the build output into the \PackageFiles folder
+ - Using makeappx.exe from your Windows 10 SDK folder, rebuild the app package from the command line, ie:
  `makeappx pack /l /p acdual.appx /d packagefiles`
 
 - To sideload the application, you will need to sign it using signtool.  Refer to the MSDN topic on signing (https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-signing).
 
-- To build the client winforms application, load the AutoClickClient.sln file in Visual Studio and build.
+- To build the client winforms application, first you will need to manually register the AutoClik.tlb file from the server.  You can do this from an administrator command prompt using the command "regtlib autoclik.tlb".  Then you can load the AutoClickClient.sln file in Visual Studio and build.
 
 Windows Store App
 -----------------
  You can also check out the app in the [Window Store] (https://www.microsoft.com/store/apps/9nm1gvnkhjnf)
+
+Requirements
+-----------------
+- Packaged Com in UWP apps requires the Windows 10 Creators Update or higher
+- Packaged Com requires Windows 10 SDK version 10.0.15063 or higher
