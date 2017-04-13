@@ -19,7 +19,7 @@ The ACDual project produces the 'ACDual.exe' binary and 'AutoClik.tlb' typelib t
 
 - To sideload the application, you will need to sign it using signtool.  Refer to the MSDN topic on signing (https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-signing).
 
-- To build the client winforms application, first you will need to manually register the AutoClik.tlb file from the server.  You can do this from an administrator command prompt using the command "regtlib autoclik.tlb".  Then you can load the AutoClickClient.sln file in Visual Studio and build.
+- To build the client winforms application, first you will need to install the server package. Then you can load the AutoClickClient.sln file in Visual Studio and build.
 
 Windows Store App
 -----------------
