@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package
+	xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
+	xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+	xmlns:uap2="http://schemas.microsoft.com/appx/manifest/uap/windows10/2"
+	xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
+	xmlns:desktop2="http://schemas.microsoft.com/appx/manifest/desktop/windows10/2"
+	xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+	xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10">
+
+  <Identity
+    Name="DesktopBridgePDFPrinter"
+    Version="1.0.0.0"
+    Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
+
+  <mp:PhoneIdentity PhoneProductId="e873643b-8f9a-4baf-aa2a-730d104dd3f0" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  
+  <Properties>
+    <DisplayName>UWP.Printer</DisplayName>
+    <PublisherDisplayName>Microsoft Corporation</PublisherDisplayName>
+    <Logo>Assets\storelogo.png</Logo>
+  </Properties>
+
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
+  </Dependencies>
+
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+
+  <Applications>
+    <Application
+      Id="DesktopBridgePDFPrinter"
+      Executable="win32\PrintToPDF.exe"
+      EntryPoint="Windows.FullTrustApplication">
+
+      <uap:VisualElements
+        DisplayName="UWP.Printer"
+        Description="UWP.Printer"
+        BackgroundColor="#777777"
+        Square150x150Logo="Assets\SampleAppx.150x150.png" 
+        Square44x44Logo="Assets\SampleAppx.44x44.png" />
+      
+      <Extensions>
+        <desktop2:Extension Category="windows.appPrinter">
+          <desktop2:AppPrinter DisplayName="Send to DesktopBridge PDF Printer" Parameters="/insertdoc %1" />
+        </desktop2:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+
+  <Capabilities>
+    <rescap:Capability Name="runFullTrust" />
+  </Capabilities>
+
+</Package>
