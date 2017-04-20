@@ -20,4 +20,4 @@ Build/Deploy and Run the sample
 Notes
 ------
 
-- You can learn more about Background tasks [here] (https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.background.aspx) 
+- You can learn more about Background tasks [here](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.background.aspx) 
