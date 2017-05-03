@@ -6,6 +6,7 @@ REM
 
 SET CERTIFICATE_PATH=.
 SET CERTIFICATE_NAME=contoso_demo
+SET FULL_CERTIFICATE_NAME=%CERTIFICATE_PATH%\%CERTIFICATE_NAME%
 
 REM If you change the X509_NAME, you *must* also change the Identity in the AppX Manifest
 REM to match, otherwise 'signtool' will give a cryptic error.
@@ -29,13 +30,13 @@ ECHO.
 
 IF NOT EXIST %CERTIFICATE_PATH% mkdir %CERTIFICATE_PATH%
 
-IF EXIST %CERTIFICATE_PATH%\%CERTIFICATE_NAME%.pvk del %CERTIFICATE_PATH%\%CERTIFICATE_NAME%.pvk
-IF EXIST %CERTIFICATE_PATH%\%CERTIFICATE_NAME%.cer del %CERTIFICATE_PATH%\%CERTIFICATE_NAME%.cer
-IF EXIST %CERTIFICATE_PATH%\%CERTIFICATE_NAME%.pfx del %CERTIFICATE_PATH%\%CERTIFICATE_NAME%.pfx
+IF EXIST %FULL_CERTIFICATE_NAME%.pvk del %FULL_CERTIFICATE_NAME%.pvk
+IF EXIST %FULL_CERTIFICATE_NAME%.cer del %FULL_CERTIFICATE_NAME%.cer
+IF EXIST %FULL_CERTIFICATE_NAME%.pfx del %FULL_CERTIFICATE_NAME%.pfx
 
-makecert /n %X509_NAME% /r /h 0 /eku "1.3.6.1.5.5.7.3.3,1.3.6.1.4.1.311.10.3.13" /e %EXPIRY_DATE% /sv %CERTIFICATE_PATH%\contoso_demo.pvk %CERTIFICATE_PATH%\contoso_demo.cer
-pvk2pfx /pvk %CERTIFICATE_PATH%\contoso_demo.pvk /spc %CERTIFICATE_PATH%\contoso_demo.cer /pfx %CERTIFICATE_PATH%\contoso_demo.pfx
-certutil -addstore TrustedPeople %CERTIFICATE_PATH%\contoso_demo.cer
+makecert /n %X509_NAME% /r /h 0 /eku "1.3.6.1.5.5.7.3.3,1.3.6.1.4.1.311.10.3.13" /e %EXPIRY_DATE% /sv %FULL_CERTIFICATE_NAME%.pvk %FULL_CERTIFICATE_NAME%.cer
+pvk2pfx /pvk %FULL_CERTIFICATE_NAME%.pvk /spc %FULL_CERTIFICATE_NAME%.cer /pfx %FULL_CERTIFICATE_NAME%.pfx
+certutil -addstore TrustedPeople %FULL_CERTIFICATE_NAME%.cer
 
 ECHO.
 ECHO Done.
@@ -49,5 +50,5 @@ ECHO users. See 'readme.md' for more information
 ECHO.
 ECHO Here are the current permissions on the files, FYI:
 ECHO.
-icacls %CERTIFICATE_PATH%\%CERTIFICATE_NAME%.*
 
+icacls %FULL_CERTIFICATE_NAME%.*
