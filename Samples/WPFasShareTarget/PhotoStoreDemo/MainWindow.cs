@@ -26,6 +26,9 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Reflection;
+using System.Runtime.InteropServices;
+using Windows.UI.StartScreen;
+
 
 namespace PhotoStoreDemo
 {
@@ -44,9 +47,62 @@ namespace PhotoStoreDemo
             _undoStack = new Stack();
             InitializeComponent();
             buttonAddPhoto.ToolTip = PhotosFolder.Current;
+
+            // if lunched via the secondary tile we set the context by selecting the right picture
+            // it can be used for any other context as well
+            string[] args = Environment.GetCommandLineArgs();
+            string output = null;
+            foreach (string line in args)
+            {
+                if (line.Contains("SelectedImage"))
+                {
+                    char[] delimiterChars = { '=' };
+                    string[] words = line.Split(delimiterChars);
+                    output = words[1];
+                }
+            }
+            if (output != null)
+                PhotoListBox.SelectedIndex = Convert.ToInt32(output);
         }
 
-       
+        // This interface definition is necessary because this is a non-universal
+        // app. This is part of enabling the Store UI purchase flow.
+        [ComImport]
+        [Guid("3E68D4BD-7135-4D10-8018-9FB6D9F33FA1")]
+        [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+        public interface IInitializeWithWindow
+        {
+            void Initialize(IntPtr hwnd);
+        }
+
+        /// <summary>
+        /// Adds secondary tile
+        /// </summary>
+        private void AddSecondaryTileAsync()
+        {
+            Uri square150x150Logo = new Uri("ms-appx:///Assets/square150x150Tile-sdk.png");
+
+            string tileActivationArguments = "SelectedImage=" + PhotoListBox.SelectedIndex;
+            string selectedItem = PhotoListBox.SelectedItem.ToString();
+            SecondaryTile tile = new SecondaryTile("SecondaryTileId" + PhotoListBox.SelectedIndex,
+                                                            selectedItem,
+                                                            tileActivationArguments,
+                                                            square150x150Logo,
+                                                            TileSize.Default);
+
+            IInitializeWithWindow initWindow = (IInitializeWithWindow)(object)tile;
+            initWindow.Initialize(System.Diagnostics.Process.GetCurrentProcess().MainWindowHandle);
+
+            // The display of the secondary tile name can be controlled for each tile size.
+            // The default is false.
+            tile.VisualElements.ShowNameOnSquare150x150Logo = true;
+
+            // Specify a foreground text value.
+            // The tile background color is inherited from the parent unless a separate value is specified.
+            tile.VisualElements.ForegroundText = ForegroundText.Light;
+
+            tile.RequestCreateAsync();
+        }
 
         private void WindowLoaded(object sender, EventArgs e)
         {
@@ -159,6 +215,11 @@ namespace PhotoStoreDemo
                 RemoveButton.IsEnabled = false;
                 UploadButton.IsEnabled = false;
             }
+        }
+
+        private void PinToStart(object sender, RoutedEventArgs e)
+        {
+            AddSecondaryTileAsync();
         }
 
         private void Upload(object sender, RoutedEventArgs e)

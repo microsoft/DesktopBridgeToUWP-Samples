@@ -633,6 +633,12 @@
                     Margin="10">
                     Remove Item
                 </Button>
+                <Button
+                    Grid.Row="1" Grid.Column="0"
+                    Click="PinToStart"
+                    VerticalAlignment="Center"
+                    Width="100"
+                    IsDefault="True" Content="Pin To Start" Margin="0,10,20,10"/>
 
             </Grid>
 
