@@ -29,7 +29,7 @@
     <ProjectConfiguration Include="Release|x64">
       <Configuration>Release</Configuration>
       <Platform>x64</Platform>
-      <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+      <UseDotNetNativeToolchain>false</UseDotNetNativeToolchain>
     </ProjectConfiguration>
     <ProjectConfiguration Include="Release|x86">
       <Configuration>Release</Configuration>
