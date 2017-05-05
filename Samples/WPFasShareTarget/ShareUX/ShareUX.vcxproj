@@ -121,7 +121,8 @@
       <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
     </ClCompile>
     <PreBuildEvent>
-      <Command>copy /y "$(SolutionDir)PhotoStoreDemo\bin\x86\$(Configuration)\*" "$(ProjectDir)Win32\" </Command>
+      <Command>
+      </Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -165,30 +166,6 @@
     </AppxManifest>
     <None Include="ShareUX_StoreKey.pfx" />
     <None Include="ShareUX_TemporaryKey.pfx" />
-    <None Include="Win32\PhotoStoreDemo.exe">
-      <DeploymentContent>true</DeploymentContent>
-    </None>
-    <None Include="Win32\PhotoStoreDemo.exe.config">
-      <FileType>Text</FileType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="Assets\LargeTile.scale-100.png" />
-    <Image Include="Assets\LargeTile.scale-200.png" />
-    <Image Include="Assets\SmallTile.scale-100.png" />
-    <Image Include="Assets\SmallTile.scale-200.png" />
-    <Image Include="Assets\Square150x150Logo.scale-100.png" />
-    <Image Include="Assets\Square150x150Logo.scale-200.png" />
-    <Image Include="Assets\Square44x44Logo.altform-unplated_targetsize-16.png" />
-    <Image Include="Assets\Square44x44Logo.altform-unplated_targetsize-48.png" />
-    <Image Include="Assets\Square44x44Logo.scale-100.png" />
-    <Image Include="Assets\Square44x44Logo.scale-200.png" />
-    <Image Include="Assets\Square44x44Logo.targetsize-16.png" />
-    <Image Include="Assets\Square44x44Logo.targetsize-48.png" />
-    <Image Include="Assets\StoreLogo.scale-100.png" />
-    <Image Include="Assets\StoreLogo.scale-200.png" />
-    <Image Include="Assets\Wide310x150Logo.scale-100.png" />
-    <Image Include="Assets\Wide310x150Logo.scale-200.png" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="App.xaml.cpp">
@@ -208,6 +185,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Package.StoreAssociation.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets2\SmallTile.scale-100.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -5,7 +5,7 @@
   <Properties>
     <DisplayName>WPF App as ShareTarget</DisplayName>
     <PublisherDisplayName>Microsoft Corporation</PublisherDisplayName>
-    <Logo>Assets\StoreLogo.png</Logo>
+    <Logo>Assets2\AppLogo.png</Logo>
   </Properties>
   <Dependencies>
     <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.0" MaxVersionTested="10.0.14393.0" />
@@ -14,21 +14,11 @@
     <Resource Language="x-generate" />
   </Resources>
   <Applications>
-    <Application Id="PhotoStore" Executable="Win32\PhotoStoreDemo.exe" EntryPoint="Windows.FullTrustApplication">
-      <uap:VisualElements DisplayName="WPF App as ShareTarget" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="ShareUX" BackgroundColor="transparent">
-        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square310x310Logo="Assets\LargeTile.png" Square71x71Logo="Assets\SmallTile.png">
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="ShareUX.App">
+      <uap:VisualElements DisplayName="App40" Square150x150Logo="Assets2\Square150x150Logo.png" Square44x44Logo="Assets2\Square44x44Logo.png" Description="App40" BackgroundColor="transparent">
+        <uap:DefaultTile Wide310x150Logo="Assets2\Wide310x150Logo.png" Square71x71Logo="Assets2\SmallTile.png">
         </uap:DefaultTile>
       </uap:VisualElements>
-      <Extensions>
-        <uap:Extension Category="windows.shareTarget" Executable="ShareUX.exe" EntryPoint="ShareUX.App">
-          <uap:ShareTarget Description="Photo Store Demo">
-            <uap:SupportedFileTypes>
-              <uap:SupportsAnyFileType />
-            </uap:SupportedFileTypes>
-            <uap:DataFormat>Bitmap</uap:DataFormat>
-          </uap:ShareTarget>
-        </uap:Extension>
-      </Extensions>
     </Application>
   </Applications>
   <Capabilities>

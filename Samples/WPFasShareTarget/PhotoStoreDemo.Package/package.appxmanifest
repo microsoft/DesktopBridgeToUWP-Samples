@@ -67,6 +67,14 @@
             </uap:SupportedFileTypes>
           </uap3:FileTypeAssociation>
         </uap3:Extension>
+        <uap:Extension Category="windows.shareTarget" Executable="ShareUX.exe" EntryPoint="ShareUX.App">
+          <uap:ShareTarget Description="Photo Store Demo">
+            <uap:SupportedFileTypes>
+              <uap:SupportsAnyFileType />
+            </uap:SupportedFileTypes>
+            <uap:DataFormat>Bitmap</uap:DataFormat>
+          </uap:ShareTarget>
+        </uap:Extension>
       </Extensions>
     </Application>
   </Applications>

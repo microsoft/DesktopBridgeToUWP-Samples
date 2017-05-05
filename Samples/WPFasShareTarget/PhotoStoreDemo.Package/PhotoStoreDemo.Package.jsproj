@@ -29,12 +29,12 @@
     <ProjectConfiguration Include="Release|x64">
       <Configuration>Release</Configuration>
       <Platform>x64</Platform>
-      <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+      <UseDotNetNativeToolchain>false</UseDotNetNativeToolchain>
     </ProjectConfiguration>
     <ProjectConfiguration Include="Release|x86">
       <Configuration>Release</Configuration>
       <Platform>x86</Platform>
-      <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+      <UseDotNetNativeToolchain>false</UseDotNetNativeToolchain>
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -53,6 +53,10 @@
     <MinimumVisualStudioVersion>$(VersionNumberMajor).$(VersionNumberMinor)</MinimumVisualStudioVersion>
     <DefaultLanguage>en-US</DefaultLanguage>
     <PackageCertificateKeyFile>PhotoStoreDemo.Package_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
+    <AppxBundle>Always</AppxBundle>
+    <AppxBundlePlatforms>x86|x64</AppxBundlePlatforms>
+    <PackageCertificateThumbprint>BA133363BA23C28CC59881285B460CB8D9824F80</PackageCertificateThumbprint>
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="package.appxmanifest">
@@ -1288,6 +1292,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PhotoStoreDemo\PhotoStoreDemo.csproj" />
+    <ProjectReference Include="..\ShareUX\ShareUX.vcxproj" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
   <!-- To modify your build process, add your task inside one of the targets below then uncomment
