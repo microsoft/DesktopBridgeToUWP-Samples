@@ -106,6 +106,7 @@ namespace BackgroundProcess
                     
                     //Finds scales in the service enumeration and return the one we use for demo that has table in the name
                     //Call the classic OPOS code
+                    // "table" parameter was specific to the device we used in video demo, please adapt to you target device
                     selectedDeviceInfo = Find("scale","table");
                     //Run Open, Claim, Enable device for usage
                     claimedDevice = Scale_ClaimOpenEnable(selectedDeviceInfo);
@@ -239,11 +240,7 @@ namespace BackgroundProcess
             WriteLog(LastWeight);
         }
 
-        static void PauseForKey()
-        {
-            Console.WriteLine("Hit a key...");
-            Console.ReadKey();
-        }
+
         static void WriteLog(string format, params object[] args)
         {
             string line = string.Format(format, args);
