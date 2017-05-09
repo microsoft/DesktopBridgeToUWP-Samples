@@ -67,6 +67,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="Windows">
       <HintPath>$(SystemDrive)\Program Files (x86)\Windows Kits\10\UnionMetadata\Windows.winmd</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -78,8 +79,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy /y /s "$(TargetDir)Win32App.exe" "$(SolutionDir)CentennialPackage\"
-xcopy /y /s "C:\Windows\Microsoft.NET\Framework\v4.0.30319\clrcompression.dll" "$(SolutionDir)CentennialPackage\"</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
