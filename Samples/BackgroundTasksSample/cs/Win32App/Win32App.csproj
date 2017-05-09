@@ -81,6 +81,15 @@
     <PostBuildEvent>xcopy /y /s "$(TargetDir)Win32App.exe" "$(SolutionDir)CentennialPackage\"
 xcopy /y /s "C:\Windows\Microsoft.NET\Framework\v4.0.30319\clrcompression.dll" "$(SolutionDir)CentennialPackage\"</PostBuildEvent>
   </PropertyGroup>
+    <Target Name="AfterBuild">
+    <PropertyGroup>
+      <TargetUWP>..\MyDesktopApp.Package\win32\</TargetUWP>
+    </PropertyGroup>
+     <ItemGroup>
+       <Win32Binaries Include="$(TargetDir)\*" />
+     </ItemGroup>
+    <Copy SourceFiles="@(Win32Binaries)" DestinationFolder="$(TargetUWP)" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
