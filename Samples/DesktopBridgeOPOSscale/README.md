@@ -1,8 +1,8 @@
 ﻿# Desktop Bridge OPOS scale Sample
 
 This sample demonstrates how to create a package that includes both a Win32 and Universal Windows Platform (UWP) process, and communicate between them via an AppService APIs. It also shows how to launch a Win32 process from a UWP app using the new "fullTrustProcess" extension.
-In addition this sample code demonstrates how to integrate a .netOPOS library to make an integration between UWP and OPOS to access all supported devices in OPOS library.
-You can download OPOS .net from [here](https://www.microsoft.com/en-us/download/details.aspx?id=42081)
+In addition this sample code demonstrates how to integrate a .net POS library to make an integration between UWP and POS to access all supported devices in POS library.
+You can download Microsoft POS for .net from [here](https://www.microsoft.com/en-us/download/details.aspx?id=42081)
 
 Adding the OPOS win32 process to your POS UWP app, allows you to access all the OPOS supported devices, even the devices not natively supported in [Windows.​Devices.​Point​OfService](https://docs.microsoft.com/en-us/uwp/api/windows.devices.pointofservice)
 
