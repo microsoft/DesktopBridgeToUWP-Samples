@@ -1,0 +1,85 @@
+﻿<Page
+    x:Class="NorthwindDemo.OrderPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NorthwindDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+          AllowDrop="True"
+          DragOver="OrderText_DragOver"
+          Drop="OrderText_Drop">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="10" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="10" />
+        </Grid.RowDefinitions>
+        <TextBlock Text="UWP Submit New Order" Grid.Row="0" Grid.Column="1"
+                   FontSize="18"
+                   HorizontalAlignment="Center" Foreground="DarkRed" />
+        <TextBlock Text="Drop Northwind Products items here" 
+                   Grid.Row="1" Grid.Column="1"
+                   FontStyle="Italic"
+                   HorizontalAlignment="Center" Foreground="SlateGray" />
+        <RelativePanel Grid.Row="2" Grid.Column="1" Margin="12" >
+            <Button Name="Pay" RelativePanel.AlignLeftWithPanel="True"
+                    Content="Pay" Background="LightGreen"
+                    Tapped="Pay_Tapped" />
+            <Button Name="Save" RelativePanel.RightOf="Pay"
+                Content="Save" Margin="12,0"
+                Background="LightBlue"
+                Tapped="Save_Tapped"/>
+            <Button Name="Toggle" RelativePanel.AlignRightWithPanel="True"
+                Content="Toggle Size" Background="LightBlue"
+                Tapped="Toggle_Tapped" />
+        </RelativePanel>
+        <ListView Name="OrderDetailsListView"
+                  DataContext="OrderDetails"
+                  Grid.Row="3" Grid.Column="1"
+                  HorizontalAlignment="Center"
+                  ScrollViewer.VerticalScrollBarVisibility="Auto"
+                  ScrollViewer.IsVerticalRailEnabled="True"
+                  ScrollViewer.VerticalScrollMode="Enabled"
+                  ScrollViewer.HorizontalScrollMode="Enabled"
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                  ScrollViewer.IsHorizontalRailEnabled="True"
+                  Margin="0,0" >
+            <ListView.HeaderTemplate>
+                <DataTemplate >
+                    <StackPanel Orientation="Horizontal"  >
+                        <TextBlock Text="   Quantity   Description                      Each        Net"
+                                   Foreground="DarkSalmon"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.HeaderTemplate>
+            <ListView.ItemTemplate>
+                <DataTemplate >
+                    <StackPanel Orientation="Horizontal" >
+                        <TextBox Name="QuantityTextbox" Text="{Binding Quantity, Mode=TwoWay}"
+                                 TextChanged="QuantityTextbox_TextChanged"
+                                 Width="20" />
+                        <TextBox Text="{Binding ProductName}"
+                                 IsReadOnly="True"
+                                 Width="150" />
+                        <TextBox Name="UnitPriceTextBox" Text="{Binding UnitPriceString, Mode=TwoWay}"
+                                 IsReadOnly="true"
+                                 Width="40" />
+                        <TextBox Name="NetAmountTextBox"
+                                     IsReadOnly="True"
+                                     Width="40" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>
+    
