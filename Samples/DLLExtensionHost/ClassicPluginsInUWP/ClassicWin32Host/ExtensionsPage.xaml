@@ -1,0 +1,54 @@
+﻿<Page x:Class="ClassicWin32Host.ExtensionsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ClassicWin32Host"
+      mc:Ignorable="d" 
+      d:DesignHeight="144" d:DesignWidth="400"
+      Title="ExtensionsPage">
+
+    
+    
+    
+    <Page.Resources>
+        <DataTemplate x:Key="ItemTemplate" DataType="local:Extension">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <CheckBox x:Name="ExtensionCheckbox" VerticalAlignment="Center" 
+                          Grid.Row="0" Grid.Column="0"
+                          MinWidth="30" Checked="CheckBox_Checked"
+                          Unchecked="CheckBox_Unchecked"
+                          HorizontalAlignment="Center"
+                          IsChecked="{Binding Path=Enabled, Mode=OneTime, UpdateSourceTrigger=PropertyChanged}" />
+                <StackPanel Margin="5,5,5,5"  Height="50" HorizontalAlignment="Left" VerticalAlignment="Center" Width="375"
+                            Grid.Row="0" Grid.Column="1">
+                    <TextBlock Margin="10,10,0,0" x:Name="ExtensionTitle" FontWeight="Bold" Text="{Binding AppExtension.DisplayName}" HorizontalAlignment="Stretch" VerticalAlignment="Center" 
+                           />
+                    <TextBlock Margin="10,0,0,10" Text="{Binding AppExtension.Description}" HorizontalAlignment="Stretch" TextWrapping="Wrap"
+                           />
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32" />
+            <RowDefinition Height="112" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <TextBlock Margin="20,5,5,5" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" Grid.Row="0" Grid.Column="0" >Plugins</TextBlock>
+        <ItemsControl Margin="5,5,5,5" Grid.Row="1" Grid.Column="0" Name="lvExtensions" BorderBrush="Black" BorderThickness="1"
+                 ItemTemplate="{StaticResource ItemTemplate}"
+            />
+    </Grid>
+</Page>
