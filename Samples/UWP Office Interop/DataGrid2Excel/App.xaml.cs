@@ -34,9 +34,8 @@ namespace DataGrid2Excel
     /// </summary>
     sealed partial class App : Application
     {
-        private BackgroundTaskDeferral appServiceDeferral = null;
+        public static BackgroundTaskDeferral AppServiceDeferral = null;
         public static AppServiceConnection Connection = null;
-
         public static event EventHandler AppServiceConnected;
 
         /// <summary>
@@ -54,7 +53,7 @@ namespace DataGrid2Excel
             // connection established from the fulltrust process
             if (args.TaskInstance.TriggerDetails is AppServiceTriggerDetails)
             {
-                appServiceDeferral = args.TaskInstance.GetDeferral();
+                AppServiceDeferral = args.TaskInstance.GetDeferral();
                 args.TaskInstance.Canceled += OnTaskCanceled; 
 
                 if (args.TaskInstance.TriggerDetails is AppServiceTriggerDetails details)
@@ -67,9 +66,9 @@ namespace DataGrid2Excel
 
         private void OnTaskCanceled(IBackgroundTaskInstance sender, BackgroundTaskCancellationReason reason)
         {
-            if (this.appServiceDeferral != null)
+            if (AppServiceDeferral != null)
             {
-                this.appServiceDeferral.Complete();
+                AppServiceDeferral.Complete();
             }
         }
 

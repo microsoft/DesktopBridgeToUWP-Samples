@@ -43,6 +43,7 @@ namespace DataGrid2Excel
         public MainPage()
         {
             this.InitializeComponent();
+            App.AppServiceConnected += MainPage_AppServiceConnected;
 
             // creating random content for the data grid
             Random rnd = new Random(Environment.TickCount);
@@ -73,11 +74,15 @@ namespace DataGrid2Excel
                 table.Add("UnitPrice" + i.ToString(), items[i].UnitPrice);
             }
 
-            // launch the fulltrust process and for it to connect to the app service
-            App.AppServiceConnected += MainPage_AppServiceConnected;
+            // launch the fulltrust process and for it to connect to the app service            
             if (ApiInformation.IsApiContractPresent("Windows.ApplicationModel.FullTrustAppContract", 1, 0))
             {
                 await FullTrustProcessLauncher.LaunchFullTrustProcessForCurrentAppAsync();
+            }
+            else
+            {
+                MessageDialog dialog = new MessageDialog("This feature is only available on Windows 10 Desktop SKU");
+                await dialog.ShowAsync();
             }
         }
 
@@ -94,6 +99,8 @@ namespace DataGrid2Excel
                 MessageDialog dialog = new MessageDialog(result.ToString());
                 await dialog.ShowAsync();
             }
+            // no longer need the AppService connection
+            App.AppServiceDeferral.Complete();
         }
     }
 
