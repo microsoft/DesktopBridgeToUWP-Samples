@@ -53,7 +53,7 @@
         </uap3:Extension>
         <uap:Extension Category="windows.protocol">
           <uap:Protocol Name="photostore">
-          <!-- The following element will re-route the user choice for this protocol. The OS will open the a URI containing this protocol using the packaged app instead of the previous desktop app -->
+          <!-- The following element will re-route the user choice for this protocol. The OS will open the a URI (i.e. photostore://) containing this protocol using the packaged app instead of the previous desktop app -->
             <rescap3:MigrationProgIds>
               <!-- You need to provide the the ProgID of the previous desktop app. Read more about prog IDs: https://msdn.microsoft.com/en-us/library/windows/desktop/cc144152(v=vs.85).aspx -->
               <rescap3:MigrationProgId>PhotoStoreDemo.exe</rescap3:MigrationProgId>

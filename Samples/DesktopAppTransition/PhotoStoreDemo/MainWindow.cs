@@ -99,7 +99,7 @@ namespace PhotoStoreDemo
                             //Robocopy.exe: https://technet.microsoft.com/en-us/library/cc733145(v=ws.11
                             //Otherwise, you should move files using System.IO
                             //Note: The "/move" flag is used to copy data over AND delete previous data in one operation
-                            if (runProcess("robocopy.exe", sourceDir + " " + destinationDir + " /move") > 1)
+                            if (RunProcess("robocopy.exe", sourceDir + " " + destinationDir + " /move") > 1)
                             {
                                 //Migration was unsuccessful -- App Developer can choose to block/retry/other action
                             }
@@ -111,7 +111,7 @@ namespace PhotoStoreDemo
                             //In this case, the uninstaller takes additional arguments.
                             //Since the uninstallString is app-specific, make sure your call to the uninstaller is properly formatted before calling create process
                             string[] uninstallArgs = uninstallString.Split(' ');
-                            if (runProcess(uninstallArgs[0], uninstallArgs[1]) != 0)
+                            if (RunProcess(uninstallArgs[0], uninstallArgs[1]) != 0)
                             {
                                 //Uninstallation was unsuccessful - App Developer can choose to block the app here
                             }
@@ -335,16 +335,13 @@ namespace PhotoStoreDemo
             item.AddToCache();
         }
 
-        private int runProcess(string appName, string arguments)
+        private int RunProcess(string appName, string arguments)
         {
             System.Diagnostics.Process process = new Process();
             process.StartInfo.FileName = appName;
             process.StartInfo.Arguments = arguments;
             process.StartInfo.CreateNoWindow = true;
-            //process.StartInfo.UseShellExecute = false; //used for debugging
-            //process.StartInfo.RedirectStandardOutput = true; //used for debugging (reading the output)
             process.Start();
-            //string output = process.StandardOutput.ReadToEnd(); //used for debugging (reading the ouput)
             process.WaitForExit();
             return process.ExitCode;
         }
