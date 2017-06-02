@@ -1,23 +1,25 @@
-# WPF picture viewer as a share target
+# WPF picture viewer with transition/migration/uninstallation
 
-This sample demonstrates how to extend a WPF picture viewer to become a share target. This way users can easily share pictures from Microsoft Edge, the Photos app and other application with our application. Sharing pictures is just one of many scenarios that can be enabled by making your app a sharing target. Several other data formats are supported as well. See the [Windows Dev Center documentation page] (https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.standarddataformats.aspx) for a complete list and more details.
+This sample demonstrates how to transition from a WPF app to a packaged app and migrate start tiles, taskbar pins, filetype associations, protocol handlers, as well as do data migration and uninstallation of the previous app.
+Please visit the following blog post for more details: https://blogs.msdn.microsoft.com/universal-windows-app-model/2017/03/01/desktop-bridge-smooth-user-transition-data-migration/
 
-AppxManifest
-------------
 
-The structure of our [AppxManifest.xml] (https://github.com/Microsoft/DesktopBridgeToUWP-Samples/blob/master/Samples/WPFasShareTarget/ShareUX/Package.appxmanifest) looks very similar to the [VB6withXaml sample] (https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/VB6withXaml). In fact, our sharing UI is also XAML. The only difference here is that we are declaring the ‘windows.shareTarget’ extension instead of protocol activation, to let the system know we want to activate if the user is sharing the specified data type and selects our app as the sharing target.
-
-Build/Deploy and Run the sample
+Run the sample
 -------------------------------
-
- - Set the "ShareUX" as startup project
+ - Install the MSI 
+ - Run the app, pin to start tile and taskbar
+ - Associate the app with a .ftj file
+ - Install the provided AppxPackage (all entry point transitions happen during installation)
+ - Run the packaged up (observe the migration/uninstallation experience)
+ 
+ Build/Deploy
+ ------------------------------
  - Build and deploy the project
  - Press Ctrl + F5 to run
  - To debug use attach to the proccess or follow the guidance [here - Debugging your Desktop Bridge app section] (https://msdn.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-packaging-dot-net)
+
  
-Windows Store App
------------------
- You can also check out the app in the [Window Store] (https://www.microsoft.com/en-us/store/p/wpf-app-as-sharetarget/9pjcjljlck37)
+
 
   
 
