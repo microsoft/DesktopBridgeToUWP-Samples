@@ -10,4 +10,6 @@ Build/Deploy and Run the sample
  - Select UWP project as your starting project
  - Press F5 to run!
 
+Related blog post: https://stefanwick.com/2017/05/26/uwp-calling-office-interop-apis/ 
+
 
