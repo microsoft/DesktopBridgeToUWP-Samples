@@ -13,4 +13,6 @@ Build/Deploy and Run the sample
 
 Result: UpdateTask gets triggered and pops up a notification with the new version number
 
+Related blog post: https://stefanwick.com/2017/06/06/updatetask-for-desktop-bridge-apps/
+
 
