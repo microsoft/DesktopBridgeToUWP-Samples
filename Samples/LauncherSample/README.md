@@ -9,10 +9,10 @@ Build and Run the sample
  - Build the solution.
  - Copy Launcher.exe and Launcher.cfg from the build path to the root of your Windows package.
  - Update your application entrypoint in your package.appxmanifest to Launcher.exe.
- - Configure Launcher.cfg content:
-	Put your win32 application executable name that on the first line.  
-	Put the current working directory as a relative path.  
-	   
-	Content of Launcher.cfg should look like this:  
-	MyappEntrypoint.exe  
+ - Configure Launcher.cfg content: <br />
+	Put your win32 application executable name that on the first line. <br />
+	Put the current working directory as a relative path. <br />
+ <br />
+	Content of Launcher.cfg should look like this: <br />
+	MyappEntrypoint.exe <br />
 	Win32\MyappDirecotory\
