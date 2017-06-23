@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities" xmlns:uap5="http://schemas.microsoft.com/appx/manifest/uap/windows10/5" IgnorableNamespaces="uap mp rescap uap5">
+  <Identity Name="c0f91aa6-1012-4d95-a8d0-588a6f5fe6d1" Version="1.0.9.0" Publisher="CN=User" />
+  <mp:PhoneIdentity PhoneProductId="c0f91aa6-1012-4d95-a8d0-588a6f5fe6d1" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Properties>
+    <DisplayName>WinFormsOOPWinRTComponent.Package</DisplayName>
+    <PublisherDisplayName>User</PublisherDisplayName>
+    <Logo>images\storelogo.png</Logo>
+  </Properties>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.16210.0" MaxVersionTested="10.0.16210.0" />
+  </Dependencies>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="WinFormsOOPWinRTComponent" Executable="Win32\WindowsFormsApp1.exe" EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements DisplayName="WinFormsOOPWinRTComponent.Package" Description="WinFormsOOPWinRTComponent.Package" BackgroundColor="transparent" Square150x150Logo="images\Square150x150Logo.png" Square44x44Logo="images\Square44x44Logo.png">
+        <uap:DefaultTile Wide310x150Logo="images\Wide310x150Logo.png">
+        </uap:DefaultTile>
+        <uap:SplashScreen Image="images\splashscreen.png" />
+      </uap:VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <rescap:Capability Name="runFullTrust" />
+  </Capabilities>
+  <Extensions>
+    <Extension Category="windows.activatableClass.outOfProcessServer">
+      <OutOfProcessServer ServerName="Microsoft.SDKSamples.Kitchen.OvenServer" uap5:IdentityType="activateAsPackage" uap5:RunFullTrust="true">
+        <Path>Microsoft.SDKSamples.Kitchen.exe</Path>
+        <Instancing>singleInstance</Instancing>
+        <ActivatableClass ActivatableClassId="Microsoft.SDKSamples.Kitchen.Oven" />
+      </OutOfProcessServer>
+    </Extension>
+    <!-- Using Metadata Marshalling - no need to register proxy server
+    <Extension Category="windows.activatableClass.proxyStub">
+      <ProxyStub ClassId="332fd2f1-1c69-4c91-949e-4bb67a85bdc5">
+        <Path>Microsoft.SDKSamples.Kitchen.Proxies.dll</Path>
+        <Interface Name="IAppliance" InterfaceId="332fd2f1-1c69-4c91-949e-4bb67a85bdc5" />
+        <Interface Name="IBread" InterfaceId="F13EA3D5-7B24-4CDE-9E5F-57AF30F0733C" />
+        <Interface Name="IBreadBakedEventArgs" InterfaceId="699b1394-3ceb-4a14-ae23-efec518b088b" />
+        <Interface Name="IOven" InterfaceId="6a112353-4f87-4460-a908-2944e92686f3" />
+        <Interface Name="IOvenFactory" InterfaceId="f36c2a21-f4e3-4c39-94ce-eb9190afdab3" />
+        <Interface Name="ITypedEventHandler_Oven_BreadBakedEventArgs" InterfaceId="6582b851-18cc-5835-8c50-d896eedda300" />
+      </ProxyStub>
+    </Extension>
+    -->
+  </Extensions>
+</Package>
