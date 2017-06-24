@@ -73,7 +73,7 @@ namespace SystrayComponent
             if (connection == null)
             {
                 connection = new AppServiceConnection();
-                connection.PackageFamilyName = "17855StefanWick.UWPwithSystrayextension_bvbr2n7re90hg";
+                connection.PackageFamilyName = Package.Current.Id.FamilyName;
                 connection.AppServiceName = "SystrayExtensionService";
                 connection.ServiceClosed += Connection_ServiceClosed;
                 AppServiceConnectionStatus connectionStatus = await connection.OpenAsync();
