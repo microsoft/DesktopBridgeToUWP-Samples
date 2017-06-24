@@ -116,9 +116,6 @@
     <None Include="SystrayExtension_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\background.png" />
-    <Content Include="Assets\background2.png" />
-    <Content Include="Assets\background3.png" />
     <Content Include="Assets\background4.png" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
