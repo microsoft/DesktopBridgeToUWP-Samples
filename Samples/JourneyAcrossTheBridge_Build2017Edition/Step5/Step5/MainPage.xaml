@@ -1,0 +1,21 @@
+﻿<Page
+    x:Class="Step5.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SqlClientTest"
+    xmlns:grid="using:Telerik.UI.Xaml.Controls.Grid" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <grid:RadDataGrid x:Name="grid" Grid.Row="0" ItemsSource="{Binding}" UserEditMode="Inline" SelectionChanged="grid_SelectionChanged"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="Purchase" Click="Button_Click" Margin="12"/>
+        </StackPanel>
+    </Grid>
+</Page>
