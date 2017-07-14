@@ -10,6 +10,7 @@ For more info on UWP apps, [see the **Universal Application Platform Guide**](ht
 - [Visual Studio 2017 RC](https://www.visualstudio.com/downloads/#visual-studio-community-2017-rc)
 - [Desktop Bridge Debugging project](http://go.microsoft.com/fwlink/?LinkID=797871)
 - [Windows Software Development Kit (SDK) for Windows 10](https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk)
+- We are working on updating the UWPDesktop NuGet package with the latest release. Meanwhile as a workaround please follow the guidance [here](https://www.nuget.org/packages/UwpDesktop/)
 
 ## Feedback
 
