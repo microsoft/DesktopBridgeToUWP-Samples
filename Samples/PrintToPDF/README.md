@@ -21,6 +21,6 @@ See it in Action
 
  - Run your faviorite application (Win32 or UWP)
  - Open your favourtie content to print
- - Select "Send to DesktopBridge PDF Pritner" printer
+ - Select "Send to DesktopBridge PDF Printer" printer
  - Select the destination folder and file name on prompt
  - Open the PDF file!
