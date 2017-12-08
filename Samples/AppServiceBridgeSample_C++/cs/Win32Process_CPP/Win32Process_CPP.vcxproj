@@ -89,7 +89,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalUsingDirectories>$(SystemDrive)\Program Files (x86)\Microsoft Visual Studio\VS15Preview\Common7\IDE\VC\vcpackages;$(SystemDrive)\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcpackages;$(SystemDrive)\Program Files (x86)\Windows Kits\10\UnionMetadata;$(SystemDrive)\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.UniversalApiContract\1.0.0.0;$(SystemDrive)\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.FoundationContract\1.0.0.0;%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+      <AdditionalUsingDirectories>"$(VSINSTALLDIR)Common7\IDE\VC\vcpackages";$(SystemDrive)\Program Files (x86)\Windows Kits\10\UnionMetadata;%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
       <CompileAsWinRT>true</CompileAsWinRT>
       <MinimalRebuild>false</MinimalRebuild>
     </ClCompile>
