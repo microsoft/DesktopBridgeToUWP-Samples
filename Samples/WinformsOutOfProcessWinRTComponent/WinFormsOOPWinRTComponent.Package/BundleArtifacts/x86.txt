@@ -1,0 +1,2 @@
+MainPackage=C:\Users\User\Documents\WinformsOutOfProcessWinRTComponent\WinFormsOOPWinRTComponent.Package\bin\x86\Release\WinFormsOOPWinRTComponent.Package_1.0.1.0_x86.appx
+SymbolPackage=C:\Users\User\Documents\WinformsOutOfProcessWinRTComponent\WinFormsOOPWinRTComponent.Package\AppPackages\WinFormsOOPWinRTComponent.Package_1.0.1.0_Test\WinFormsOOPWinRTComponent.Package_1.0.1.0_x86.appxsym

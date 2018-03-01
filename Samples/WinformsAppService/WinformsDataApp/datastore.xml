@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" standalone="yes"?>
+<contacts>
+  <contact>
+    <ID>133-23-7893</ID>
+    <Name>Patrick Hines</Name>
+    <Phone>206-555-0144</Phone>
+    <City>Mercer Island</City>
+    <State>WA</State>
+  </contact>
+  <contact>
+    <ID>233-63-4491</ID>
+    <Name>Johnson White</Name>
+    <Phone>510-555-0144</Phone>
+    <City>Oakland</City>
+    <State>CA</State>
+  </contact>
+</contacts>

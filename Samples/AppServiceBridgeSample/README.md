@@ -17,4 +17,4 @@ Build/Deploy and Run the sample
 Notes
 ------
 
-- You can learn more about App Services [here] (https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.appservice.aspx)
+- You can learn more about App Services [here](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.appservice.aspx)

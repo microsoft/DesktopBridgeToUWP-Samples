@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" 
+         xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" 
+         xmlns:uap2="http://schemas.microsoft.com/appx/manifest/uap/windows10/2" 
+         xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3" 
+         xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities" 
+         xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
+         xmlns:desktop2="http://schemas.microsoft.com/appx/manifest/desktop/windows10/2"
+         xmlns:com="http://schemas.microsoft.com/appx/manifest/com/windows10">
+  
+  <Identity Name="52601TheDesktopBridge.2261331D290CD" ProcessorArchitecture="x86" Publisher="CN=A22CD806-3E5E-43E5-9086-9F066DA66A9E" Version="1.1.0.0" />
+  <Properties>
+    <DisplayName>AutoClick ComServer</DisplayName>
+    <PublisherDisplayName>Desktop Bridge</PublisherDisplayName>
+    <Logo>Assets\AppStoreLogo.png</Logo>
+  </Properties>
+  <Resources>
+    <Resource Language="en-us" />
+    <Resource uap:Scale="100" />
+    <Resource uap:Scale="125" />
+    <Resource uap:Scale="150" />
+    <Resource uap:Scale="200" />
+    <Resource uap:Scale="400" />
+  </Resources>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.15042.0" MaxVersionTested="10.0.15063.0" />
+	<PackageDependency Name="Microsoft.VCLibs.140.00.UWPDesktop" MinVersion="14.0.24217.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
+  </Dependencies>
+  <Capabilities>
+    <rescap:Capability Name="runFullTrust" />
+  </Capabilities>
+  <Applications>
+    <Application Id="ACDual" Executable="ACDual.exe" EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements DisplayName="AutoClick ComServer" Description="AutoClick Dual Interface App" BackgroundColor="transparent" Square150x150Logo="Assets\AppMedTile.png" Square44x44Logo="Assets\AppList.png">
+        <uap:DefaultTile Wide310x150Logo="Assets\AppWideTile.png" Square310x310Logo="Assets\AppLargeTile.png" Square71x71Logo="Assets\AppSmallTile.png">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="square150x150Logo" />
+            <uap:ShowOn Tile="wide310x150Logo" />
+            <uap:ShowOn Tile="square310x310Logo" />
+          </uap:ShowNameOnTiles>
+        </uap:DefaultTile>
+      </uap:VisualElements>
+    <Extensions>
+        
+      <com:Extension Category="windows.comServer">
+        <com:ComServer>
+          <!-- CLSID -->
+          <!--  HKEY_CLASSES_ROOT\CLSID\{4B115281-32F0-11cf-AC85-444553540000} = AClick Document
+                HKEY_CLASSES_ROOT\CLSID\{4B115281-32F0-11cf-AC85-444553540000}\LocalServer32 = AUTOCLIK.EXE
+                HKEY_CLASSES_ROOT\CLSID\{4B115281-32F0-11cf-AC85-444553540000}\ProgId = AutoClick.Document
+          -->
+          <com:ExeServer Executable="ACDual.exe" DisplayName="AutoClick">
+            <com:Class Id ="4B115281-32F0-11cf-AC85-444553540000"
+                       DisplayName="AClick Document"
+                       ProgId="AutoClick.Document.1"
+                       VersionIndependentProgId="AutoClick.Document">
+            </com:Class>
+                       
+            <!--
+      	    //  Class information for ACDual.Point
+	          [ uuid(4B115285-32F0-11cf-AC85-444553540000) ]
+	          coclass Point
+	          {
+		          dispinterface IAutoClickPoint;
+		          [default] interface IDualAutoClickPoint;
+	          };
+          -->
+          </com:ExeServer>
+      
+          <!-- ProgId -->
+          <!--  HKEY_CLASSES_ROOT\AutoClick.Document = AClick Document
+                HKEY_CLASSES_ROOT\AutoClick.Document\CLSID = {FC866850-9F96-11CE-B0F2-00AA006C28B3}
+          -->
+          <com:ProgId Id="AutoClick.Document"
+                      CurrentVersion="AutoClick.Document.1" />
+          <com:ProgId Id="AutoClick.Document.1"
+                      Clsid="4B115281-32F0-11cf-AC85-444553540000" />
+
+        </com:ComServer>
+      </com:Extension>
+      <com:Extension Category="windows.comInterface">
+        <com:ComInterface>
+          <!-- Interfaces -->
+          <!--  [ uuid(0BDD0E80-0DD7-11cf-BBA8-444553540000),	// IID_IDualAutoClickPoint
+	              oleautomation, dual]
+          	    interface IDualAutoClickPoint : IDispatch    -->
+          <com:Interface Id="0BDD0E80-0DD7-11cf-BBA8-444553540000"
+                         UseUniversalMarshaler="true">
+            <com:TypeLib Id="4B115284-32F0-11cf-AC85-444553540000"
+                         VersionNumber="1.0" />
+          </com:Interface>
+
+          <!--	[ uuid(0BDD0E81-0DD7-11cf-BBA8-444553540000),	// IID_IDualAClick
+                oleautomation, dual]
+	              interface IDualAClick : IDispatch          -->
+          <com:Interface Id="0BDD0E81-0DD7-11cf-BBA8-444553540000"
+                         UseUniversalMarshaler="true">
+            <com:TypeLib Id="4B115284-32F0-11cf-AC85-444553540000"
+                         VersionNumber="1.0" />
+          </com:Interface>
+
+          <!-- TypeLib  -->
+          <!--  [ uuid(4B115284-32F0-11cf-AC85-444553540000), version(1.0) ]
+                library ACDual          -->
+          <com:TypeLib Id="4B115284-32F0-11cf-AC85-444553540000">
+            <com:Version
+              DisplayName = "ACDual"
+              VersionNumber="1.0"
+              LocaleId="0"
+              LibraryFlag="0">
+              <com:Win32Path Path="AutoClik.tlb" />
+            </com:Version>
+          </com:TypeLib>
+        </com:ComInterface>
+      </com:Extension>
+    </Extensions>
+    </Application>
+  </Applications>
+</Package>

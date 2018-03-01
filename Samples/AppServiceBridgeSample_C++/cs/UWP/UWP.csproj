@@ -152,8 +152,7 @@
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy /y /s "$(SolutionDir)$(ConfigurationName)\Win32Process_CPP.exe" "$(SolutionDir)\UWP\bin\x64\$(ConfigurationName)\AppX\"
-xcopy /y /s "$(SolutionDir)$(ConfigurationName)\Win32Process_CPP.exe" "$(SolutionDir)\UWP\bin\x86\$(ConfigurationName)\AppX\"</PostBuildEvent>
+    <PostBuildEvent>xcopy /y /s "$(SolutionDir)x64\$(ConfigurationName)\Win32Process_CPP.exe" "$(SolutionDir)\UWP\bin\x64\$(ConfigurationName)\AppX\" || xcopy /y /s "$(SolutionDir)$(ConfigurationName)\Win32Process_CPP.exe" "$(SolutionDir)\UWP\bin\x86\$(ConfigurationName)\AppX\"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

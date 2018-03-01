@@ -1,0 +1,8 @@
+﻿<Application
+    x:Class="Xaml_MapUI.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Xaml_MapUI"
+    RequestedTheme="Dark">
+
+</Application>

@@ -28,4 +28,4 @@ or "could not find assembly 'platform.winmd'"
 2. Add the following path to the LIBPATH 
 $Your_Path\Microsoft Visual Studio\$YOUR_VER\Enterprise\Common7\IDE\VC\vcpackages
 
-- You can learn more about App Services [here] (https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.appservice.aspx)
+- You can learn more about App Services [here](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.appservice.aspx)

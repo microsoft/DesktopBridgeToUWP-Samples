@@ -1,0 +1,2 @@
+MainPackage=C:\Users\pezan\Documents\Build2017\demo\v2\Step2\Packaging\bin\ARM\Debug\Packaging_1.0.0.0_ARM_Debug.appx
+ResourcePack=C:\Users\pezan\Documents\Build2017\demo\v2\Step2\Packaging\bin\ARM\Debug\Packaging_1.0.0.0_scale-100.appx

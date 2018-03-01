@@ -9,15 +9,14 @@ In this sample we show how to register for time zone and timer triggers but you 
 Build/Deploy and Run the sample
 -------------------------------
 
- - Press Ctrl+Shift+B, or select **Build** \> **Build Solution**. 
- - Under the BackgroundTasksSample\cs directory you will find the CentennialPackage to deploy during development, run: "add-appxpackage –register AppxManifest.xml" from a PowerShell window.
- - To deploy for production please follow the guidance [here] (https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-deploy-and-debug)
- - To run the app, go to the start menu, find the app tile "Win32App", right click, and choose "Pin to taskbar"
+ - To Debug select the MyDesktopApp.AppxDebug as the default project Ctrl+Shift+B, or select **Build** \> **Build Solution**. 
+ - To run the app, just hit F5
  - Go to settings and change your time zone, you will receive notifications from the background task! Your live tile will also receive updates. 
  - Look what happens after 15 min when the time trigger is fired.
+ - To package your app, right click on the MyDesktopApp.Package and select Store-->Create App Package, for the full details please follow the instructions [here](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-packaging-dot-net)
  
 
 Notes
 ------
 
-- You can learn more about Background tasks [here] (https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.background.aspx) 
+- You can learn more about Background tasks [here](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.background.aspx) 

@@ -1,0 +1,2 @@
+MainPackage=C:\Users\vladimp\Downloads\TestFileOpen\SecondaryTileSample\MyDesktopApp.Package\bin\x86\Debug\MyDesktopApp.Package_1.5.4.0_x86_Debug.appx
+SymbolPackage=C:\Users\vladimp\Downloads\TestFileOpen\SecondaryTileSample\MyDesktopApp.Package\AppPackages\MyDesktopApp.Package_1.5.4.0_Debug_Test\MyDesktopApp.Package_1.5.4.0_x86_Debug.appxsym

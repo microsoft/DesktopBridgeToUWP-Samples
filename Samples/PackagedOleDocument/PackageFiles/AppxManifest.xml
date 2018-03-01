@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" 
+		 xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" 
+		 xmlns:uap2="http://schemas.microsoft.com/appx/manifest/uap/windows10/2" 
+		 xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3" 
+		 xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+		 xmlns:rescap3="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3"
+         xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
+		 xmlns:desktop2="http://schemas.microsoft.com/appx/manifest/desktop/windows10/2" 
+		 xmlns:com="http://schemas.microsoft.com/appx/manifest/com/windows10"
+		 IgnorableNamespaces="rescap3 desktop2">
+     
+		 
+  <Identity Name="52601TheDesktopBridge.ScribbleOleDocument" ProcessorArchitecture="x86" Publisher="CN=A22CD806-3E5E-43E5-9086-9F066DA66A9E" Version="1.1.0.0" />
+  <Properties>
+    <DisplayName>Scribble OleDocument</DisplayName>
+    <PublisherDisplayName>Desktop Bridge</PublisherDisplayName>
+    <Logo>Assets\AppStoreLogo.png</Logo>
+  </Properties>
+  <Resources>
+    <Resource Language="en-us" />
+    <Resource uap:Scale="100" />
+    <Resource uap:Scale="125" />
+    <Resource uap:Scale="150" />
+    <Resource uap:Scale="200" />
+    <Resource uap:Scale="400" />
+  </Resources>
+  <Dependencies>
+    <!-- minversion=15000 because Packaged COM requires RS/Creators Update -->
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.15000.0" MaxVersionTested="10.0.15000.0" />
+    <PackageDependency Name="Microsoft.VCLibs.140.00.UWPDesktop" MinVersion="14.0.24217.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
+  </Dependencies>
+  <Capabilities>
+    <rescap:Capability Name="runFullTrust" />
+  </Capabilities>
+  <Applications>
+    <Application Id="Scribble" Executable="Scribble.exe" EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements DisplayName="Scribble OleDocument" Description="Scribble OleDocument App" BackgroundColor="transparent" Square150x150Logo="Assets\AppMedTile.png" Square44x44Logo="Assets\AppList.png">
+        <uap:DefaultTile Wide310x150Logo="Assets\AppWideTile.png" Square310x310Logo="Assets\AppLargeTile.png" Square71x71Logo="Assets\AppSmallTile.png">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="square150x150Logo" />
+            <uap:ShowOn Tile="wide310x150Logo" />
+            <uap:ShowOn Tile="square310x310Logo" />
+          </uap:ShowNameOnTiles>
+        </uap:DefaultTile>
+      </uap:VisualElements>
+      <Extensions>
+
+        <uap3:Extension Category="windows.appExecutionAlias"
+            EntryPoint="Windows.FullTrustApplication"
+            Executable="Scribble.exe">
+          <uap3:AppExecutionAlias>
+            <desktop:ExecutionAlias Alias="scribble.exe"/>
+          </uap3:AppExecutionAlias>
+        </uap3:Extension>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap3:FileTypeAssociation Name="scb" Parameters="%1">
+            <uap:SupportedFileTypes>
+              <uap:FileType>.scb</uap:FileType>
+            </uap:SupportedFileTypes>
+          </uap3:FileTypeAssociation>
+        </uap:Extension>
+
+        <com:Extension Category="windows.comServer">
+          <com:ComServer>
+            <com:ExeServer Executable="Scribble.exe" DisplayName="Scribble">
+              <!-- ClsId Registration -->
+              <com:Class Id="7559FD90-9B93-11CE-B0F0-00AA006C28B3"
+                         DisplayName="Scribb Document"
+                         ShortDisplayName="Scribb"
+                         ProgId="Scribble.Document.1"
+                         VersionIndependentProgId ="Scribble.Document"
+                         EnableOleDefaultHandler="true"
+                         InsertableObject="true">
+                <com:DefaultIcon Path="Scribble.exe" ResourceIndex="1" />
+                <com:MiscStatus OleMiscFlag="32"/>
+                <com:Verbs>
+                  <com:Verb Id="0" DisplayName="&amp;Edit"
+                            AppendMenuFlag="0" OleVerbFlag="2" />
+                  <com:Verb Id="1" DisplayName="&amp;Open"
+                            AppendMenuFlag="0" OleVerbFlag="2" />
+                </com:Verbs>
+              </com:Class>
+            </com:ExeServer>
+            <!-- ProgId Registration -->
+            <com:ProgId Id="Scribble.Document"
+                        CurrentVersion="Scribble.Document.1" />
+            <com:ProgId Id="Scribble.Document.1"
+                        Clsid="7559FD90-9B93-11CE-B0F0-00AA006C28B3" />
+          </com:ComServer>
+        </com:Extension>
+        
+      </Extensions>
+    </Application>
+  </Applications>
+</Package>
