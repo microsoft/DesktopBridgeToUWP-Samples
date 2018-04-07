@@ -80,8 +80,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy /y /s "$(SolutionDir)BackgroundProcess\bin\$(ConfigurationName)\BackgroundProcess.exe" "$(SolutionDir)\UWP\bin\x64\$(ConfigurationName)\AppX\"
-xcopy /y /s "$(SolutionDir)BackgroundProcess\bin\$(ConfigurationName)\BackgroundProcess.exe" "$(SolutionDir)\UWP\bin\x86\$(ConfigurationName)\AppX\"</PostBuildEvent>
+    <PostBuildEvent>xcopy /y /s "$(TargetPath)" "$(SolutionDir)\UWP\bin\x64\$(ConfigurationName)\AppX\"
+xcopy /y /s "$(TargetPath)" "$(SolutionDir)\UWP\bin\x86\$(ConfigurationName)\AppX\"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
