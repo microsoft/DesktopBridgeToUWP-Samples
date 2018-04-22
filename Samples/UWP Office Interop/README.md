@@ -1,5 +1,9 @@
 ﻿# UWP calling Office Interop APIs
 
+*There is a newer version of this sample available at this link, using the new VS Packaing Project that is the supported way going forward to build solutions that have both UWP and Desktop components.*
+https://github.com/Microsoft/Windows-Packaging-Samples/tree/master/OfficeInterop
+
+----------------------------------------------------------------------------------------------------------------------------
 This sample demonstrates how to automate Microsoft Office apps installed on the PC using the Microsoft.Office.Interop.* APIs
 
 
