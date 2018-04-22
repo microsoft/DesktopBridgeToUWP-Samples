@@ -1,5 +1,9 @@
 ﻿# AppService Bridge Sample
 
+*THIS SAMPLE IS OUTDATED - please use the VS Packaging Project going forward for building projects that contain both UWP and Desktop components. See this post for details and samples:*
+https://blogs.windows.com/buildingapps/2017/12/04/extend-desktop-application-windows-10-features-using-new-visual-studio-application-packaging-project/
+
+-------------------------------------------------------------------------------------------------------------------------------
 This sample demonstrates how to create a package that includes both a Win32 and Universal Windows Platform (UWP) processes, and communicate between them via an AppService APIs. It also shows how to launch a Win32 process from a UWP app using the new "fullTrustProcess" extension.
 
 Adding UWP app to your package allows you to integrate features previously unavailable to desktop apps, such as UWP XAML UI frontend. Additionally, by gradually migrating existing Win32/.NET code to move functionality to UWP over time, you can improve the security of your user’s machine and expand your app’s reach to include a wide range of devices such as PCs, Phones, IoT devices, Xbox One and HoloLens.
