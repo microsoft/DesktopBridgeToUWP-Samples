@@ -97,8 +97,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
-    <PackageCertificateKeyFile>StorePackaging_StoreKey.pfx</PackageCertificateKeyFile>
-    <PackageCertificateThumbprint>6D13FD7F53034F9EBAE0805EC910DDCC19699239</PackageCertificateThumbprint>
+    <PackageCertificateKeyFile>StorePackaging_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateThumbprint>ACF5F0B13AE3D3DA739ED3DD1CD1693F58003933</PackageCertificateThumbprint>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <AppxBundle>Always</AppxBundle>
     <AppxBundlePlatforms>x86|x64</AppxBundlePlatforms>
@@ -160,7 +160,6 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="StorePackaging_StoreKey.pfx" />
     <None Include="StorePackaging_TemporaryKey.pfx" />
     <None Include="Win32\MFCwithPush.exe">
       <DeploymentContent>true</DeploymentContent>

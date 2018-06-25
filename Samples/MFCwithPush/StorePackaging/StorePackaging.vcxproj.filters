@@ -29,7 +29,6 @@
     <None Include="StorePackaging_TemporaryKey.pfx" />
     <None Include="Win32\MFCwithPush.exe" />
     <None Include="Package.StoreAssociation.xml" />
-    <None Include="StorePackaging_StoreKey.pfx" />
     <None Include="Win32\PushTestserver.exe" />
     <None Include="Win32\UWPFeatures.dll" />
   </ItemGroup>
