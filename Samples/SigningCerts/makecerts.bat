@@ -14,7 +14,8 @@ SET X509_NAME="CN=Contoso Demo Publisher"
 
 REM This is the date the certificate *and also the signature* will expire. It is recommended
 REM you only make certificates valid for a short period of time (eg, a few weeks or a month)
-REM to minimize the chances of them leaking and being used against you.
+REM to minimize the window in which an attacker could steal the certificate (or a signed app)
+REM and try to use it against you.
 SET EXPIRY_DATE=01/01/2019
 
 NET FILE > nul 2> nul
