@@ -43,7 +43,12 @@ step will fail.
 The `EXPIRY_DATE` variable determines when the self-signed certificate will
 expire. It is recommended that you only generate certificates that are valid
 for a short period of time (eg, a month) to minimize risk of the keys falling
-into the wrong hands and being used to sign malicious code. 
+into the wrong hands and being used to sign malicious code. Also note that because
+the certs used here are for test purposes only, *the **signature** will also expire
+when the certificate expires* (due to the use of the "lifetime signing" EKU in the
+certificate). This is so you don't accidentally have an old untested version of the app
+(possibly with security bugs) lying around that someone accidentally picks up and
+starts to use.
 
 ## securecerts.bat
 
