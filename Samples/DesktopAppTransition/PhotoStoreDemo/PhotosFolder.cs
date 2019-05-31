@@ -25,8 +25,7 @@ namespace PhotoStoreDemo
                        {
                            path = Path.Combine(Enviroment.GetFolderPath(Enviroment.SpecialFolders.LocalApplicationFolder), "PreviousPhotoStore");
                        }
-                    path = new FileInfo(Assembly.GetExecutingAssembly().Location).DirectoryName;
-                    path = Path.Combine(path, "Photos");
+                    path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\PreviousPhotoStore"
                     var di = new DirectoryInfo(path);
                     if (!di.Exists)
                     {
