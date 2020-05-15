@@ -52,19 +52,16 @@ namespace NorthwindCent.UwaClient
         {
             base.OnBackgroundActivated(args);
 
-            if (args.TaskInstance.TriggerDetails is AppServiceTriggerDetails)
+            AppServiceTriggerDetails details = args.TaskInstance.TriggerDetails as AppServiceTriggerDetails;
+            if (details != null)
             {
                 // Hold deferral reference to make sure AppService connection is always alive
                 appServiceDeferral = args.TaskInstance.GetDeferral();
 
-                AppServiceTriggerDetails details = args.TaskInstance.TriggerDetails as AppServiceTriggerDetails;
-                if (details != null)
-                {
-                    connection = details.AppServiceConnection;
+                connection = details.AppServiceConnection;
 
-                    // Notify that connection between app and desktop server has been built
-                    AppServiceConnected?.Invoke(this, null);
-                }
+                // Notify that connection between app and desktop server has been built
+                AppServiceConnected?.Invoke(this, null);
             }
         }
 
