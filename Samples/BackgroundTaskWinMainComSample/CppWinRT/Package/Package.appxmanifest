@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+  xmlns:com="http://schemas.microsoft.com/appx/manifest/com/windows10"
+  IgnorableNamespaces="uap rescap com">
+
+  <Identity
+    Name="SampleBackgroundTaskAppWinMainCppWinRT"
+    Publisher="CN=Contoso"
+    Version="1.0.0.0" />
+
+  <Properties>
+    <DisplayName>SampleBackgroundTaskAppWinMainCppWinRT</DisplayName>
+    <PublisherDisplayName>Contoso</PublisherDisplayName>
+    <Logo>Images\StoreLogo.png</Logo>
+  </Properties>
+
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.19041.0" MaxVersionTested="10.0.19041.0" />
+  </Dependencies>
+
+  <Resources>
+    <Resource Language="x-generate"/>
+  </Resources>
+
+  <Applications>
+    <Application Id="App"
+      Executable="$targetnametoken$.exe"
+      EntryPoint="$targetentrypoint$">
+
+      <uap:VisualElements
+        DisplayName="SampleBackgroundTaskAppWinMainCppWinRT"
+        Description="SampleBackgroundTaskAppWinMainCppWinRT"
+        BackgroundColor="transparent"
+        Square150x150Logo="Images\Square150x150Logo.png"
+        Square44x44Logo="Images\Square44x44Logo.png">
+        <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png" />
+        <uap:SplashScreen Image="Images\SplashScreen.png" />
+      </uap:VisualElements>
+
+
+      <Extensions>
+        <com:Extension Category="windows.comServer">
+          <com:ComServer>
+            <com:ExeServer Executable="BackgroundTaskWinMainComSample_CppWinRT\BackgroundTaskWinMainComSample_CppWinRT.exe" Arguments="-RegisterProcessAsComServer" DisplayName="BackgroundTaskWinMainComSample_CppWinRT">
+              <com:Class Id="1498AA14-E11E-48C8-912A-BCEBF27E19AC" DisplayName="Time Triggered Sample Background Task" />
+            </com:ExeServer>
+          </com:ComServer>
+        </com:Extension>
+      </Extensions>
+
+    </Application>
+  </Applications>
+
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <rescap:Capability Name="runFullTrust" />
+  </Capabilities>
+</Package>
