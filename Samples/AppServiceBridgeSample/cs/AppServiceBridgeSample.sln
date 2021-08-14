@@ -1,9 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2011
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UWP", "UWP\UWP.csproj", "{68E3E0F8-DF4C-4A7C-A8D2-F1000E2219D1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CC907CB5-2F85-4C6E-937F-64BA9E1B9202} = {CC907CB5-2F85-4C6E-937F-64BA9E1B9202}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgroundProcess", "BackgroundProcess\BackgroundProcess.csproj", "{CC907CB5-2F85-4C6E-937F-64BA9E1B9202}"
 EndProject
@@ -58,5 +61,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7D8083D4-3B85-469E-AEBD-49E1214A17D0}
 	EndGlobalSection
 EndGlobal
