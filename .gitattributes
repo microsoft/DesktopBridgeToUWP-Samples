@@ -1,7 +1,7 @@
 ###############################################################################
 # Set default behavior to automatically normalize line endings.
 ###############################################################################
-* text=auto
+#* text=auto
 
 # Declare files that will always have CRLF line endings on checkout.
 *.appxmanifest text eol=crlf
