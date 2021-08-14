@@ -7,8 +7,8 @@ For more info on UWP apps, [see the **Universal Application Platform Guide**](ht
 ## Requirements
 
 - Windows 10, version 1607 (Anniversary Edition) or later.
-- [Visual Studio 2017 RC](https://www.visualstudio.com/downloads/#visual-studio-community-2017-rc)
-- [Desktop Bridge Debugging project](http://go.microsoft.com/fwlink/?LinkID=797871)
+- [Visual Studio 2017 15.5 and above](https://visualstudio.microsoft.com/vs/community/)
+- You may still need the [Desktop Bridge Debugging project](http://go.microsoft.com/fwlink/?LinkID=797871) to open some samples. However, this project is now deprecated and it has been replaced by the [Windows Application Packaging Project](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-packaging-dot-net), which is included in Visual Studio 2017 starting from release 15.5
 - [Windows Software Development Kit (SDK) for Windows 10](https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk)
 - We are working on updating the UWPDesktop NuGet package with the latest release. Meanwhile as a workaround please follow the guidance [here](https://www.nuget.org/packages/UwpDesktop/)
 
