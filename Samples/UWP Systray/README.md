@@ -1,6 +1,6 @@
 ﻿# UWP with Systray extension
 
-This sample demonstrates how a UWP app can light up an extension on the desktop edition that runs in the Systemtray (also knwon as Notification Area). This is accomplished via FullTrustProcessLauncher API. The communication is done with an in-proc AppService.
+This sample demonstrates how a UWP app can light up an extension on the desktop edition that runs in the Systemtray (also known as Notification Area). This is accomplished via FullTrustProcessLauncher API. The communication is done with an in-proc AppService.
 
 
 Build/Deploy and Run the sample
