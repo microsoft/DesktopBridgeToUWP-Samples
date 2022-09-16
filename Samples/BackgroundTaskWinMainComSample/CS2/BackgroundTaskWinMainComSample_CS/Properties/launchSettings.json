@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "BackgroundTaskWinMainComSample_CS (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "BackgroundTaskWinMainComSample_CS (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
