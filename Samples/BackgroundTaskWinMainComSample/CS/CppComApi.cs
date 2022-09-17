@@ -20,6 +20,7 @@ namespace BackgroundTaskWinMainComSample_CS
 
         public const uint CLSCTX_LOCAL_SERVER = 4;
         public const uint REGCLS_MULTIPLEUSE = 1;
+
         public const uint S_OK = 0x00000000;
         public const uint CLASS_E_NOAGGREGATION = 0x80040110;
         public const uint E_NOINTERFACE = 0x80004002;
@@ -54,8 +55,7 @@ namespace BackgroundTaskWinMainComSample_CS
                     return CLASS_E_NOAGGREGATION;
                 }
 
-                if ((interfaceId != typeof(TimeTriggeredTask).GUID) &&
-                    (interfaceId != new Guid(IID_IUnknown)))
+                if ((interfaceId != typeof(TaskType).GUID) && (interfaceId != new Guid(IID_IUnknown)))
                 {
                     objectPointer = IntPtr.Zero;
                     return E_NOINTERFACE;
@@ -65,7 +65,7 @@ namespace BackgroundTaskWinMainComSample_CS
                 return S_OK;
             }
 
-            public uint LockServer(bool Lock)
+            public uint LockServer(bool lockServer)
             {
                 return S_OK;
             }
