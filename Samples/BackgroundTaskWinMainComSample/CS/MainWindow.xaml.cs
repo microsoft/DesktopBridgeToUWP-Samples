@@ -148,9 +148,9 @@ namespace BackgroundTaskWinMainComSample_CS
 
 /*
             RegistrationServices registrationServices = new RegistrationServices();
-            registrationServices.RegisterTypeForComClients(backgroundTaskClass,
-                                                            RegistrationClassContext.LocalServer,
-                                                            RegistrationConnectionType.MultipleUse);
+            registrationServices.RegisterTypeForComClients(typeof(TaskType),
+                                                           RegistrationClassContext.LocalServer,
+                                                           RegistrationConnectionType.MultipleUse);
 */
 
             // This app is currently using the .NET Core framework. Use the
@@ -158,7 +158,7 @@ namespace BackgroundTaskWinMainComSample_CS
             // API.
 
             Guid taskGuid = typeof(TaskType).GUID;
-            var hr = CppComApi.CoRegisterClassObject(ref taskGuid,
+            CppComApi.CoRegisterClassObject(ref taskGuid,
                                             new CppComApi.BackgroundTaskFactory<TaskType, TaskInterface>(),
                                             CppComApi.CLSCTX_LOCAL_SERVER,
                                             CppComApi.REGCLS_MULTIPLEUSE,
