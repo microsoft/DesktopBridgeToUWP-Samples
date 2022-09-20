@@ -1,4 +1,18 @@
+﻿using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Controls.Primitives;
+using Microsoft.UI.Xaml.Data;
+using Microsoft.UI.Xaml.Input;
+using Microsoft.UI.Xaml.Media;
+using Microsoft.UI.Xaml.Navigation;
 using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.Foundation;
+using Windows.Foundation.Collections;
+
 using System.Windows;
 
 // The following namespace is required for BackgroundTaskBuilder APIs.
@@ -10,14 +24,21 @@ using Microsoft.Win32;
 // The following namespace is requires to use the COM registration API (RegisterTypeForComClients).
 using System.Runtime.InteropServices;
 using System.Diagnostics;
+using Windows.Foundation.Metadata;
+
+
+// To learn more about WinUI, the WinUI project structure,
+// and more about our project templates, see: http://aka.ms/winui-project-info.
 
 namespace BackgroundTaskWinMainComSample_CS
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// An empty window that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public partial class MainWindow : Window
+    public sealed partial class MainWindow : Window
     {
+        static private uint _RegistrationToken;
+
         /// <summary>
         /// This method sets registry keys such that COM understands to launch
         /// the specified executable with parameters when no such process is
@@ -119,12 +140,29 @@ namespace BackgroundTaskWinMainComSample_CS
         /// aforementioned API, it will be the process that has instances of the
         /// background task invoked.
         /// </summary>
-        static void RegisterProcessForBackgroundTask(Type backgroundTaskClass)
+        static void RegisterProcessForBackgroundTask<TaskType, TaskInterface>() where TaskType : TaskInterface, new()
         {
+            // If the application is compiled with the full .NET frameworks, the
+            // built-in RegistrationServices class may be used to use COM server
+            // registration APIs.
+
+/*
             RegistrationServices registrationServices = new RegistrationServices();
-            registrationServices.RegisterTypeForComClients(backgroundTaskClass,
+            registrationServices.RegisterTypeForComClients(typeof(TaskType),
                                                            RegistrationClassContext.LocalServer,
                                                            RegistrationConnectionType.MultipleUse);
+*/
+
+            // This app is currently using the .NET Core framework. Use the
+            // manual C++ imported implementation of the CoRegisterClassObject
+            // API.
+
+            Guid taskGuid = typeof(TaskType).GUID;
+            CppComApi.CoRegisterClassObject(ref taskGuid,
+                                            new CppComApi.BackgroundTaskFactory<TaskType, TaskInterface>(),
+                                            CppComApi.CLSCTX_LOCAL_SERVER,
+                                            CppComApi.REGCLS_MULTIPLEUSE,
+                                            out _RegistrationToken);
         }
 
         public MainWindow()
@@ -132,7 +170,12 @@ namespace BackgroundTaskWinMainComSample_CS
             InitializeComponent();
 
             RegisterBackgroundTaskWithSystem(new TimeTrigger(15, false), typeof(TimeTriggeredTask).GUID, typeof(TimeTriggeredTask).Name);
-            RegisterProcessForBackgroundTask(typeof(TimeTriggeredTask));
+            RegisterProcessForBackgroundTask<TimeTriggeredTask, IBackgroundTask>();
+        }
+
+        private void myButton_Click(object sender, RoutedEventArgs e)
+        {
+            myButton.Content = "Clicked";
         }
     }
 }
