@@ -92,7 +92,7 @@ namespace PhotoStoreDemo
                         if (Directory.Exists(sourceDir))
                         {
                             //Obtain the path (String) to the "packaged" location, where the previous data will be migrated TO.
-                            String destinationDir = Windows.Storage.ApplicationData.Current.LocalFolder.Path + "\\NewPhotoStore";
+                            String destinationDir = PhotosFolder.Current;
 
                             //If you are moving data from one of the redirected folders, you need to use robocopy.exe to bypass redirection. This is the only time you should bypass redirection
                             //Redirected folders: https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-behind-the-scenes
